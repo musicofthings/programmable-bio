@@ -1,4 +1,4 @@
-# programmable.bio
+# Programmable Bio
 
 **LabOS — the agentic operating system for distributed biology.**
 
@@ -31,4 +31,4 @@ skannan@oncophenomics.com
 
 ---
 
-&copy; 2026 programmable.bio. All rights reserved.
+&copy; 2026 Programmable Bio. All rights reserved.
