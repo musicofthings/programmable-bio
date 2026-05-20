@@ -8,18 +8,23 @@ discovery for India and APAC.
 
 ## Pages
 
-Public site (linked from nav):
+Top-level navigation hubs:
 
-- [Home](https://programmablebio.tech/) — market context + core strategic thesis
-- [Platform](https://programmablebio.tech/platform.html) — Why Now, LabOS agentic
-  architecture, LIMS integration, fine-tuning roadmap
-- [Apollo Moat](https://programmablebio.tech/apollo.html) — Apollo Hospitals
-  partnership + competitive moat analysis
-- [Programs](https://programmablebio.tech/programs.html) — two costed reference
-  programs (IVD CDx + Phase 4 PV), offerings stack, customer segments, value chain
-- [Strategy](https://programmablebio.tech/strategy.html) — build-vs-partner,
-  go-to-market, North Star + KPIs, risk mitigation incl. agentic-lab interface
-- [BioHelix](https://programmablebio.tech/biohelix.html) — Singapore APAC hub
+- **Home** — cover, market context, core strategic thesis
+- **Platform** — hub for `why-now`, `labos`, `lims`
+- **Apollo Moat** — hub for `apollo-partnership`, `competitive-moat`
+- **Programs** — hub for `reference-programs`, `offerings`, `customers`, `value-chain`
+- **Strategy** — hub for `fal`, `gtm`, `kpis`, `risks`
+- **BioHelix** — Singapore APAC hub
+
+Each topic gets its own focused page with breadcrumb + prev/next navigation:
+
+| Hub | Topic pages |
+|---|---|
+| Platform | `/why-now.html`, `/labos.html`, `/lims.html` |
+| Apollo | `/apollo-partnership.html`, `/competitive-moat.html` |
+| Programs | `/reference-programs.html`, `/offerings.html`, `/customers.html`, `/value-chain.html` |
+| Strategy | `/fal.html`, `/gtm.html`, `/kpis.html`, `/risks.html` |
 
 Internal-only (in repo, not linked from public nav):
 
