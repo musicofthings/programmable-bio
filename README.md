@@ -20,12 +20,15 @@ discovery for India and APAC.
 
 Pre-seed. Strategic Blueprint dated April 2026.
 
-## Confidentiality
+## Disclaimer
 
-Material on this site is for strategic planning and investor discussions.
-Financial projections are indicative and scenario-based. Not an offer of
-securities.
+Financial projections are indicative and scenario-based. Nothing on this site
+constitutes an offer of securities.
 
 ## Contact
 
 skannan@oncophenomics.com
+
+---
+
+&copy; 2026 programmable.bio. All rights reserved.
