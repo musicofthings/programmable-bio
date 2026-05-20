@@ -8,11 +8,11 @@ discovery for India and APAC.
 
 ## Pages
 
-- [Strategic Blueprint](https://programmable.bio/) — the full thesis: LabOS
+- [Strategic Blueprint](https://programmablebio.tech/) — the full thesis: LabOS
   agentic architecture, Apollo Hospitals data moat, the two flagship reference
   programs (IVD Companion Diagnostics + Phase 4 Pharmacovigilance), risk
   mitigation, and the pre-seed pitch outline.
-- [Singapore BioHelix Node](https://programmable.bio/biohelix.html) — the APAC
+- [Singapore BioHelix Node](https://programmablebio.tech/biohelix.html) — the APAC
   wet-lab operations hub, MiRXES partnership thesis, and the India ↔ Singapore
   corridor architecture.
 
