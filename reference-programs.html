@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Two Reference Programs &mdash; Programmable Bio</title>
+<title>Reference Programs &mdash; Programmable Bio</title>
 <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
@@ -17,6 +17,7 @@
     </label>
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
+      <li><a href="/overview.html">Overview</a></li>
       <li><a href="/platform.html">Platform</a></li>
       <li><a href="/apollo.html">Apollo Moat</a></li>
       <li><a href="/programs.html" class="active">Programs</a></li>
@@ -26,193 +27,54 @@
   </div>
 </nav>
 
-<div class="breadcrumb">
-  <a href="/">Home</a>
-  <span class="breadcrumb-sep">&rsaquo;</span>
-  <a href="/programs.html">Programs</a>
-  <span class="breadcrumb-sep">&rsaquo;</span>
-  <span class="breadcrumb-current">Two Reference Programs</span>
+<div class="section" style="padding-top: 16px;">
+  <div class="section-label">Programmable Bio</div>
+  <h2>Reference Programs</h2>
+  <p style="font-size: 16px; color: var(--ink-secondary); max-width: 720px;">Our flagship reference programs split into two tracks: IVD companion diagnostics, and the full pharma R&D lifecycle.</p>
+  <div class="card-grid" style="margin-top: 32px;">
+    <a class="card card-amber" href="/ivd.html">
+      <h4>IVD Companion Diagnostics &rarr;</h4>
+      <p>Companion diagnostic development pathway — 18 months / $5M vs $30–50M traditional.</p>
+    </a>
+    <a class="card card-amber" href="/pharma.html">
+      <h4>Pharma R&D &rarr;</h4>
+      <p>Serving pharma across the full R&D lifecycle.</p>
+    </a>
+  </div>
 </div>
-<div class="section">
-<div class="section-label">Section 12</div>
-<h2>Two Reference <em>Programs</em></h2>
-<p>Replacing abstract ROI multipliers with two fully-costed flagship sprints. Both are anchored on the Apollo Hospitals biobank, executed via the LabOS agent mesh, and packaged through ClinicalBridge. Together they cover the two highest-value moments in a drug's lifecycle — pre-approval (companion diagnostics) and post-approval (pharmacovigilance).</p>
-<!-- PROGRAM A: IVD COMPANION DIAGNOSTICS -->
-<h3>Program A · IVD Companion Diagnostics Pathway</h3>
-<div class="card card-accent">
-<h4>The customer scenario</h4>
-<p>A pharma partner has a Phase 2 oncology drug — say, a targeted therapy in NSCLC or HER2-low breast cancer. To enter Phase 3 with a stratified label, they need a regulator-grade companion diagnostic (CDx) that predicts responders. Traditional path: outsource to Roche Dx or Thermo Fisher — 4–6 years, $30–50M, parallel to clinical development, and almost always FDA-optimized with CDSCO as an afterthought.</p>
-</div>
-<table style="margin-top: 16px;">
-<thead>
-<tr><th>Phase</th><th>Months</th><th>LabOS execution</th><th>Cost</th></tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Biomarker discovery</strong></td>
-<td>0–3</td>
-<td>OmicsOS Hypothesis Agent over Apollo NSCLC cohort (scRNA + WGS + IHC) + literature. Ranked candidate biomarkers with uncertainty.</td>
-<td>$0.4M</td>
-</tr>
-<tr>
-<td><strong>Analytical validation</strong></td>
-<td>3–9</td>
-<td>Design Agent emits typed DAGs; Execution Broker routes to Syngene (assay dev), MedGenome (NGS validation). Precision, accuracy, LoD/LoQ per CLSI EP05/EP17.</td>
-<td>$1.6M</td>
-</tr>
-<tr>
-<td><strong>Clinical validation</strong></td>
-<td>9–15</td>
-<td>Retrospective Apollo cohort (consented, IRB-approved) + prospective sub-study. QC Agent enforces sample-quality gates. Provenance-signed graph for every datapoint.</td>
-<td>$2.5M</td>
-</tr>
-<tr>
-<td><strong>Regulatory submission</strong></td>
-<td>15–18</td>
-<td>ClinicalBridge packages CDSCO IVD dossier + FDA pre-submission Q-Sub. Cross-agency bridging strategy.</td>
-<td>$0.5M</td>
-</tr>
-<tr style="background: var(--bg-soft);">
-<td><strong>Total</strong></td>
-<td><strong>18 months</strong></td>
-<td><strong>vs. 4–6 years traditional</strong></td>
-<td><strong>$5.0M vs. $30–50M</strong></td>
-</tr>
-</tbody>
-</table>
-<div class="two-col" style="margin-top: 16px;">
-<div class="card card-teal">
-<h4>Revenue to us</h4>
-<ul>
-<li><strong>$1.5M upfront</strong> sprint fee (LabOS + sample analysis + analytical validation)</li>
-<li><strong>$500K × 3 milestones</strong> (analytical lock, clinical lock, regulatory acceptance) = $1.5M</li>
-<li><strong>$5–10/test royalty</strong> on Dx kit sales (at peak 50K–200K tests/yr → $0.25–2M/yr recurring)</li>
-<li><strong>5–10% royalty</strong> on the drug's CDx-stratified clinical revenue (long-tail, decade+)</li>
-<li><strong>Apollo revenue share:</strong> 25–35% of kit royalty + Atlas licensing uplift</li>
-</ul>
-</div>
-<div class="card card-purple">
-<h4>Why this works for the pharma buyer</h4>
-<ul>
-<li><strong>6x faster, 6–10x cheaper</strong> than the Roche Dx route</li>
-<li><strong>India-first regulatory path</strong> de-risks domestic launch; FDA bridging via Q-Sub strategy</li>
-<li><strong>Auditable provenance</strong> — every datapoint signed to its DAG; reviewer can replay</li>
-<li><strong>Apollo clinical credibility</strong> on the submission — investigator-initiated extension built in</li>
-<li><strong>Companion Dx ready for Phase 3 enrollment</strong> stratification, accelerating clinical timeline</li>
-</ul>
-</div>
-</div>
-<!-- PROGRAM B: PHASE 4 PHARMACOVIGILANCE -->
-<h3 style="margin-top: 32px;">Program B · Phase 4 Pharmacovigilance Pathway</h3>
-<div class="card card-blue">
-<h4>The customer scenario</h4>
-<p>A pharma has an approved drug — say, a DOAC (apixaban) or a CV/diabetes combination — sold at scale in India. They need Phase 4 real-world safety surveillance with pharmacogenomic signal detection. India-specific PGx variants (CYP2C9, VKORC1, CYP2C19) make Western label data structurally insufficient. Traditional path: contract a Phase 4 CRO study with manual ADR reporting + claims data — $10–30M, 3–5 years, weak India-specific signal.</p>
-</div>
-<table style="margin-top: 16px;">
-<thead>
-<tr><th>Component</th><th>LabOS execution</th><th>Annual cost</th></tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Real-world evidence feed</strong></td>
-<td>Continuous DPDP-compliant pipeline from Apollo EHR (de-identified, federated). Patient-on-drug cohort sized at 5K–50K depending on indication.</td>
-<td>$0.6M</td>
-</tr>
-<tr>
-<td><strong>Multiomics sub-cohort</strong></td>
-<td>ADR experiencers (~2–5% of treated) characterized via WGS + targeted PGx panel + metabolomics. Agentic anomaly detection over the Atlas baseline.</td>
-<td>$1.2M</td>
-</tr>
-<tr>
-<td><strong>Signal detection</strong></td>
-<td>QC + Learning Agents continuously refine signal-to-noise. Quarterly signal reports with PGx + ethnicity stratification. Auto-generated CIOMS-format ADR narratives.</td>
-<td>$0.4M</td>
-</tr>
-<tr>
-<td><strong>Regulatory packaging</strong></td>
-<td>ClinicalBridge quarterly PSUR/PBRER inputs for CDSCO + label-update support packages for FDA/EMA when actionable signal emerges.</td>
-<td>$0.3M</td>
-</tr>
-<tr style="background: var(--bg-soft);">
-<td><strong>Total recurring</strong></td>
-<td><strong>12–18 month contracts, renew annually</strong></td>
-<td><strong>$2.5M/yr vs. $10–30M one-off</strong></td>
-</tr>
-</tbody>
-</table>
-<div class="two-col" style="margin-top: 16px;">
-<div class="card card-teal">
-<h4>Revenue to us</h4>
-<ul>
-<li><strong>$2–4M/year</strong> active surveillance contract (recurring, high gross margin)</li>
-<li><strong>$250K–1M per actionable signal</strong> (label-update support package)</li>
-<li><strong>Bundle pricing</strong> across a pharma's portfolio (5+ drugs = 30%+ discount, 10x ACV)</li>
-<li><strong>Atlas enrichment</strong> — every PV cohort feeds the Atlas with longitudinal phenotype data; compounds the moat</li>
-<li><strong>Apollo revenue share:</strong> 20–30% of surveillance contract value</li>
-</ul>
-</div>
-<div class="card card-purple">
-<h4>Why this works for the pharma buyer</h4>
-<ul>
-<li><strong>Recurring revenue model</strong> aligned to pharma's PV budget cycle — easy to procure</li>
-<li><strong>India-specific PGx signals</strong> are not extractable from US/EU databases — uniquely defensible insight</li>
-<li><strong>Auto-generated CIOMS narratives</strong> cut PV writing cost by 60–80%</li>
-<li><strong>Audit-ready</strong> — provenance-signed every step; survives CDSCO + FDA inspection</li>
-<li><strong>Pre-emptive label refinement</strong> protects post-marketing revenue from withdrawal risk</li>
-</ul>
-</div>
-</div>
-<h3 style="margin-top: 32px;">Why this pair of reference programs</h3>
-<div class="card-grid">
-<div class="card card-accent">
-<h4>Coverage of the drug lifecycle</h4>
-<p>CDx = pre-approval, high-margin one-shot revenue with long-tail royalties. PV = post-approval, recurring revenue across a pharma's entire portfolio. Together they make us relevant before and after every drug launch.</p>
-</div>
-<div class="card card-teal">
-<h4>Both anchored on the same substrate</h4>
-<p>Apollo biobank + LabOS agent mesh + ClinicalBridge — one platform investment, two distinct revenue streams. Marginal cost of adding the second program to an existing customer approaches zero.</p>
-</div>
-<div class="card card-purple">
-<h4>Both compound the Atlas</h4>
-<p>CDx programs deposit deep multiomics + clinical-response data. PV programs deposit longitudinal phenotype + ADR data. The Atlas becomes uniquely complete on both response and safety dimensions — a structural lead that widens with every program.</p>
-</div>
-</div>
-<div class="callout">
-<h4>The Platform Flywheel</h4>
-<p>More CDx + PV programs → <strong>richer Atlas</strong> → better India-tuned model → faster discovery → more customers → more programs. The Atlas becomes a <strong>$100M+ standalone asset by Year 5</strong>; the model becomes the licensable AI substrate of Indian biotech.</p>
-</div>
-</div>
-<div class="page-nav"><span></span><a class="page-nav-hub" href="/programs.html">All Programs topics</a><a class="page-nav-next" href="/offerings.html"><span class="page-nav-dir">Next &rarr;</span><span class="page-nav-title">Offerings & USP</span></a></div>
 
 <footer class="site-footer">
   <div class="footer-grid">
     <div class="footer-col">
       <div class="footer-title">Programmable Bio</div>
       <p class="footer-tag">Agentic operating system for distributed biology. India-first, APAC expansion via the Singapore BioHelix node.</p>
+      <p class="footer-tag" style="margin-top:14px;"><a href="/biohelix.html">&rarr; Singapore BioHelix Hub</a></p>
     </div>
     <div class="footer-col">
-      <div class="footer-title">Platform</div>
+      <div class="footer-title">Overview &amp; Platform</div>
       <ul>
+        <li><a href="/market.html">Market Context</a></li>
+        <li><a href="/thesis.html">Strategic Thesis</a></li>
         <li><a href="/why-now.html">Why Now</a></li>
         <li><a href="/labos.html">LabOS Architecture</a></li>
         <li><a href="/lims.html">LIMS Integration</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <div class="footer-title">Moat &amp; Programs</div>
+      <div class="footer-title">Programs</div>
       <ul>
-        <li><a href="/apollo-partnership.html">Apollo Partnership</a></li>
-        <li><a href="/competitive-moat.html">Competitive Moat</a></li>
         <li><a href="/reference-programs.html">Reference Programs</a></li>
+        <li><a href="/ivd.html">IVD CDx</a></li>
+        <li><a href="/pharma.html">Pharma R&amp;D</a></li>
         <li><a href="/offerings.html">Offerings &amp; USP</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <div class="footer-title">Strategy</div>
+      <div class="footer-title">Moat &amp; Strategy</div>
       <ul>
-        <li><a href="/fal.html">Build vs Partner</a></li>
+        <li><a href="/apollo-partnership.html">Apollo Partnership</a></li>
+        <li><a href="/competitive-moat.html">Competitive Moat</a></li>
         <li><a href="/gtm.html">Go-to-Market</a></li>
-        <li><a href="/kpis.html">North Star &amp; KPIs</a></li>
         <li><a href="/risks.html">Risk Mitigation</a></li>
       </ul>
     </div>
