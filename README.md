@@ -8,23 +8,24 @@ discovery for India and APAC.
 
 ## Pages
 
-Top-level navigation hubs:
+Top-level navigation hubs (7 items, with hamburger collapse on mobile):
 
-- **Home** — cover, market context, core strategic thesis
-- **Platform** — hub for `why-now`, `labos`, `lims`
-- **Apollo Moat** — hub for `apollo-partnership`, `competitive-moat`
-- **Programs** — hub for `reference-programs`, `offerings`, `customers`, `value-chain`
-- **Strategy** — hub for `fal`, `gtm`, `kpis`, `risks`
+- **Home** — cover + explore grid
+- **Overview** — `market`, `thesis`
+- **Platform** — `why-now`, `labos`, `lims`
+- **Apollo Moat** — `apollo-partnership`, `competitive-moat`
+- **Programs** — `reference-programs` (sub-hub), `offerings`, `customers`, `value-chain`
+- **Strategy** — `fal`, `gtm`, `kpis`, `risks`
 - **BioHelix** — Singapore APAC hub
 
-Each topic gets its own focused page with breadcrumb + prev/next navigation:
+Nested under **Reference Programs**:
 
-| Hub | Topic pages |
+| Sub-hub | Pages |
 |---|---|
-| Platform | `/why-now.html`, `/labos.html`, `/lims.html` |
-| Apollo | `/apollo-partnership.html`, `/competitive-moat.html` |
-| Programs | `/reference-programs.html`, `/offerings.html`, `/customers.html`, `/value-chain.html` |
-| Strategy | `/fal.html`, `/gtm.html`, `/kpis.html`, `/risks.html` |
+| `ivd` | IVD Companion Diagnostics |
+| `pharma` (sub-sub-hub) | `target-discovery`, `drug-discovery`, `in-silico`, `preclinical`, `clinical` (teaser), `pharmacovigilance` |
+
+Every topic page has a breadcrumb (`Home › Hub › Topic`) and prev/next nav.
 
 Internal-only (in repo, not linked from public nav):
 
