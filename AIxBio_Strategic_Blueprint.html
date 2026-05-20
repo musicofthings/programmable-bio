@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>programmable.bio — Strategic Blueprint 2026</title>
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-secondary: #4a4a4a;
+    --ink-muted: #888;
+    --bg: #fff;
+    --bg-soft: #f8f7f4;
+    --bg-card: #ffffff;
+    --border: rgba(0,0,0,0.1);
+    --border-strong: rgba(0,0,0,0.2);
+    --accent: #e05a2b;
+    --accent-soft: #fdf0eb;
+    --accent-mid: #b8421b;
+    --teal: #0f6e56;
+    --teal-soft: #e1f5ee;
+    --purple: #534ab7;
+    --purple-soft: #eeedfe;
+    --blue: #185fa5;
+    --blue-soft: #e6f1fb;
+    --amber: #ba7517;
+    --amber-soft: #faeeda;
+    --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --font-mono: 'Courier New', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: var(--font-sans);
+    color: var(--ink);
+    background: var(--bg);
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 32px 80px;
+  }
+  /* COVER */
+  .cover {
+    padding: 64px 0 48px;
+    border-bottom: 2px solid var(--ink);
+    margin-bottom: 56px;
+  }
+  .cover-eyebrow {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  .cover h1 {
+    font-size: 44px;
+    font-weight: 300;
+    letter-spacing: -1.5px;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .cover h1 strong { font-weight: 700; color: var(--accent); }
+  .cover-sub {
+    font-size: 18px;
+    color: var(--ink-secondary);
+    font-weight: 300;
+    margin-bottom: 32px;
+    max-width: 620px;
+    line-height: 1.6;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .cover-meta-item { font-size: 13px; color: var(--ink-muted); }
+  .cover-meta-item strong { color: var(--ink); }
+  /* SECTIONS */
+  .section { margin-bottom: 60px; }
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 8px;
+  }
+  h2 {
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+    margin-bottom: 24px;
+    color: var(--ink);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2 em { font-style: normal; color: var(--accent); font-weight: 500; }
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--ink);
+    margin-top: 28px;
+  }
+  h3:first-child { margin-top: 0; }
+  p { margin-bottom: 14px; color: var(--ink-secondary); }
+  /* STAT GRID */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+    margin: 24px 0;
+  }
+  .stat-card {
+    background: var(--bg-soft);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .stat-num {
+    font-size: 26px;
+    font-weight: 300;
+    letter-spacing: -1px;
+    color: var(--ink);
+  }
+  .stat-num strong { font-weight: 700; color: var(--accent); }
+  .stat-label { font-size: 12px; color: var(--ink-muted); margin-top: 4px; line-height: 1.4; }
+  /* CARDS */
+  .card {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 12px;
+    background: var(--bg-card);
+  }
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .card h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .card p { font-size: 13px; margin-bottom: 0; line-height: 1.6; }
+  /* ACCENT CARDS */
+  .card-accent {
+    border-left: 3px solid var(--accent);
+    background: var(--accent-soft);
+  }
+  .card-teal { border-left: 3px solid var(--teal); background: var(--teal-soft); }
+  .card-purple { border-left: 3px solid var(--purple); background: var(--purple-soft); }
+  .card-blue { border-left: 3px solid var(--blue); background: var(--blue-soft); }
+  .card-amber { border-left: 3px solid var(--amber); background: var(--amber-soft); }
+  /* CALLOUT */
+  .callout {
+    background: var(--ink);
+    color: #fff;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin: 24px 0;
+  }
+  .callout h4 { color: #fff; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; font-weight: 500; opacity: 0.6; }
+  .callout p { color: rgba(255,255,255,0.85); font-size: 18px; font-weight: 300; line-height: 1.5; margin: 0; letter-spacing: -0.3px; }
+  .callout strong { color: var(--accent); font-weight: 600; }
+  /* VERDICT */
+  .verdict {
+    background: var(--accent);
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+  .verdict-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.75; margin-bottom: 6px; }
+  .verdict p { color: #fff; margin: 0; font-size: 15px; }
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+  th {
+    text-align: left;
+    padding: 8px 12px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    border-bottom: 1px solid var(--border-strong);
+    font-weight: 500;
+  }
+  td { padding: 10px 12px; border-bottom: 1px solid var(--border); color: var(--ink-secondary); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  td strong { color: var(--ink); font-weight: 600; }
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-weight: 500;
+    margin: 2px 2px 2px 0;
+  }
+  .badge-green { background: #dcfce7; color: #15803d; }
+  .badge-red { background: #fef2f2; color: #b91c1c; }
+  .badge-amber { background: #fef3c7; color: #92400e; }
+  .badge-blue { background: #dbeafe; color: #1e40af; }
+  .badge-accent { background: var(--accent-soft); color: var(--accent-mid); }
+  /* NORTHSTAR */
+  .northstar {
+    text-align: center;
+    padding: 48px 24px;
+    background: var(--bg-soft);
+    border-radius: 16px;
+    margin: 24px 0;
+  }
+  .northstar-icon { font-size: 40px; margin-bottom: 16px; }
+  .northstar h3 { font-size: 22px; font-weight: 300; margin-bottom: 8px; color: var(--ink); }
+  .northstar h3 strong { font-weight: 700; color: var(--accent); }
+  .northstar p { font-size: 14px; color: var(--ink-muted); margin: 0; max-width: 500px; margin: 0 auto; }
+  /* VALUE CHAIN */
+  .chain {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin: 24px 0;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+  .chain-step {
+    flex: 1;
+    min-width: 110px;
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    padding: 14px 10px;
+    text-align: center;
+    position: relative;
+  }
+  .chain-step:first-child { border-radius: 10px 0 0 10px; }
+  .chain-step:last-child { border-radius: 0 10px 10px 0; }
+  .chain-step.active { background: var(--accent); border-color: var(--accent); }
+  .chain-step.active .chain-label { color: #fff; }
+  .chain-step.active .chain-sublabel { color: rgba(255,255,255,0.75); }
+  .chain-arrow {
+    display: flex;
+    align-items: center;
+    color: var(--border-strong);
+    font-size: 18px;
+    padding: 0 2px;
+    flex-shrink: 0;
+  }
+  .chain-label { font-size: 11px; font-weight: 600; color: var(--ink); line-height: 1.3; margin-bottom: 4px; }
+  .chain-sublabel { font-size: 10px; color: var(--ink-muted); line-height: 1.3; }
+  /* PHASE */
+  .phases { display: flex; flex-direction: column; gap: 16px; margin: 20px 0; }
+  .phase {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .phase-num {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .phase-body h4 { font-size: 15px; font-weight: 600; margin-bottom: 4px; color: var(--ink); }
+  .phase-body p { font-size: 13px; color: var(--ink-secondary); margin: 0; }
+  /* KPI grid */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .kpi-card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+  }
+  .kpi-category {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 8px;
+  }
+  .kpi-item {
+    font-size: 13px;
+    color: var(--ink-secondary);
+    padding: 4px 0;
+    border-bottom: 1px solid var(--border);
+    line-height: 1.4;
+  }
+  .kpi-item:last-child { border-bottom: none; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+  .page-break { border-top: 2px dashed var(--border); margin: 60px 0; padding-top: 16px; }
+  .page-break-label { font-size: 11px; color: var(--ink-muted); letter-spacing: 1px; text-transform: uppercase; text-align: center; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 16px 0; }
+  @media (max-width: 600px) {
+    .two-col { grid-template-columns: 1fr; }
+    .cover h1 { font-size: 32px; }
+    .chain { flex-wrap: nowrap; }
+  }
+  ul { padding-left: 20px; margin-bottom: 14px; }
+  ul li { color: var(--ink-secondary); font-size: 14px; margin-bottom: 6px; line-height: 1.6; }
+  ul li strong { color: var(--ink); }
+  .footnote { font-size: 12px; color: var(--ink-muted); border-top: 1px solid var(--border); padding-top: 12px; margin-top: 40px; }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-eyebrow">programmable.bio · Stealth · Strategic Blueprint · April 2026</div>
+  <h1>programmable<strong>.bio</strong><br>India's Agentic Lab<br>Operating System</h1>
+  <p class="cover-sub">LabOS — the agentic operating system for distributed biology. Orchestrating multiomics computation, partner wet labs, and Apollo Hospitals' clinical biobank into closed-loop discovery for India and APAC.</p>
+  <div class="cover-meta">
+    <div class="cover-meta-item"><strong>Stage:</strong> Pre-seed / Stealth</div>
+    <div class="cover-meta-item"><strong>Geography:</strong> India-first, APAC expansion</div>
+    <div class="cover-meta-item"><strong>Core thesis:</strong> Discovery-as-a-Service</div>
+    <div class="cover-meta-item"><strong>Format:</strong> Platform + Venture Studio</div>
+  </div>
+</div>
+
+<!-- SECTION 1: MARKET CONTEXT -->
+<div class="section">
+  <div class="section-label">Section 01</div>
+  <h2>The <em>2026 Market</em> Reality</h2>
+
+  <p>The autonomous lab revolution is no longer theoretical — it has achieved commercial takeoff in 2026. Ginkgo Bioworks launched Ginkgo Cloud Lab in March 2026, running 36,000 experimental conditions in a closed-loop GPT-5-driven workflow with a 40% cost reduction over prior state-of-the-art. Recursion has aggregated over 50 petabytes of phenomics, transcriptomics, and proteomics data with millions of cell experiments per week. Isomorphic Labs raised $600M. Automata raised $45M (Series C, Feb 2026) with a Danaher partnership for modular lab automation. The race is on.</p>
+
+  <p><strong>But the entire innovation axis runs through Boston, London, Salt Lake City, and London. India and APAC are invisible in this map — despite holding the world's most diverse patient populations, the largest untapped biological datasets, and the deepest cost arbitrage for R&D.</strong> That is the opening.</p>
+
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-num"><strong>$1.61T</strong></div>
+      <div class="stat-label">APAC Biotech by 2034<br><span style="color:#0f6e56">14.8% CAGR</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num"><strong>$112B</strong></div>
+      <div class="stat-label">India Biotech by 2034<br><span style="color:#0f6e56">13.09% CAGR</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num"><strong>$9.81B</strong></div>
+      <div class="stat-label">Global Multiomics by 2033<br><span style="color:#0f6e56">APAC fastest at 17.75%</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num"><strong>$18.4B</strong></div>
+      <div class="stat-label">Lab Automation by 2033<br><span style="color:#0f6e56">APAC fastest growing</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num"><strong>11,000</strong></div>
+      <div class="stat-label">Biotech startups in India (2025)<br>up from 8,531 in 2023</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num"><strong>29.6%</strong></div>
+      <div class="stat-label">AI Drug Discovery CAGR<br>through 2030</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <h4>The Structural Gap</h4>
+    <p>India is the world's <strong>3rd largest clinical trial destination</strong>, produces <strong>20% of global generic medicines</strong>, has <strong>665 FDA-approved plants</strong>, and 1.4 billion people with unique genomic diversity — yet there is <strong>no indigenous platform</strong> bridging multiomics AI with autonomous wet-lab validation at scale.</p>
+  </div>
+</div>
+
+<!-- SECTION 2: STRATEGIC THESIS -->
+<div class="section">
+  <div class="section-label">Section 02</div>
+  <h2>Core <em>Strategic Thesis</em></h2>
+
+  <p>The fundamental insight driving this venture is that biology's rate-limiting step has always been experimental data generation — not ideas. Autonomous labs eliminate this bottleneck by closing the Design-Build-Test-Learn (DBTL) loop at machine speed. But building the robots themselves is not the moat. The moat is in three things: <strong>the experimental graph</strong> (the typed, provenance-signed record of how every datapoint was produced), <strong>proprietary clinical data</strong> (Apollo Hospitals biobank), and <strong>an agent mesh</strong> that turns natural-language hypotheses into auditable wet-lab execution across heterogeneous partners.</p>
+
+  <div class="callout">
+    <h4>Our thesis in one sentence</h4>
+    <p><strong>LabOS</strong> is the agentic operating system for distributed biology — a multi-agent mesh that orchestrates multiomics computation, partner wet labs, and Apollo Hospitals' clinical biobank into closed-loop discovery. We do not own robots; we own <strong>the experimental graph</strong> and the <strong>India-tuned models</strong> running on top of it.</p>
+  </div>
+
+  <h3>The Three-Layer Stack — LabOS at the Center</h3>
+  <div class="card-grid">
+    <div class="card card-accent">
+      <h4>Layer 1 · OmicsOS (the AI brain feeding LabOS)</h4>
+      <p>Multi-modal model integrating WGS/WES, scRNA-seq, spatial omics, proteomics, metabolomics, epigenomics. Generates hypotheses and ranks targets. Frontier-model wrappers in Year 1; <strong>fine-tuned, India-cohort-trained bio model</strong> on sovereign cloud by Year 2 (see Future-Proofing section).</p>
+    </div>
+    <div class="card card-teal" style="grid-column: 1 / -1;">
+      <h4>Layer 2 · LabOS — the Agentic Operating System <span class="badge badge-accent">FLAGSHIP</span></h4>
+      <p>A five-agent mesh (Hypothesis → Design → Execution → QC/Validator → Learning) that translates a goal into a typed experiment graph, routes nodes to the cheapest qualified partner (Syngene, Aragen, MedGenome, Ginkgo Cloud Lab, FAL Pods), captures provenance-signed results, and feeds the loop. <strong>LIMS-native</strong>: ingests from and writes to STARLIMS, LabWare, Benchling, LabVantage. No robots owned. The experimental graph is the moat.</p>
+    </div>
+    <div class="card card-purple">
+      <h4>Layer 3 · ClinicalBridge (regulatory translation)</h4>
+      <p>Regulatory-grade packaging for CDSCO (India), TGA (AUS), PMDA (Japan), FDA/EMA bridging studies. Biomarker panels, IVD companion-diagnostic dossiers, Phase 4 pharmacovigilance signal packages. India-specific disease area specialization.</p>
+    </div>
+    <div class="card card-blue">
+      <h4>Data Substrate · Apollo Hospitals Biobank</h4>
+      <p>Anchor data partnership with Apollo — pan-India EHR, longitudinal clinical phenotyping, consented biospecimens. The India Biomarker Atlas is constructed on top of this substrate. See dedicated Apollo Partnership section.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 3: FAL DECISION -->
+<div class="section">
+  <div class="section-label">Section 03</div>
+  <h2>Build vs. Partner: <em>The FAL Decision</em></h2>
+
+  <p>This is the most critical strategic fork in the road. The Ginkgo story is instructive: they burned $6 billion and lost revenue for three straight years trying to build and own the full FAL stack. They are now pivoting to software + orchestration (Cloud Lab). Recursion built automation but their real moat is the 50-petabyte dataset, not the robots. The hardware is being commoditized.</p>
+
+  <div class="verdict">
+    <div class="verdict-label">Strategic Verdict</div>
+    <p><strong>Do NOT build your own FAL in Phase 1 or 2.</strong> Be the intelligent orchestration and AI layer. Own the algorithms, the data, and the customer relationships. Partner or access-on-demand for the robotic execution layer. Revisit FAL ownership only at Series B+ when you have $50M+ ARR to justify the CapEx.</p>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <h3>Why NOT building saves you</h3>
+      <ul>
+        <li><strong>CapEx avoided:</strong> A world-class FAL costs $50–200M to build and staff</li>
+        <li><strong>Ginkgo's cautionary tale:</strong> $6B losses, decommissioning benches in 2026</li>
+        <li><strong>Hardware commoditizing:</strong> Opentrons, Hamilton, Tecan, Automata all offer modular APIs</li>
+        <li><strong>Faster time-to-customer:</strong> Partner CROs exist — Syngene, Aragen, Lambda, GVK Bio</li>
+        <li><strong>India CRO base:</strong> $3B+ CRO market, underutilized for AI-driven workflows</li>
+        <li><strong>Margin clarity:</strong> Software EBITDA margins 70%+; hardware-heavy biotech 20–40%</li>
+      </ul>
+    </div>
+    <div>
+      <h3>The 3-Phase FAL Evolution</h3>
+      <div class="phases">
+        <div class="phase">
+          <div class="phase-num">1</div>
+          <div class="phase-body">
+            <h4>Phase 1 (0–24 months): Partner CRO Model</h4>
+            <p>Use Syngene, Aragen, GVK Bio as execution partners. LabOS orchestrates their instruments. You own the AI layer and data.</p>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="phase-num">2</div>
+          <div class="phase-body">
+            <h4>Phase 2 (24–48 months): Hybrid Modular Pods</h4>
+            <p>Deploy 3–5 Automata/Opentrons modular pods co-located with CRO partners. "FAL Pods" as a branded sub-service. ₹15–20Cr investment.</p>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="phase-num">3</div>
+          <div class="phase-body">
+            <h4>Phase 3 (48–72 months): Own FAL</h4>
+            <p>Build India's first purpose-built Fully Autonomous Lab in Hyderabad/Bengaluru Genome Valley. License LabOS to others. Infrastructure play.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Ideal Partner Ecosystem (India)</h3>
+  <table>
+    <thead>
+      <tr><th>Partner Type</th><th>Key Names</th><th>What They Provide</th><th>Our Leverage</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>CRO (Wet Lab)</strong></td><td>Syngene, Aragen, GVK Bio, Lambda</td><td>Lab execution, instruments, scientists</td><td>AI-driven protocols, data ownership</td></tr>
+      <tr><td><strong>Cloud Lab</strong></td><td>Ginkgo Cloud Lab, Arctoris</td><td>Remote robotic execution, global access</td><td>Orchestration layer + India IP translation</td></tr>
+      <tr><td><strong>Genomics</strong></td><td>MedGenome, Strand Life Sciences, 4baseCare</td><td>India genomic cohorts, NGS infrastructure</td><td>AI interpretation, clinical integration</td></tr>
+      <tr><td><strong>Hardware</strong></td><td>Automata, Opentrons, Hamilton</td><td>Modular robots, APIs</td><td>Workflow orchestration, data capture</td></tr>
+      <tr><td><strong>Cloud</strong></td><td>AWS Hyderabad, Azure India, Google Cloud</td><td>HPC, storage, AI infrastructure</td><td>Negotiated credits, co-sell motions</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- SECTION 4: WHY NOW -->
+<div class="section">
+  <div class="section-label">Section 04</div>
+  <h2>Why <em>Now</em> — The 2026 Step-Change</h2>
+
+  <p>LabOS could not have been built two years ago. Three independent waves crossed in 2025–26, and the window to claim the category is roughly 18 months before incumbents pivot.</p>
+
+  <div class="card-grid">
+    <div class="card card-accent">
+      <h4>1 · Reasoning models cross the threshold</h4>
+      <p>GPT-5, Claude Opus 4.7, and Gemini 2.5 Pro can now plan multi-step experiments, recover from unexpected lab state, and reason over typed scientific schemas — not just summarize. Agentic chains that were brittle in 2024 are production-ready in 2026. This is the engine that makes the LabOS agent mesh actually work.</p>
+    </div>
+    <div class="card card-teal">
+      <h4>2 · Lab automation APIs standardize</h4>
+      <p>SiLA2 v1.4 (instrument interop), Opentrons SDK v8, Automata Eva 3.0, Hamilton Venus REST, and PyLabRobot have made instruments programmable behind a uniform contract. CROs (Syngene, Aragen) now expose digital interfaces. The orchestration layer is finally buildable without bespoke integration per partner.</p>
+    </div>
+    <div class="card card-purple">
+      <h4>3 · Indian regulatory + data infrastructure matures</h4>
+      <p>CDSCO's New Drugs and Clinical Trials Rules 2019 + DPDP Act 2023 + ICMR genomic data guidelines + DigiLocker health stack now constitute a coherent (if imperfect) regulatory rail. Apollo Hospitals' EHR digitization (Apollo 24/7) is at production scale. Hospital biobanks are consent-enabled. India is suddenly platform-buildable.</p>
+    </div>
+    <div class="card card-blue">
+      <h4>4 · Incumbent attention is misallocated</h4>
+      <p>Ginkgo is decommissioning benches and pivoting to Cloud Lab. Recursion is doubling down on US phenomics. Isomorphic is protein-structure-only. No global player has a coherent India strategy — and they will not for ~18 months while they prove out their domestic businesses post-pivot. Window: now.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <h4>Why not 2024 · Why not 2028</h4>
+    <p>2024: reasoning models hallucinated protocols, lab APIs were proprietary, DPDP wasn't enforceable. 2028: Ginkgo Cloud Lab has an India POP, Recursion has acquired an Indian CRO, and Apollo's data has been licensed to the highest bidder. The category gets defined in <strong>2026–27</strong>.</p>
+  </div>
+</div>
+
+<!-- SECTION 5: APOLLO HOSPITALS PARTNERSHIP -->
+<div class="section">
+  <div class="section-label">Section 05</div>
+  <h2>Apollo Hospitals — <em>Data &amp; Biobank Moat</em></h2>
+
+  <p>The Apollo partnership is the single most important strategic asset of this venture. It converts a generic "we have India data" claim into a defensible, contracted, longitudinal clinical data pipeline that no global competitor can replicate by writing a check.</p>
+
+  <div class="two-col">
+    <div>
+      <h3>Why Apollo specifically</h3>
+      <ul>
+        <li><strong>Scale:</strong> 70+ hospitals, ~150,000 patient encounters/day, multi-million digitized EHRs</li>
+        <li><strong>Geographic breadth:</strong> pan-India footprint capturing genetic diversity from Tamil Nadu to Punjab to the North-East — the diversity that <em>is</em> the moat</li>
+        <li><strong>Disease-burden alignment:</strong> dominant share in oncology, cardiac, diabetes, transplant — India's top 4 disease-burden verticals</li>
+        <li><strong>Digital readiness:</strong> Apollo 24/7 platform, Apollo Personalized Health Check, existing AI initiatives — already past the digitization barrier</li>
+        <li><strong>Regulated entity:</strong> can legitimately hold patient consents under DPDP Act 2023 and ICMR guidelines — federated learning at source</li>
+        <li><strong>Brand &amp; trust:</strong> Apollo logo on the deck unlocks every pharma BD conversation in APAC</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Partnership structure (proposed)</h3>
+      <div class="card card-teal">
+        <h4>Joint Biobank &amp; Data Co-development</h4>
+        <p style="margin-bottom: 8px;"><strong>Apollo contributes:</strong> de-identified EHR access, consented biospecimens, clinical phenotyping, research-arm investigator network.</p>
+        <p style="margin-bottom: 8px;"><strong>We contribute:</strong> LabOS multiomics pipeline, agentic analytics, regulatory packaging, pharma BD reach.</p>
+        <p style="margin-bottom: 8px;"><strong>Economics:</strong> revenue share on Atlas licensing (Apollo 25–35%), co-IP on biomarker assets, preferred access for Apollo clinicians to Discovery Sprint outputs, joint publications.</p>
+        <p style="margin: 0;"><strong>Governance:</strong> data never leaves Apollo's sovereign infrastructure — federated learning, on-prem training nodes, differential-privacy outputs.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3>What Apollo unlocks across the stack</h3>
+  <table>
+    <thead>
+      <tr><th>Layer</th><th>Apollo's contribution</th><th>Strategic effect</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>OmicsOS</strong></td><td>Multi-million-patient EHR + linked biospecimens for fine-tuning</td><td>India-tuned bio foundation model with provable population coverage</td></tr>
+      <tr><td><strong>LabOS</strong></td><td>Apollo Diagnostics + reference lab integration as a first-party node in the mesh</td><td>End-to-end clinical-to-discovery loop closes inside one partnership</td></tr>
+      <tr><td><strong>ClinicalBridge</strong></td><td>Investigator-initiated studies, prospective cohorts, CDSCO sponsor experience</td><td>Faster IND/IVD pathway, regulator trust, ready Phase 4 platform</td></tr>
+      <tr><td><strong>India Biomarker Atlas</strong></td><td>Longitudinal phenotype data + consented samples — the substrate</td><td>Compounds at 5,000 → 5M entries; 3–5 year structural lead</td></tr>
+      <tr><td><strong>Two flagship programs</strong></td><td>Oncology CDx cohort; pan-India PV signal feed</td><td>Both reference programs (Section 12) anchored on Apollo data</td></tr>
+    </tbody>
+  </table>
+
+  <div class="verdict">
+    <div class="verdict-label">Strategic Verdict</div>
+    <p>The Apollo MoU is the <strong>#1 pre-seed milestone</strong>. Without it, this is "another undifferentiated AI-bio startup." With it, this is the only credible India platform for the next decade. Negotiate it before Series A pricing is anchored — Apollo's leverage rises with our valuation.</p>
+  </div>
+</div>
+
+<!-- SECTION 6: AGENTIC LABOS ARCHITECTURE -->
+<div class="section">
+  <div class="section-label">Section 06</div>
+  <h2>LabOS <em>Agentic Architecture</em></h2>
+
+  <p>LabOS is not a "natural-language protocol submission engine." That's a chatbot wrapper on SiLA2 — table stakes by 2026. LabOS is an <strong>agent mesh whose product is the experimental graph</strong>: every datapoint cryptographically tied to the typed chain of operations that produced it. This is what regulators want, what pharma BD pays for, and what trains the next generation of self-improving protocols.</p>
+
+  <h3>The Five-Agent Mesh</h3>
+  <table>
+    <thead>
+      <tr><th>Agent</th><th>Owns</th><th>Inputs</th><th>Outputs</th><th>Backed by</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Hypothesis</strong></td>
+        <td>Target / mechanism proposals</td>
+        <td>OmicsOS embeddings, literature, Apollo cohort</td>
+        <td>Ranked hypotheses with uncertainty</td>
+        <td>Frontier LLM + RAG over Atlas</td>
+      </tr>
+      <tr>
+        <td><strong>Design</strong></td>
+        <td>Hypothesis → executable experiment graph (DAG)</td>
+        <td>Reagent catalog, instrument capability registry, budget</td>
+        <td>Typed DAG of ops, power calcs, success criteria, cost</td>
+        <td>Protocol IR + planner LLM</td>
+      </tr>
+      <tr>
+        <td><strong>Execution</strong></td>
+        <td>Brokers + monitors partner-lab runs</td>
+        <td>DAG, CRO/cloud-lab API state, SLA</td>
+        <td>Real-time status, anomaly flags, dynamic re-routing</td>
+        <td>State machine + LLM exception handler</td>
+      </tr>
+      <tr>
+        <td><strong>QC / Validator</strong></td>
+        <td>Decides whether output is trustworthy</td>
+        <td>Raw data, instrument metadata, spike-ins, controls</td>
+        <td>Pass/fail + uncertainty quantification</td>
+        <td>Statistical models + vision/sequence models</td>
+      </tr>
+      <tr>
+        <td><strong>Learning</strong></td>
+        <td>Updates priors, refines protocols, posts to Atlas</td>
+        <td>All graph nodes + outcomes + scientist feedback</td>
+        <td>Updated model weights, protocol patches, Atlas entries</td>
+        <td>RLHF + offline distillation pipeline</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>System Architecture</h3>
+  <div class="card" style="background: var(--bg-soft); font-family: var(--font-mono); font-size: 12px; line-height: 1.7; white-space: pre; overflow-x: auto;">
+   Scientist · Pharma BD · OmicsOS (programmatic API)
+                       │ goal / hypothesis
+                       ▼
+   ┌────────────────────────────────────────────────────────┐
+   │  AGENT MESH                                            │
+   │  Hypothesis → Design → Execution → QC → Learning       │
+   │  Shared memory: experiment graph store (provenance DB) │
+   │  Tool catalog:  instrument + assay capability registry │
+   └────────────────────────────────────────────────────────┘
+                       │ typed experiment DAG
+                       ▼
+   ┌────────────────────────────────────────────────────────┐
+   │  EXECUTION BROKER — routes nodes to the cheapest       │
+   │  qualified partner:                                    │
+   │   • Syngene / Aragen / GVK Bio  (HTS, in vivo, ADMET)  │
+   │   • MedGenome / Strand          (NGS, sequencing)      │
+   │   • Apollo Diagnostics          (clinical assays)      │
+   │   • Ginkgo Cloud Lab / Arctoris (overflow, novel)      │
+   │   • FAL Pods (Phase 2 — Opentrons/Automata, own)       │
+   └────────────────────────────────────────────────────────┘
+                       │ signed run records + raw data
+                       ▼
+   ┌────────────────────────────────────────────────────────┐
+   │  DATA PLANE                                            │
+   │  Provenance-signed graph store · LIMS sync ·           │
+   │  Atlas write (consented) · OmicsOS training corpus     │
+   └────────────────────────────────────────────────────────┘
+  </div>
+
+  <h3>Engineering Substrate — What Makes This Defensible</h3>
+  <div class="card-grid">
+    <div class="card">
+      <h4>Protocol IR</h4>
+      <p>A typed intermediate representation for lab operations — typed extension of PAML/Aquarium. Stable contract between Design and Execution. Without this, every CRO integration is bespoke and doesn't compound.</p>
+    </div>
+    <div class="card">
+      <h4>Capability Registry</h4>
+      <p>"npm for lab ops." Every CRO and instrument publishes a capability manifest (operations supported, specs, turnaround, cost). Execution Broker reads this to make smart routing decisions instead of being a Jira board.</p>
+    </div>
+    <div class="card">
+      <h4>Provenance Signing</h4>
+      <p>Every datapoint cryptographically tied to its DAG path (Ed25519 + content-addressed graph store). Unlocks regulatory submission, IP defense, and pharma audit in one mechanism.</p>
+    </div>
+    <div class="card">
+      <h4>Agent Eval Harness</h4>
+      <p>Held-out historical programs where agents must recover known answers. Without this, you can't claim the system works; with it, you've defined the category and have a reproducible benchmark for investors and regulators.</p>
+    </div>
+  </div>
+
+  <h3>Future-Proofing — The Fine-Tuning Roadmap</h3>
+  <div class="card card-accent">
+    <h4>Why fine-tune (and why it's not optional)</h4>
+    <p>Year-1 LabOS runs on frontier LLMs (Opus 4.7, GPT-5, Gemini 2.5). Every margin point is Anthropic's or OpenAI's, every latency hit is theirs, and Apollo patient data <em>cannot legally leave India</em> under DPDP Act 2023. Fine-tuning is therefore both a margin lever and a regulatory necessity — not a "nice to have."</p>
+  </div>
+  <div class="phases" style="margin-top: 16px;">
+    <div class="phase">
+      <div class="phase-num">Y1</div>
+      <div class="phase-body">
+        <h4>Year 1 — Frontier wrappers + multi-model abstraction</h4>
+        <p>Opus 4.7 / GPT-5 / Gemini 2.5 behind a model-router. Capture every prompt/response pair as supervised distillation data. No regulated patient data sent to frontier APIs — proxied through on-prem retrieval.</p>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="phase-num">Y2</div>
+      <div class="phase-body">
+        <h4>Year 2 — Distill into specialist bio model on sovereign cloud</h4>
+        <p>Fine-tune Llama 4 / Qwen3 / Mistral-Bio on India cohort + Atlas + captured trajectories. Deploy on AWS Hyderabad (MeitY-compliant) and Apollo on-prem nodes. Target: 80% of agent calls served by sovereign model, 20% fallback to frontier.</p>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="phase-num">Y3</div>
+      <div class="phase-body">
+        <h4>Year 3 — Vertical specialist models per disease area</h4>
+        <p>Oncology, rare disease, cardiometabolic — separately fine-tuned heads sharing a base. Each vertical's model is a licensable asset. Sovereign deployment becomes a sellable feature to MNC pharma (data residency compliance bundled).</p>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="phase-num">Y4+</div>
+      <div class="phase-body">
+        <h4>Year 4+ — Continuous learning from the experimental graph</h4>
+        <p>Every closed-loop cycle becomes training data. RLHF from scientist sign-offs. The model gets better the more LabOS is used — the compounding loop OpenAI cannot replicate without our data substrate.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 7: LIMS INTEGRATION -->
+<div class="section">
+  <div class="section-label">Section 07</div>
+  <h2>LIMS Integration — <em>The Quiet Wedge</em></h2>
+
+  <p>LIMS (Laboratory Information Management Systems) is where the lab's institutional memory lives. STARLIMS, LabWare, LabVantage, Benchling, SampleManager — every serious lab has one, and most are 10–20 years old, painful to extend, and unloved. <strong>LabOS being LIMS-native is the quiet wedge that converts a "platform sale" into an "infrastructure upgrade."</strong> Buyers approve infrastructure upgrades. Buyers stall on platform sales.</p>
+
+  <div class="two-col">
+    <div>
+      <h3>Why LIMS is the wedge</h3>
+      <ul>
+        <li><strong>Already budgeted:</strong> labs spend $50K–$500K/year per site on LIMS. We replace or augment that line item — no net-new budget required.</li>
+        <li><strong>Audit-trail mandate:</strong> 21 CFR Part 11, GxP, NABL — LIMS exists because regulators demand provenance. Our provenance-signed graph natively satisfies the same audit requirements, often better.</li>
+        <li><strong>Switching cost is the moat:</strong> once we are the system of record for sample lineage and experiment state, displacing us means re-validating every protocol. Same dynamic that protects incumbents — flipped to favor us.</li>
+        <li><strong>Sample lineage = data lineage:</strong> sample tracking is the exact same graph as experimental provenance. We unify two systems that have always been separate.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Integration architecture</h3>
+      <div class="card card-blue">
+        <h4>Three integration tiers</h4>
+        <p style="margin-bottom: 8px;"><strong>Tier 1 — Sidecar (Months 0–6):</strong> Read-only adapters for STARLIMS, LabWare, LabVantage, Benchling. LabOS reads sample IDs, writes back results + provenance. Customer's existing LIMS stays canonical. Zero validation burden.</p>
+        <p style="margin-bottom: 8px;"><strong>Tier 2 — Bidirectional sync (Months 6–18):</strong> Two-way integration with conflict resolution. Sample lineage authoritative in LabOS; LIMS gets the human-readable view. Sample management moves into the agent mesh.</p>
+        <p style="margin: 0;"><strong>Tier 3 — LIMS replacement (Year 2+):</strong> For new sites and greenfield CROs, LabOS-native LIMS as a module. Sells as "LabOS Bench" — modern UX, agent-driven, on top of the same graph.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3>Targeted LIMS / ELN ecosystem</h3>
+  <table>
+    <thead>
+      <tr><th>System</th><th>Footprint</th><th>Integration priority</th><th>Year 1 target</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Benchling</strong></td><td>Biotech / academic / startup-favored ELN+LIMS</td><td>P0 (modern API, ecosystem)</td><td>Native two-way sync</td></tr>
+      <tr><td><strong>STARLIMS (Abbott)</strong></td><td>Pharma QC, Indian generic pharma</td><td>P0 (Sun, Dr Reddy's, Cipla footprint)</td><td>Tier-1 sidecar</td></tr>
+      <tr><td><strong>LabWare</strong></td><td>Large pharma R&D, Apollo Diagnostics likely</td><td>P0 (Apollo integration path)</td><td>Tier-1 sidecar</td></tr>
+      <tr><td><strong>LabVantage</strong></td><td>Mid-large pharma, biopharma</td><td>P1</td><td>Tier-1 sidecar Q4</td></tr>
+      <tr><td><strong>SampleManager (Thermo)</strong></td><td>Analytical labs, Thermo instrument shops</td><td>P1</td><td>Q4 connector</td></tr>
+      <tr><td><strong>SapioSciences, Genemod, eLabNext</strong></td><td>Modern challengers</td><td>P2</td><td>Year 2 if pulled by customer</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <h4>The LIMS narrative for pharma BD</h4>
+    <p>"You will not replace your STARLIMS deployment. <strong>LabOS sits beside it</strong>, gives your scientists agentic experiment design and your QA team better audit trails, and within a year your sample lineage is more searchable than it has ever been. No validation re-cert. No data migration. <strong>One signed MSA.</strong>"</p>
+  </div>
+</div>
+
+<!-- SECTION 8 (LEGACY) — RENUMBERED — Customer Value Prop now appears at Section 08 -->
+<div class="section">
+  <div class="section-label">Section 08</div>
+  <h2>Customer Value <em>Proposition</em></h2>
+
+  <p>Different customer segments have fundamentally different pain points. The value proposition must be segment-specific, not generic.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <h4>🏭 Indian Generic Pharma<br><span style="font-weight:400;color:var(--ink-muted)">Sun, Dr. Reddy's, Cipla, Lupin</span></h4>
+      <p><strong>Pain:</strong> Patent cliffs accelerating, need innovation pipelines not just generics. Struggling to compete on novel drug discovery.<br><strong>Our value:</strong> AI-powered drug repurposing, biomarker-driven formulation science, NCE discovery at 1/5th the cost of US CROs. Regulatory dossiers India-ready.</p>
+    </div>
+    <div class="card">
+      <h4>🌐 MNC Pharma India R&D<br><span style="font-weight:400;color:var(--ink-muted)">Novartis, AZ, Pfizer, Roche</span></h4>
+      <p><strong>Pain:</strong> Need to diversify discovery into APAC populations. India data is siloed, unstructured, underutilized.<br><strong>Our value:</strong> Access to India's unique genomic diversity. Pre-validated cohorts. Faster IND-enabling data packages. Cost-effective Phase 0 studies.</p>
+    </div>
+    <div class="card">
+      <h4>🔬 Indian Biotech Startups<br><span style="font-weight:400;color:var(--ink-muted)">CAR-T, Gene Therapy, Biologics</span></h4>
+      <p><strong>Pain:</strong> Can't afford full computational biology + wet lab teams. Discovery infrastructure is the bottleneck, not ideas.<br><strong>Our value:</strong> Discovery-as-a-Service. Pay-per-program. Full-stack from hypothesis to validated lead without building a lab.</p>
+    </div>
+    <div class="card">
+      <h4>🏥 Hospital Research Arms<br><span style="font-weight:400;color:var(--ink-muted)">Apollo, Fortis, AIIMS, CMC</span></h4>
+      <p><strong>Pain:</strong> Rich clinical data, no AI-multiomics capability to convert it to insights or IP.<br><strong>Our value:</strong> Clinical data → multiomics → biomarker discovery pipeline. Co-IP arrangements. Revenue share on licensing.</p>
+    </div>
+    <div class="card">
+      <h4>🎓 Government / Institutional<br><span style="font-weight:400;color:var(--ink-muted)">BIRAC, DBT, ICMR, IITs</span></h4>
+      <p><strong>Pain:</strong> Grant-funded research needs commercial translation. IP generation without commercialization pathways.<br><strong>Our value:</strong> Translational research platform. Co-IP. BIRAC/DBT grant co-application partner. De-risked innovation.</p>
+    </div>
+    <div class="card">
+      <h4>🌏 APAC Expansion Targets<br><span style="font-weight:400;color:var(--ink-muted)">Singapore, Japan, South Korea</span></h4>
+      <p><strong>Pain:</strong> Singapore (A*STAR/Biopolis) needs APAC platform plays. Japanese pharma (Takeda, Astellas) seeking Asia discovery partners.<br><strong>Our value:</strong> Pan-APAC discovery network, diverse population datasets, Singapore as regulatory bridge to FDA/EMA.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 9: VALUE CHAIN MAPPING -->
+<div class="section">
+  <div class="section-label">Section 09</div>
+  <h2>Customer Value <em>Chain Mapping</em></h2>
+
+  <p>We intervene at the highest-value, highest-friction steps of the drug discovery value chain. The highlighted steps are where we replace or dramatically accelerate the current bottleneck.</p>
+
+  <div class="chain">
+    <div class="chain-step active">
+      <div class="chain-label">Target ID</div>
+      <div class="chain-sublabel">OmicsOS multiomics</div>
+    </div>
+    <div class="chain-arrow">→</div>
+    <div class="chain-step active">
+      <div class="chain-label">Hit Discovery</div>
+      <div class="chain-sublabel">AI screen + FAL HTS</div>
+    </div>
+    <div class="chain-arrow">→</div>
+    <div class="chain-step active">
+      <div class="chain-label">Lead Optim.</div>
+      <div class="chain-sublabel">ADMET + SAR cycles</div>
+    </div>
+    <div class="chain-arrow">→</div>
+    <div class="chain-step active">
+      <div class="chain-label">Preclinical</div>
+      <div class="chain-sublabel">Biomarker + validation</div>
+    </div>
+    <div class="chain-arrow">→</div>
+    <div class="chain-step">
+      <div class="chain-label">IND Filing</div>
+      <div class="chain-sublabel">Partner handoff</div>
+    </div>
+    <div class="chain-arrow">→</div>
+    <div class="chain-step">
+      <div class="chain-label">Phase I/II/III</div>
+      <div class="chain-sublabel">Companion Dx</div>
+    </div>
+  </div>
+  <p style="font-size:12px;color:var(--ink-muted);margin-top:6px;">Highlighted = primary intervention zones. Shaded = downstream value through companion diagnostics &amp; pharmacogenomics.</p>
+
+  <h3>Value Delivered at Each Intervention Point</h3>
+  <table>
+    <thead>
+      <tr><th>Stage</th><th>Traditional Approach</th><th>Our Platform</th><th>Time Savings</th><th>Cost Reduction</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Target ID</strong></td>
+        <td>Literature mining, manual GWAS, 12–18 months</td>
+        <td>OmicsOS multiomics integration, AI target scoring, India cohort validation</td>
+        <td>70% faster</td>
+        <td>60% lower</td>
+      </tr>
+      <tr>
+        <td><strong>Hit Discovery</strong></td>
+        <td>HTS library screening, $2–5M, 6–12 months</td>
+        <td>Virtual screen + focused FAL validation of top 500 candidates</td>
+        <td>65% faster</td>
+        <td>80% lower</td>
+      </tr>
+      <tr>
+        <td><strong>Lead Optimization</strong></td>
+        <td>Manual SAR iterations, 18–36 months</td>
+        <td>Closed-loop DBTL: AI designs → FAL makes → AI learns → iterate</td>
+        <td>50% faster</td>
+        <td>50% lower</td>
+      </tr>
+      <tr>
+        <td><strong>Preclinical Biomarker</strong></td>
+        <td>$5–10M, 2–3 years per panel</td>
+        <td>scRNA + spatial omics + proteomics panel in 6–9 months</td>
+        <td>60% faster</td>
+        <td>70% lower</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- SECTION 10: OFFERINGS & USP -->
+<div class="section">
+  <div class="section-label">Section 10</div>
+  <h2>Key Offerings <em>&amp; USP</em></h2>
+
+  <div class="card-grid">
+    <div class="card card-teal" style="grid-column: 1 / -1;">
+      <h4>LabOS — Agentic Lab Operating System <span class="badge badge-accent">FLAGSHIP</span></h4>
+      <p>The agent mesh + experimental graph + LIMS-native integration described in Section 06. Sold as: (a) <strong>LabOS Platform</strong> — annual subscription per site, agent mesh + capability registry + LIMS adapters; (b) <strong>LabOS Bench</strong> — full LIMS replacement module for greenfield sites; (c) <strong>LabOS Broker</strong> — usage-based execution routing across partner CROs.</p>
+      <div style="margin-top:10px">
+        <span class="badge badge-green">$250K–1.5M ARR/site (Platform)</span>
+        <span class="badge badge-green">$50K–200K/site (Bench)</span>
+        <span class="badge badge-green">2–5% take-rate (Broker)</span>
+      </div>
+    </div>
+    <div class="card card-accent">
+      <h4>OmicsCloud (the AI brain, sold standalone)</h4>
+      <p>Self-serve multiomics pipeline — WGS/WES, scRNA-seq, spatial, proteomics. India reference genome integration. Frontier-LLM agents Year 1; India-tuned bio model Year 2+. Target: biotech startups, academic institutions, hospital research arms that don't yet need LabOS execution layer.</p>
+      <div style="margin-top:10px"><span class="badge badge-blue">$50K–250K ARR/customer</span></div>
+    </div>
+    <div class="card card-purple">
+      <h4>Discovery Sprints (premium services)</h4>
+      <p>Time-boxed, milestone-defined discovery programs powered by LabOS end-to-end. 90-day to 18-month engagements. Two flagship sprint products — IVD Companion Diagnostics &amp; Phase 4 Pharmacovigilance — fully costed in Section 12.</p>
+      <div style="margin-top:10px"><span class="badge badge-accent">$1.5M–8M per program</span></div>
+    </div>
+    <div class="card card-blue">
+      <h4>India Biomarker Atlas (data licensing)</h4>
+      <p>Proprietary biomarker database built on the Apollo Hospitals biobank substrate. Licensed to pharma for companion Dx development, clinical trial design, patient stratification. Revenue share with Apollo.</p>
+      <div style="margin-top:10px"><span class="badge badge-blue">$200K–2M licensing/year</span></div>
+    </div>
+    <div class="card card-amber">
+      <h4>ClinicalBridge Packages</h4>
+      <p>Regulatory-grade dossiers for CDSCO, TGA, PMDA, FDA. IND-enabling preclinical reports. IVD submission packages. Phase 4 PV signal reports. Bridging study design for India populations.</p>
+      <div style="margin-top:10px"><span class="badge badge-amber">$250K–1M per package</span></div>
+    </div>
+    <div class="card">
+      <h4>Co-Development Partnerships</h4>
+      <p>Equity + milestone deals with pharma/biotech. We provide full LabOS infrastructure + Apollo data access; they provide disease area focus and commercial execution. Revenue + IP sharing. Royalty streams at Phase 2+.</p>
+      <div style="margin-top:10px"><span class="badge badge-green">Long-term royalty streams</span></div>
+    </div>
+  </div>
+
+  <h3>Unique Selling Propositions — What No One Else Has</h3>
+  <div class="card card-teal" style="margin-top:16px">
+    <h4>USP 1 — The Experimental Graph as Infrastructure</h4>
+    <p>LabOS is the only platform that treats every experiment as a typed, provenance-signed graph. The graph unifies sample lineage, data lineage, regulatory audit trail, and agent training data into a single substrate. Once we are the system of record for a lab's experimental graph, displacing us means re-validating every protocol — the same switching-cost moat that protects STARLIMS, flipped to favor us.</p>
+  </div>
+  <div class="card card-accent" style="margin-top:8px">
+    <h4>USP 2 — Apollo Hospitals as Proprietary Clinical Substrate</h4>
+    <p>The Apollo partnership (Section 05) gives us pan-India EHR + consented biospecimens + clinical phenotyping that no global competitor can replicate by writing a check. India harbors ~4,600 population groups; Apollo touches all of them. The India Biomarker Atlas built on this substrate is the genomic Rosetta Stone for Asia — a 3–5 year structural lead.</p>
+  </div>
+  <div class="card card-purple" style="margin-top:8px">
+    <h4>USP 3 — Full-Stack Discovery Without the CapEx</h4>
+    <p>Pure software plays (Isomorphic, Schrödinger) need wet lab partners. Pure CROs lack AI depth. Pure FAL owners (Ginkgo) bleed capital. We bridge all three — agentic design + orchestrated wet-lab validation + clinical-grade data — delivered as a service. Recursion-class capability without Recursion-class infrastructure costs.</p>
+  </div>
+  <div class="card card-blue" style="margin-top:8px">
+    <h4>USP 4 — India Regulatory Intelligence Built-In</h4>
+    <p>Native bridging across CDSCO, DCGI, the New Drugs and Clinical Trials Rules 2019, DPDP Act 2023, and ICMR genomic data guidelines. Most global platforms are FDA/EMA-optimized and treat India as a translation problem. We are the translation layer.</p>
+  </div>
+  <div class="card card-amber" style="margin-top:8px">
+    <h4>USP 5 — Future-Proofed via India-Tuned Sovereign Models</h4>
+    <p>Year 1 LabOS runs on frontier LLMs behind a model-router that captures every trajectory as distillation data. By Year 2, an India-cohort-tuned bio model deployed on AWS Hyderabad and Apollo on-prem nodes serves 80% of agent calls. By Year 3, vertical-specialist models per disease area become licensable assets. This is both a margin lever (offload from frontier APIs) and a DPDP Act compliance feature — Apollo patient data <em>never leaves India</em>. No other India platform is architected for this from day one.</p>
+  </div>
+</div>
+
+<!-- SECTION 11: NORTHSTAR + KPIs -->
+<div class="section">
+  <div class="section-label">Section 11</div>
+  <h2>North Star Metric <em>&amp; KPIs</em></h2>
+
+  <div class="northstar">
+    <div class="northstar-icon">◎</div>
+    <h3><strong>Closed-Loop Discovery Cycles</strong> Completed Per Quarter</h3>
+    <p>One cycle = hypothesis generated by OmicsOS → experiment designed → executed via LabOS → data analyzed → validated insight confirmed. This is the fundamental unit of scientific value creation. Everything else derives from this.</p>
+  </div>
+
+  <p>The North Star captures both platform utilization and scientific rigor simultaneously. A company running 50 validated cycles per quarter is generating compounding scientific and commercial value. Secondary north star for investors: <strong>ARR Growth Rate</strong>.</p>
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="kpi-category">Platform Health</div>
+      <div class="kpi-item">Monthly Active Users (MAU) on OmicsCloud</div>
+      <div class="kpi-item">Data ingested (TB/month)</div>
+      <div class="kpi-item">Pipeline runs per month</div>
+      <div class="kpi-item">Time-to-first-insight (hours)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-category">Discovery Engine</div>
+      <div class="kpi-item">Target-to-validated hit (months)</div>
+      <div class="kpi-item">DBTL cycles per program</div>
+      <div class="kpi-item">Cost per validated datapoint</div>
+      <div class="kpi-item">Experiment reproducibility rate (%)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-category">Commercial</div>
+      <div class="kpi-item">ARR ($)</div>
+      <div class="kpi-item">Revenue per program ($)</div>
+      <div class="kpi-item">Gross margin (%)</div>
+      <div class="kpi-item">Net Revenue Retention (%)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-category">Customer</div>
+      <div class="kpi-item">NPS (target: >60)</div>
+      <div class="kpi-item">Programs per active customer</div>
+      <div class="kpi-item">Time-to-contract (sales cycle)</div>
+      <div class="kpi-item">Customer churn (%/year)</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-category">Scientific IP</div>
+      <div class="kpi-item">Biomarker assets in Atlas (#)</div>
+      <div class="kpi-item">Patents filed/granted</div>
+      <div class="kpi-item">Publications (peer-reviewed)</div>
+      <div class="kpi-item">Co-development agreements</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-category">Lab Efficiency</div>
+      <div class="kpi-item">Experiment throughput (runs/week)</div>
+      <div class="kpi-item">Protocol automation rate (%)</div>
+      <div class="kpi-item">CRO turnaround time (days)</div>
+      <div class="kpi-item">Data quality score (%)</div>
+    </div>
+  </div>
+
+  <h3>Year-by-Year Targets</h3>
+  <table>
+    <thead>
+      <tr><th>Metric</th><th>Year 1</th><th>Year 2</th><th>Year 3</th><th>Year 5</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>ARR</strong></td><td>$500K</td><td>$3M</td><td>$10M</td><td>$50M+</td></tr>
+      <tr><td><strong>Active Customers</strong></td><td>5–8</td><td>20–30</td><td>60–80</td><td>200+</td></tr>
+      <tr><td><strong>Discovery Programs</strong></td><td>3–5</td><td>15–20</td><td>40–50</td><td>150+</td></tr>
+      <tr><td><strong>Closed-Loop Cycles/Qtr</strong></td><td>10</td><td>50</td><td>200</td><td>1,000+</td></tr>
+      <tr><td><strong>India Biomarker Atlas entries</strong></td><td>5,000</td><td>50,000</td><td>500K</td><td>5M+</td></tr>
+      <tr><td><strong>Gross Margin</strong></td><td>40–50%</td><td>55–65%</td><td>65–70%</td><td>75%+</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- SECTION 12: TWO REFERENCE PROGRAMS -->
+<div class="section">
+  <div class="section-label">Section 12</div>
+  <h2>Two Reference <em>Programs</em></h2>
+
+  <p>Replacing abstract ROI multipliers with two fully-costed flagship sprints. Both are anchored on the Apollo Hospitals biobank, executed via the LabOS agent mesh, and packaged through ClinicalBridge. Together they cover the two highest-value moments in a drug's lifecycle — pre-approval (companion diagnostics) and post-approval (pharmacovigilance).</p>
+
+  <!-- PROGRAM A: IVD COMPANION DIAGNOSTICS -->
+  <h3>Program A · IVD Companion Diagnostics Pathway</h3>
+  <div class="card card-accent">
+    <h4>The customer scenario</h4>
+    <p>A pharma partner has a Phase 2 oncology drug — say, a targeted therapy in NSCLC or HER2-low breast cancer. To enter Phase 3 with a stratified label, they need a regulator-grade companion diagnostic (CDx) that predicts responders. Traditional path: outsource to Roche Dx or Thermo Fisher — 4–6 years, $30–50M, parallel to clinical development, and almost always FDA-optimized with CDSCO as an afterthought.</p>
+  </div>
+
+  <table style="margin-top: 16px;">
+    <thead>
+      <tr><th>Phase</th><th>Months</th><th>LabOS execution</th><th>Cost</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Biomarker discovery</strong></td>
+        <td>0–3</td>
+        <td>OmicsOS Hypothesis Agent over Apollo NSCLC cohort (scRNA + WGS + IHC) + literature. Ranked candidate biomarkers with uncertainty.</td>
+        <td>$0.4M</td>
+      </tr>
+      <tr>
+        <td><strong>Analytical validation</strong></td>
+        <td>3–9</td>
+        <td>Design Agent emits typed DAGs; Execution Broker routes to Syngene (assay dev), MedGenome (NGS validation). Precision, accuracy, LoD/LoQ per CLSI EP05/EP17.</td>
+        <td>$1.6M</td>
+      </tr>
+      <tr>
+        <td><strong>Clinical validation</strong></td>
+        <td>9–15</td>
+        <td>Retrospective Apollo cohort (consented, IRB-approved) + prospective sub-study. QC Agent enforces sample-quality gates. Provenance-signed graph for every datapoint.</td>
+        <td>$2.5M</td>
+      </tr>
+      <tr>
+        <td><strong>Regulatory submission</strong></td>
+        <td>15–18</td>
+        <td>ClinicalBridge packages CDSCO IVD dossier + FDA pre-submission Q-Sub. Cross-agency bridging strategy.</td>
+        <td>$0.5M</td>
+      </tr>
+      <tr style="background: var(--bg-soft);">
+        <td><strong>Total</strong></td>
+        <td><strong>18 months</strong></td>
+        <td><strong>vs. 4–6 years traditional</strong></td>
+        <td><strong>$5.0M vs. $30–50M</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="two-col" style="margin-top: 16px;">
+    <div class="card card-teal">
+      <h4>Revenue to us</h4>
+      <ul>
+        <li><strong>$1.5M upfront</strong> sprint fee (LabOS + sample analysis + analytical validation)</li>
+        <li><strong>$500K × 3 milestones</strong> (analytical lock, clinical lock, regulatory acceptance) = $1.5M</li>
+        <li><strong>$5–10/test royalty</strong> on Dx kit sales (at peak 50K–200K tests/yr → $0.25–2M/yr recurring)</li>
+        <li><strong>5–10% royalty</strong> on the drug's CDx-stratified clinical revenue (long-tail, decade+)</li>
+        <li><strong>Apollo revenue share:</strong> 25–35% of kit royalty + Atlas licensing uplift</li>
+      </ul>
+    </div>
+    <div class="card card-purple">
+      <h4>Why this works for the pharma buyer</h4>
+      <ul>
+        <li><strong>6x faster, 6–10x cheaper</strong> than the Roche Dx route</li>
+        <li><strong>India-first regulatory path</strong> de-risks domestic launch; FDA bridging via Q-Sub strategy</li>
+        <li><strong>Auditable provenance</strong> — every datapoint signed to its DAG; reviewer can replay</li>
+        <li><strong>Apollo clinical credibility</strong> on the submission — investigator-initiated extension built in</li>
+        <li><strong>Companion Dx ready for Phase 3 enrollment</strong> stratification, accelerating clinical timeline</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- PROGRAM B: PHASE 4 PHARMACOVIGILANCE -->
+  <h3 style="margin-top: 32px;">Program B · Phase 4 Pharmacovigilance Pathway</h3>
+  <div class="card card-blue">
+    <h4>The customer scenario</h4>
+    <p>A pharma has an approved drug — say, a DOAC (apixaban) or a CV/diabetes combination — sold at scale in India. They need Phase 4 real-world safety surveillance with pharmacogenomic signal detection. India-specific PGx variants (CYP2C9, VKORC1, CYP2C19) make Western label data structurally insufficient. Traditional path: contract a Phase 4 CRO study with manual ADR reporting + claims data — $10–30M, 3–5 years, weak India-specific signal.</p>
+  </div>
+
+  <table style="margin-top: 16px;">
+    <thead>
+      <tr><th>Component</th><th>LabOS execution</th><th>Annual cost</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Real-world evidence feed</strong></td>
+        <td>Continuous DPDP-compliant pipeline from Apollo EHR (de-identified, federated). Patient-on-drug cohort sized at 5K–50K depending on indication.</td>
+        <td>$0.6M</td>
+      </tr>
+      <tr>
+        <td><strong>Multiomics sub-cohort</strong></td>
+        <td>ADR experiencers (~2–5% of treated) characterized via WGS + targeted PGx panel + metabolomics. Agentic anomaly detection over the Atlas baseline.</td>
+        <td>$1.2M</td>
+      </tr>
+      <tr>
+        <td><strong>Signal detection</strong></td>
+        <td>QC + Learning Agents continuously refine signal-to-noise. Quarterly signal reports with PGx + ethnicity stratification. Auto-generated CIOMS-format ADR narratives.</td>
+        <td>$0.4M</td>
+      </tr>
+      <tr>
+        <td><strong>Regulatory packaging</strong></td>
+        <td>ClinicalBridge quarterly PSUR/PBRER inputs for CDSCO + label-update support packages for FDA/EMA when actionable signal emerges.</td>
+        <td>$0.3M</td>
+      </tr>
+      <tr style="background: var(--bg-soft);">
+        <td><strong>Total recurring</strong></td>
+        <td><strong>12–18 month contracts, renew annually</strong></td>
+        <td><strong>$2.5M/yr vs. $10–30M one-off</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="two-col" style="margin-top: 16px;">
+    <div class="card card-teal">
+      <h4>Revenue to us</h4>
+      <ul>
+        <li><strong>$2–4M/year</strong> active surveillance contract (recurring, high gross margin)</li>
+        <li><strong>$250K–1M per actionable signal</strong> (label-update support package)</li>
+        <li><strong>Bundle pricing</strong> across a pharma's portfolio (5+ drugs = 30%+ discount, 10x ACV)</li>
+        <li><strong>Atlas enrichment</strong> — every PV cohort feeds the Atlas with longitudinal phenotype data; compounds the moat</li>
+        <li><strong>Apollo revenue share:</strong> 20–30% of surveillance contract value</li>
+      </ul>
+    </div>
+    <div class="card card-purple">
+      <h4>Why this works for the pharma buyer</h4>
+      <ul>
+        <li><strong>Recurring revenue model</strong> aligned to pharma's PV budget cycle — easy to procure</li>
+        <li><strong>India-specific PGx signals</strong> are not extractable from US/EU databases — uniquely defensible insight</li>
+        <li><strong>Auto-generated CIOMS narratives</strong> cut PV writing cost by 60–80%</li>
+        <li><strong>Audit-ready</strong> — provenance-signed every step; survives CDSCO + FDA inspection</li>
+        <li><strong>Pre-emptive label refinement</strong> protects post-marketing revenue from withdrawal risk</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="margin-top: 32px;">Why this pair of reference programs</h3>
+  <div class="card-grid">
+    <div class="card card-accent">
+      <h4>Coverage of the drug lifecycle</h4>
+      <p>CDx = pre-approval, high-margin one-shot revenue with long-tail royalties. PV = post-approval, recurring revenue across a pharma's entire portfolio. Together they make us relevant before and after every drug launch.</p>
+    </div>
+    <div class="card card-teal">
+      <h4>Both anchored on the same substrate</h4>
+      <p>Apollo biobank + LabOS agent mesh + ClinicalBridge — one platform investment, two distinct revenue streams. Marginal cost of adding the second program to an existing customer approaches zero.</p>
+    </div>
+    <div class="card card-purple">
+      <h4>Both compound the Atlas</h4>
+      <p>CDx programs deposit deep multiomics + clinical-response data. PV programs deposit longitudinal phenotype + ADR data. The Atlas becomes uniquely complete on both response and safety dimensions — a structural lead that widens with every program.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <h4>The Platform Flywheel</h4>
+    <p>More CDx + PV programs → <strong>richer Atlas</strong> → better India-tuned model → faster discovery → more customers → more programs. The Atlas becomes a <strong>$100M+ standalone asset by Year 5</strong>; the model becomes the licensable AI substrate of Indian biotech.</p>
+  </div>
+</div>
+
+<!-- SECTION 13: RAINMATTER VC -->
+<div class="section">
+  <div class="section-label">Section 13</div>
+  <h2>Rainmatter VC — <em>Fit Analysis</em></h2>
+
+  <p>Rainmatter (Zerodha's venture arm) has invested ₹1,500+ crore across 163 companies since 2016. Their mandate spans fintech, climate, health, and deep tech with a "patient capital, no board seats" philosophy. They invest ₹50L–₹100Cr without stage constraints.</p>
+
+  <div class="two-col">
+    <div>
+      <h3>Where Rainmatter Fits</h3>
+      <div class="card card-teal">
+        <h4>Strong Alignment Points</h4>
+        <ul>
+          <li>41 health portfolio companies — growing conviction</li>
+          <li>Patient capital: no quick exit pressure (critical for biotech timelines)</li>
+          <li>No board seats: founder-friendly for technical founders</li>
+          <li>India-first: explicitly backing companies building what India needs to own</li>
+          <li>Deep tech conviction growing (GalaxEye, defense tech investments in 2026)</li>
+          <li>Seed cheques: ideal for pre-seed round of ₹3–5Cr</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <h3>Where the Fit Has Limits</h3>
+      <div class="card card-amber">
+        <h4>Caution Flags</h4>
+        <ul>
+          <li>Biotech capital cycles require 7–10 years; Rainmatter history shows mostly consumer/fintech exits</li>
+          <li>Maximum ₹100Cr limits them to Seed/Series A — insufficient for full build</li>
+          <li>Portfolio skews to software/fintech; life sciences regulatory complexity is unfamiliar</li>
+          <li>No biotech domain partners listed — DD may be superficial</li>
+          <li>Portfolio exit data sparse — only 2 exits recorded</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="verdict">
+    <div class="verdict-label">Rainmatter Verdict</div>
+    <p><strong>Ideal as a Seed co-investor (₹2–5Cr)</strong> for the mission fit and patient capital. NOT suitable as a lead Series A+ investor. Use them to signal India credibility, access Zerodha's network (fintech × healthtech crossover plays possible), and get the "impact investor" narrative. Lead with India Bioscience Fund, Chiratae, or Sequoia India Surge for Series A.</p>
+  </div>
+
+  <h3>Better VC Fit by Stage</h3>
+  <table>
+    <thead>
+      <tr><th>Stage</th><th>Round Size</th><th>Target Investors</th><th>Thesis Angle</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Pre-Seed</strong></td>
+        <td>$1–3M</td>
+        <td>Rainmatter, India Bioscience Fund, BIRAC grant, Angel networks (iSPIRT, Mumbai Angels)</td>
+        <td>Proof-of-concept on OmicsOS + first 2 customers</td>
+      </tr>
+      <tr>
+        <td><strong>Seed</strong></td>
+        <td>$5–10M</td>
+        <td>Chiratae Ventures, Stellaris, Arkam (healthtech), Avataar, Novo Ventures India</td>
+        <td>Product-market fit, 5+ paying customers, first Discovery Sprint delivered</td>
+      </tr>
+      <tr>
+        <td><strong>Series A</strong></td>
+        <td>$20–40M</td>
+        <td>Sequoia India, Lightspeed India, B Capital, OrbiMed Asia, RA Capital</td>
+        <td>ARR $5M+, proven Discovery Sprint model, India Biomarker Atlas differentiation</td>
+      </tr>
+      <tr>
+        <td><strong>Series B</strong></td>
+        <td>$60–120M</td>
+        <td>Novo Holdings, Temasek, GIC, ARCH Venture, a16z bio</td>
+        <td>Global APAC expansion, first co-development royalty streams, FAL Pod buildout</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- SECTION 14: GO-TO-MARKET -->
+<div class="section">
+  <div class="section-label">Section 14</div>
+  <h2>Go-to-Market <em>Strategy</em></h2>
+
+  <div class="phases">
+    <div class="phase">
+      <div class="phase-num">1</div>
+      <div class="phase-body">
+        <h4>Phase 1 — Land with Anchor Customers (Months 0–18)</h4>
+        <p>Target 3 anchor customers: 1 Indian generic pharma (drug repurposing), 1 hospital research arm (biomarker discovery), 1 biotech startup (Discovery Sprint). Co-develop OmicsCloud with them. Use Hyderabad connections (Apollo, Genome Valley ecosystem). BIRAC grant application for non-dilutive capital. Publish 2–3 high-impact papers using India cohort data to establish scientific credibility.</p>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="phase-num">2</div>
+      <div class="phase-body">
+        <h4>Phase 2 — Scale the Platform (Months 18–36)</h4>
+        <p>OmicsCloud goes to general availability. LabOS integrations with Syngene and Aragen live. 20–30 customers across three tiers. First international customer (Singapore or Japan). Series A raise. India Biomarker Atlas first licensing deal with MNC pharma. First co-development agreement signed.</p>
+      </div>
+    </div>
+    <div class="phase">
+      <div class="phase-num">3</div>
+      <div class="phase-body">
+        <h4>Phase 3 — Studio &amp; APAC (Months 36–60)</h4>
+        <p>Spin out OncoBio India and RarePath India with dedicated founding teams. Open Singapore entity for APAC hub. FAL Pods deployed (Phase 2 lab strategy). Series B raise anchored by APAC strategic investors (Temasek, GIC). Government MoU for India rare disease national program.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 15: COMPETITIVE MOAT -->
+<div class="section">
+  <div class="section-label">Section 15</div>
+  <h2>Competitive Moat <em>Analysis</em></h2>
+
+  <table>
+    <thead>
+      <tr><th>Competitor</th><th>Their Strength</th><th>Their Gap</th><th>Our Advantage</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Ginkgo Cloud Lab</strong></td>
+        <td>World-class FAL infrastructure, OpenAI integration</td>
+        <td>Boston-centric, no India/APAC presence, no India genomic data</td>
+        <td>India-native, 5x cheaper execution, local regulatory</td>
+      </tr>
+      <tr>
+        <td><strong>Recursion</strong></td>
+        <td>50PB dataset, phenomics moat, BioHive-2</td>
+        <td>Drug-discovery only, $1B+ invested to build, US-centric</td>
+        <td>Platform model, faster to market, India data layer</td>
+      </tr>
+      <tr>
+        <td><strong>Isomorphic Labs</strong></td>
+        <td>AlphaFold, Alphabet backing, $600M</td>
+        <td>Protein structure only, no wet lab, no APAC</td>
+        <td>Full-stack multiomics + wet lab orchestration</td>
+      </tr>
+      <tr>
+        <td><strong>Indian CROs (Syngene, Aragen)</strong></td>
+        <td>Lab execution, India presence, regulatory familiarity</td>
+        <td>No AI-multiomics capability, execution-only, no IP</td>
+        <td>We are their AI brain — potential partners, not just rivals</td>
+      </tr>
+      <tr>
+        <td><strong>Indian Genomics (MedGenome)</strong></td>
+        <td>India NGS data, clinical relationships</td>
+        <td>Diagnostics-only, no drug discovery, no wet lab orchestration</td>
+        <td>Discovery + translation + atlas (they become a data supplier)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- SECTION 16: RISKS & MITIGATION -->
+<div class="section">
+  <div class="section-label">Section 16</div>
+  <h2>Key Risks <em>&amp; Mitigation</em></h2>
+
+  <h3>Enterprise risks</h3>
+  <div class="card-grid">
+    <div class="card">
+      <h4>Risk 1 — Long Sales Cycles</h4>
+      <p><strong>Pharma contracts take 12–18 months.</strong> Mitigation: Start with Apollo + academic anchor customers (3–6 month cycles). Use DBT/BIRAC grants for non-dilutive bridge. Recurring PV contracts and LabOS SaaS subscriptions build base revenue in parallel.</p>
+    </div>
+    <div class="card">
+      <h4>Risk 2 — Talent Scarcity</h4>
+      <p><strong>Computational biologists + ML engineers are scarce in India.</strong> Mitigation: Partner with IISc, IITB, IITH, NCBS for PhD pipelines. Equity-heavy senior offers. Remote-first to access India diaspora (US/UK returnees). Apollo gives access to clinician collaborators.</p>
+    </div>
+    <div class="card">
+      <h4>Risk 3 — Patient Data Privacy</h4>
+      <p><strong>DPDP Act 2023 + ICMR genomic data guidelines + Apollo's own data governance.</strong> Mitigation: Federated learning where raw data never leaves Apollo. Consent-tracking layer. Differential privacy on Atlas outputs. Sovereign-cloud fine-tuned model (USP 5) eliminates frontier-API data exposure.</p>
+    </div>
+    <div class="card">
+      <h4>Risk 4 — CRO Partner Reliability</h4>
+      <p><strong>Wet lab partners may not meet quality standards.</strong> Mitigation: Multi-CRO redundancy via Execution Broker. LabOS QC Agent enforces quality gates on every node. SLA-backed contracts with capability-registry-published specs. FAL Pods in Phase 2 as fallback.</p>
+    </div>
+    <div class="card">
+      <h4>Risk 5 — Global Competitor Entry to India</h4>
+      <p><strong>Ginkgo or Recursion could open an India POP.</strong> Mitigation: Apollo exclusivity clauses. India Biomarker Atlas is a 3–5 year lead. Regulatory relationships + DPDP-compliant deployment cannot be replicated overnight. The experimental graph + LIMS lock-in is the long-term moat.</p>
+    </div>
+    <div class="card">
+      <h4>Risk 6 — Scientific Validation Failures</h4>
+      <p><strong>AI predictions may not validate in wet lab.</strong> Mitigation: Systematic uncertainty quantification built into Hypothesis Agent. Internal red-team and held-out eval harness. Published validation benchmarks. Customer co-development shares risk.</p>
+    </div>
+    <div class="card">
+      <h4>Risk 7 — Apollo Partnership Dependency</h4>
+      <p><strong>Single-point-of-failure on the data substrate.</strong> Mitigation: Negotiate 5–7 year exclusivity but with non-cancellable data rights to records generated during the term. Parallel MoUs in Year 2 with Fortis, AIIMS, CMC as secondary substrates. Make Apollo's economic stake high enough that exit is irrational.</p>
+    </div>
+    <div class="card">
+      <h4>Risk 8 — Frontier-Model Provider Lock-In</h4>
+      <p><strong>Anthropic / OpenAI pricing changes or policy shifts.</strong> Mitigation: Multi-model abstraction layer from day 1; every prompt/response captured as distillation data; Year-2 sovereign-cloud fine-tuned model serves 80%+ of agent calls.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top: 32px;">Agentic Lab Interface — Dedicated Risk Plan</h3>
+  <p>The agent mesh introduces a class of risks that do not exist in conventional SaaS. Each is paired with a concrete control built into LabOS, not bolted on. These controls are themselves a sellable feature — pharma QA buyers ask about them on day one.</p>
+
+  <table>
+    <thead>
+      <tr><th>Failure mode</th><th>Concrete consequence</th><th>Mitigation built into LabOS</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Agent designs an incorrect protocol</strong></td>
+        <td>$10K–100K of wasted reagents + 2–6 weeks lost cycle time</td>
+        <td>Mandatory <em>human-in-the-loop sign-off</em> at the Design→Execution boundary. Design Agent surfaces budget impact, scientific risk score, and uncertainty before submission. Scientist signature captured as preference data feeding the Learning Agent.</td>
+      </tr>
+      <tr>
+        <td><strong>Hypothesis Agent hallucinates a target or mechanism</strong></td>
+        <td>Wasted Discovery Sprint, customer trust damage</td>
+        <td>Grounded retrieval — every claim must cite an Atlas record or peer-reviewed paper. Uncertainty quantification on every ranked hypothesis. Confidence threshold below which the agent refuses to commit; escalates to human.</td>
+      </tr>
+      <tr>
+        <td><strong>Cross-agent context drift</strong></td>
+        <td>Design Agent misinterprets Hypothesis Agent's intent; protocol diverges from goal</td>
+        <td>Typed contracts between agents (Protocol IR schemas). Schema validation on every handoff. Replay tests on held-out trajectories before any agent version is promoted to production.</td>
+      </tr>
+      <tr>
+        <td><strong>Stale or wrong instrument state</strong></td>
+        <td>Agent submits run to a machine that's down, drift-flagged, or out of reagents</td>
+        <td>Real-time capability registry with liveness checks (heartbeat from each instrument/CRO). Circuit breakers per node. Execution Broker dynamically re-routes; if no path exists, queues and notifies.</td>
+      </tr>
+      <tr>
+        <td><strong>Training-data bias (Western-skewed models)</strong></td>
+        <td>Hypotheses miss India-specific biology (e.g., HLA-B*57:01 PGx, NAFLD phenotypes)</td>
+        <td>India-cohort fine-tuning pipeline (USP 5). Per-vertical bias audits. Held-out India-population eval set. Refuse-to-commit if predictions diverge significantly from Apollo cohort priors.</td>
+      </tr>
+      <tr>
+        <td><strong>Regulatory non-compliance from autonomous workflow</strong></td>
+        <td>CDSCO / FDA / NABL audit failure; data inadmissible</td>
+        <td>Provenance signing (Ed25519) on every datapoint. GxP-compliant audit trail by construction. Risk-based qualification matrix — every operation tagged "human-required" / "agent-OK" / "agent-with-checkpoint". CDSCO pre-consultation in Year 1.</td>
+      </tr>
+      <tr>
+        <td><strong>Patient data leakage via agent prompts</strong></td>
+        <td>DPDP Act violation, Apollo MoU breach, criminal liability</td>
+        <td>Patient data never enters frontier-API prompts. On-prem retrieval at Apollo; only de-identified embeddings or aggregates traverse the agent mesh. Year-2 sovereign-cloud model eliminates exposure entirely. DLP scanning on every outbound API call.</td>
+      </tr>
+      <tr>
+        <td><strong>Agent does something irreversible (sample destroyed, sequencing run committed)</strong></td>
+        <td>Lost biospecimen — irreplaceable; sunk cost on sequencing</td>
+        <td>Two-key authorization for any irreversible operation. Cost-and-irreversibility classifier on every action. Dry-run / simulation mode by default; "commit" is a separate explicit step. Sample-criticality registry (Apollo biobank items flagged).</td>
+      </tr>
+      <tr>
+        <td><strong>Adversarial inputs / prompt injection from external data</strong></td>
+        <td>Agent manipulated by malicious paper, fake reagent record, compromised CRO API</td>
+        <td>Treat all external inputs as untrusted. Quarantine + provenance check on ingest. Capability sandboxing — agents can only act through the capability registry, not arbitrary tools. Red-team eval suite run weekly.</td>
+      </tr>
+      <tr>
+        <td><strong>Cascading failure across the mesh</strong></td>
+        <td>One bad agent decision propagates; many programs corrupted simultaneously</td>
+        <td>Per-program isolation; no shared mutable state across customer tenants. Canary deployment for agent model updates. Rollback to any prior graph state (content-addressed store enables time-travel debugging).</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <h4>Risk posture as a sellable feature</h4>
+    <p>Most agentic-AI products treat these controls as compliance overhead. We treat them as <strong>product</strong>. The provenance graph, the human-in-the-loop checkpoint, the dry-run mode, the capability sandbox — these are the answers to every pharma QA, regulator, and CISO question, packaged as the platform's day-one UX. <strong>"The scientist signs every plan; we make signing easy."</strong></p>
+  </div>
+</div>
+
+<!-- PITCH DECK BLUEPRINT -->
+<div class="page-break"><div class="page-break-label">· Pitch Deck Structure ·</div></div>
+
+<div class="section">
+  <div class="section-label">Appendix</div>
+  <h2>Investor Pitch Deck <em>Blueprint</em></h2>
+  <p>Recommended 14-slide structure for the pre-seed pitch. LabOS-first narrative — every slide answers a specific investor objection. Team slide deferred; replace with traction once Apollo MoU is signed.</p>
+
+  <table>
+    <thead>
+      <tr><th>#</th><th>Slide Title</th><th>Core Assertion</th><th>Key Visual</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td><strong>Cover</strong></td><td>LabOS — the agentic operating system for distributed biology</td><td>Minimal logo + one-liner</td></tr>
+      <tr><td>2</td><td><strong>The Problem</strong></td><td>Biology's bottleneck is the experimental graph, not ideas. Every datapoint today is orphaned from its provenance.</td><td>Fragmented lab landscape diagram</td></tr>
+      <tr><td>3</td><td><strong>Why Now</strong></td><td>Reasoning models + lab APIs + India regulatory all crossed in 2025–26. 18-month window.</td><td>Four-wave timeline converging on 2026</td></tr>
+      <tr><td>4</td><td><strong>The Market</strong></td><td>$1.6T APAC biotech, $18.4B lab automation. India has no platform player.</td><td>Market waterfall + India white-space map</td></tr>
+      <tr><td>5</td><td><strong>LabOS — the Solution</strong></td><td>Five-agent mesh + experimental graph + LIMS-native. We own the graph; we don't own the robots.</td><td>Agent mesh architecture diagram</td></tr>
+      <tr><td>6</td><td><strong>The Apollo Moat</strong></td><td>Pan-India biobank + EHR + clinical phenotyping as our proprietary substrate. Not replicable with a check.</td><td>Apollo footprint map + Atlas growth curve</td></tr>
+      <tr><td>7</td><td><strong>LIMS — the Quiet Wedge</strong></td><td>We don't replace STARLIMS; we sit beside it. One signed MSA, no validation re-cert.</td><td>Sidecar → bidirectional → replacement tier diagram</td></tr>
+      <tr><td>8</td><td><strong>Reference Program A — IVD CDx</strong></td><td>$5M / 18 months vs. $30–50M / 4–6 years traditional. Upfront + milestones + royalties.</td><td>Costed timeline + revenue stack</td></tr>
+      <tr><td>9</td><td><strong>Reference Program B — Phase 4 PV</strong></td><td>$2.5M/yr recurring. India-specific PGx signals not extractable from US/EU databases.</td><td>Active surveillance flow + recurring revenue chart</td></tr>
+      <tr><td>10</td><td><strong>Future-Proofing — Sovereign Models</strong></td><td>Year 1 frontier wrappers → Year 2 India-tuned bio model on sovereign cloud → Year 3 vertical specialists. DPDP-compliant by construction.</td><td>4-year fine-tuning roadmap</td></tr>
+      <tr><td>11</td><td><strong>Business Model</strong></td><td>LabOS SaaS + Discovery Sprints + Atlas licensing + co-development royalties</td><td>Revenue stack with margins</td></tr>
+      <tr><td>12</td><td><strong>Risk Posture as a Feature</strong></td><td>Human-in-the-loop, provenance signing, dry-run mode — all sellable</td><td>Agentic risk-controls table (condensed)</td></tr>
+      <tr><td>13</td><td><strong>Go-to-Market</strong></td><td>Apollo anchor → 3 Indian pharma → APAC expansion. Singapore as regulatory bridge.</td><td>3-phase GTM roadmap</td></tr>
+      <tr><td>14</td><td><strong>The Ask</strong></td><td>$X pre-seed for Apollo MoU signed + LabOS MVP live + first CDx Sprint customer. 18-month milestone plan.</td><td>Funding roadmap + milestone chart</td></tr>
+    </tbody>
+  </table>
+
+  <p style="font-size: 12px; color: var(--ink-muted); margin-top: 16px;">Team slide intentionally deferred. Once Apollo MoU + founding scientist are confirmed, insert as Slide 13 and push GTM to 14, Ask to 15.</p>
+</div>
+
+<div class="footnote">
+  Strategic Blueprint prepared April 2026. Market data sourced from IBEF, Grand View Research, Precedence Research, and primary research. Financial projections are indicative and scenario-based. This document is confidential and intended for internal strategic planning and investor discussions only.
+</div>
+
+</body>
+</html>
