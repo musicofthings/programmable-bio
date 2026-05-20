@@ -1,0 +1,23 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Local notes / drafts (don't publish)
+*.local.html
+drafts/
+notes/
+.scratch/
+
+# Build / temp
+*.tmp
+*.bak
+*.log
