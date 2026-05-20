@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programs — Reference Sprints & Offerings &mdash; Programmable Bio</title>
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">Programmable <strong>Bio</strong></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/platform.html">Platform</a></li>
+      <li><a href="/apollo.html">Apollo Moat</a></li>
+      <li><a href="/programs.html" class="active">Programs</a></li>
+      <li><a href="/strategy.html">Strategy</a></li>
+      <li><a href="/biohelix.html">BioHelix</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="section" style="padding-top: 16px;">
+  <div class="section-label">Programmable Bio</div>
+  <h2>Programs — Reference Sprints & Offerings</h2>
+  <p style="font-size: 16px; color: var(--ink-secondary); max-width: 720px;">Two costed flagship programs (IVD Companion Diagnostics + Phase 4 Pharmacovigilance), the full offerings stack, customer segmentation, and the value-chain intervention map.</p>
+</div>
+<div class="section">
+<div class="section-label">Section 12</div>
+<h2>Two Reference <em>Programs</em></h2>
+<p>Replacing abstract ROI multipliers with two fully-costed flagship sprints. Both are anchored on the Apollo Hospitals biobank, executed via the LabOS agent mesh, and packaged through ClinicalBridge. Together they cover the two highest-value moments in a drug's lifecycle — pre-approval (companion diagnostics) and post-approval (pharmacovigilance).</p>
+<!-- PROGRAM A: IVD COMPANION DIAGNOSTICS -->
+<h3>Program A · IVD Companion Diagnostics Pathway</h3>
+<div class="card card-accent">
+<h4>The customer scenario</h4>
+<p>A pharma partner has a Phase 2 oncology drug — say, a targeted therapy in NSCLC or HER2-low breast cancer. To enter Phase 3 with a stratified label, they need a regulator-grade companion diagnostic (CDx) that predicts responders. Traditional path: outsource to Roche Dx or Thermo Fisher — 4–6 years, $30–50M, parallel to clinical development, and almost always FDA-optimized with CDSCO as an afterthought.</p>
+</div>
+<table style="margin-top: 16px;">
+<thead>
+<tr><th>Phase</th><th>Months</th><th>LabOS execution</th><th>Cost</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Biomarker discovery</strong></td>
+<td>0–3</td>
+<td>OmicsOS Hypothesis Agent over Apollo NSCLC cohort (scRNA + WGS + IHC) + literature. Ranked candidate biomarkers with uncertainty.</td>
+<td>$0.4M</td>
+</tr>
+<tr>
+<td><strong>Analytical validation</strong></td>
+<td>3–9</td>
+<td>Design Agent emits typed DAGs; Execution Broker routes to Syngene (assay dev), MedGenome (NGS validation). Precision, accuracy, LoD/LoQ per CLSI EP05/EP17.</td>
+<td>$1.6M</td>
+</tr>
+<tr>
+<td><strong>Clinical validation</strong></td>
+<td>9–15</td>
+<td>Retrospective Apollo cohort (consented, IRB-approved) + prospective sub-study. QC Agent enforces sample-quality gates. Provenance-signed graph for every datapoint.</td>
+<td>$2.5M</td>
+</tr>
+<tr>
+<td><strong>Regulatory submission</strong></td>
+<td>15–18</td>
+<td>ClinicalBridge packages CDSCO IVD dossier + FDA pre-submission Q-Sub. Cross-agency bridging strategy.</td>
+<td>$0.5M</td>
+</tr>
+<tr style="background: var(--bg-soft);">
+<td><strong>Total</strong></td>
+<td><strong>18 months</strong></td>
+<td><strong>vs. 4–6 years traditional</strong></td>
+<td><strong>$5.0M vs. $30–50M</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="two-col" style="margin-top: 16px;">
+<div class="card card-teal">
+<h4>Revenue to us</h4>
+<ul>
+<li><strong>$1.5M upfront</strong> sprint fee (LabOS + sample analysis + analytical validation)</li>
+<li><strong>$500K × 3 milestones</strong> (analytical lock, clinical lock, regulatory acceptance) = $1.5M</li>
+<li><strong>$5–10/test royalty</strong> on Dx kit sales (at peak 50K–200K tests/yr → $0.25–2M/yr recurring)</li>
+<li><strong>5–10% royalty</strong> on the drug's CDx-stratified clinical revenue (long-tail, decade+)</li>
+<li><strong>Apollo revenue share:</strong> 25–35% of kit royalty + Atlas licensing uplift</li>
+</ul>
+</div>
+<div class="card card-purple">
+<h4>Why this works for the pharma buyer</h4>
+<ul>
+<li><strong>6x faster, 6–10x cheaper</strong> than the Roche Dx route</li>
+<li><strong>India-first regulatory path</strong> de-risks domestic launch; FDA bridging via Q-Sub strategy</li>
+<li><strong>Auditable provenance</strong> — every datapoint signed to its DAG; reviewer can replay</li>
+<li><strong>Apollo clinical credibility</strong> on the submission — investigator-initiated extension built in</li>
+<li><strong>Companion Dx ready for Phase 3 enrollment</strong> stratification, accelerating clinical timeline</li>
+</ul>
+</div>
+</div>
+<!-- PROGRAM B: PHASE 4 PHARMACOVIGILANCE -->
+<h3 style="margin-top: 32px;">Program B · Phase 4 Pharmacovigilance Pathway</h3>
+<div class="card card-blue">
+<h4>The customer scenario</h4>
+<p>A pharma has an approved drug — say, a DOAC (apixaban) or a CV/diabetes combination — sold at scale in India. They need Phase 4 real-world safety surveillance with pharmacogenomic signal detection. India-specific PGx variants (CYP2C9, VKORC1, CYP2C19) make Western label data structurally insufficient. Traditional path: contract a Phase 4 CRO study with manual ADR reporting + claims data — $10–30M, 3–5 years, weak India-specific signal.</p>
+</div>
+<table style="margin-top: 16px;">
+<thead>
+<tr><th>Component</th><th>LabOS execution</th><th>Annual cost</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Real-world evidence feed</strong></td>
+<td>Continuous DPDP-compliant pipeline from Apollo EHR (de-identified, federated). Patient-on-drug cohort sized at 5K–50K depending on indication.</td>
+<td>$0.6M</td>
+</tr>
+<tr>
+<td><strong>Multiomics sub-cohort</strong></td>
+<td>ADR experiencers (~2–5% of treated) characterized via WGS + targeted PGx panel + metabolomics. Agentic anomaly detection over the Atlas baseline.</td>
+<td>$1.2M</td>
+</tr>
+<tr>
+<td><strong>Signal detection</strong></td>
+<td>QC + Learning Agents continuously refine signal-to-noise. Quarterly signal reports with PGx + ethnicity stratification. Auto-generated CIOMS-format ADR narratives.</td>
+<td>$0.4M</td>
+</tr>
+<tr>
+<td><strong>Regulatory packaging</strong></td>
+<td>ClinicalBridge quarterly PSUR/PBRER inputs for CDSCO + label-update support packages for FDA/EMA when actionable signal emerges.</td>
+<td>$0.3M</td>
+</tr>
+<tr style="background: var(--bg-soft);">
+<td><strong>Total recurring</strong></td>
+<td><strong>12–18 month contracts, renew annually</strong></td>
+<td><strong>$2.5M/yr vs. $10–30M one-off</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="two-col" style="margin-top: 16px;">
+<div class="card card-teal">
+<h4>Revenue to us</h4>
+<ul>
+<li><strong>$2–4M/year</strong> active surveillance contract (recurring, high gross margin)</li>
+<li><strong>$250K–1M per actionable signal</strong> (label-update support package)</li>
+<li><strong>Bundle pricing</strong> across a pharma's portfolio (5+ drugs = 30%+ discount, 10x ACV)</li>
+<li><strong>Atlas enrichment</strong> — every PV cohort feeds the Atlas with longitudinal phenotype data; compounds the moat</li>
+<li><strong>Apollo revenue share:</strong> 20–30% of surveillance contract value</li>
+</ul>
+</div>
+<div class="card card-purple">
+<h4>Why this works for the pharma buyer</h4>
+<ul>
+<li><strong>Recurring revenue model</strong> aligned to pharma's PV budget cycle — easy to procure</li>
+<li><strong>India-specific PGx signals</strong> are not extractable from US/EU databases — uniquely defensible insight</li>
+<li><strong>Auto-generated CIOMS narratives</strong> cut PV writing cost by 60–80%</li>
+<li><strong>Audit-ready</strong> — provenance-signed every step; survives CDSCO + FDA inspection</li>
+<li><strong>Pre-emptive label refinement</strong> protects post-marketing revenue from withdrawal risk</li>
+</ul>
+</div>
+</div>
+<h3 style="margin-top: 32px;">Why this pair of reference programs</h3>
+<div class="card-grid">
+<div class="card card-accent">
+<h4>Coverage of the drug lifecycle</h4>
+<p>CDx = pre-approval, high-margin one-shot revenue with long-tail royalties. PV = post-approval, recurring revenue across a pharma's entire portfolio. Together they make us relevant before and after every drug launch.</p>
+</div>
+<div class="card card-teal">
+<h4>Both anchored on the same substrate</h4>
+<p>Apollo biobank + LabOS agent mesh + ClinicalBridge — one platform investment, two distinct revenue streams. Marginal cost of adding the second program to an existing customer approaches zero.</p>
+</div>
+<div class="card card-purple">
+<h4>Both compound the Atlas</h4>
+<p>CDx programs deposit deep multiomics + clinical-response data. PV programs deposit longitudinal phenotype + ADR data. The Atlas becomes uniquely complete on both response and safety dimensions — a structural lead that widens with every program.</p>
+</div>
+</div>
+<div class="callout">
+<h4>The Platform Flywheel</h4>
+<p>More CDx + PV programs → <strong>richer Atlas</strong> → better India-tuned model → faster discovery → more customers → more programs. The Atlas becomes a <strong>$100M+ standalone asset by Year 5</strong>; the model becomes the licensable AI substrate of Indian biotech.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Section 10</div>
+<h2>Key Offerings <em>&amp; USP</em></h2>
+<div class="card-grid">
+<div class="card card-teal" style="grid-column: 1 / -1;">
+<h4>LabOS — Agentic Lab Operating System <span class="badge badge-accent">FLAGSHIP</span></h4>
+<p>The agent mesh + experimental graph + LIMS-native integration described in Section 06. Sold as: (a) <strong>LabOS Platform</strong> — annual subscription per site, agent mesh + capability registry + LIMS adapters; (b) <strong>LabOS Bench</strong> — full LIMS replacement module for greenfield sites; (c) <strong>LabOS Broker</strong> — usage-based execution routing across partner CROs.</p>
+<div style="margin-top:10px">
+<span class="badge badge-green">$250K–1.5M ARR/site (Platform)</span>
+<span class="badge badge-green">$50K–200K/site (Bench)</span>
+<span class="badge badge-green">2–5% take-rate (Broker)</span>
+</div>
+</div>
+<div class="card card-accent">
+<h4>OmicsCloud (the AI brain, sold standalone)</h4>
+<p>Self-serve multiomics pipeline — WGS/WES, scRNA-seq, spatial, proteomics. India reference genome integration. Frontier-LLM agents Year 1; India-tuned bio model Year 2+. Target: biotech startups, academic institutions, hospital research arms that don't yet need LabOS execution layer.</p>
+<div style="margin-top:10px"><span class="badge badge-blue">$50K–250K ARR/customer</span></div>
+</div>
+<div class="card card-purple">
+<h4>Discovery Sprints (premium services)</h4>
+<p>Time-boxed, milestone-defined discovery programs powered by LabOS end-to-end. 90-day to 18-month engagements. Two flagship sprint products — IVD Companion Diagnostics &amp; Phase 4 Pharmacovigilance — fully costed in Section 12.</p>
+<div style="margin-top:10px"><span class="badge badge-accent">$1.5M–8M per program</span></div>
+</div>
+<div class="card card-blue">
+<h4>India Biomarker Atlas (data licensing)</h4>
+<p>Proprietary biomarker database built on the Apollo Hospitals biobank substrate. Licensed to pharma for companion Dx development, clinical trial design, patient stratification. Revenue share with Apollo.</p>
+<div style="margin-top:10px"><span class="badge badge-blue">$200K–2M licensing/year</span></div>
+</div>
+<div class="card card-amber">
+<h4>ClinicalBridge Packages</h4>
+<p>Regulatory-grade dossiers for CDSCO, TGA, PMDA, FDA. IND-enabling preclinical reports. IVD submission packages. Phase 4 PV signal reports. Bridging study design for India populations.</p>
+<div style="margin-top:10px"><span class="badge badge-amber">$250K–1M per package</span></div>
+</div>
+<div class="card">
+<h4>Co-Development Partnerships</h4>
+<p>Equity + milestone deals with pharma/biotech. We provide full LabOS infrastructure + Apollo data access; they provide disease area focus and commercial execution. Revenue + IP sharing. Royalty streams at Phase 2+.</p>
+<div style="margin-top:10px"><span class="badge badge-green">Long-term royalty streams</span></div>
+</div>
+</div>
+<h3>Unique Selling Propositions — What No One Else Has</h3>
+<div class="card card-teal" style="margin-top:16px">
+<h4>USP 1 — The Experimental Graph as Infrastructure</h4>
+<p>LabOS is the only platform that treats every experiment as a typed, provenance-signed graph. The graph unifies sample lineage, data lineage, regulatory audit trail, and agent training data into a single substrate. Once we are the system of record for a lab's experimental graph, displacing us means re-validating every protocol — the same switching-cost moat that protects STARLIMS, flipped to favor us.</p>
+</div>
+<div class="card card-accent" style="margin-top:8px">
+<h4>USP 2 — Apollo Hospitals as Proprietary Clinical Substrate</h4>
+<p>The Apollo partnership (Section 05) gives us pan-India EHR + consented biospecimens + clinical phenotyping that no global competitor can replicate by writing a check. India harbors ~4,600 population groups; Apollo touches all of them. The India Biomarker Atlas built on this substrate is the genomic Rosetta Stone for Asia — a 3–5 year structural lead.</p>
+</div>
+<div class="card card-purple" style="margin-top:8px">
+<h4>USP 3 — Full-Stack Discovery Without the CapEx</h4>
+<p>Pure software plays (Isomorphic, Schrödinger) need wet lab partners. Pure CROs lack AI depth. Pure FAL owners (Ginkgo) bleed capital. We bridge all three — agentic design + orchestrated wet-lab validation + clinical-grade data — delivered as a service. Recursion-class capability without Recursion-class infrastructure costs.</p>
+</div>
+<div class="card card-blue" style="margin-top:8px">
+<h4>USP 4 — India Regulatory Intelligence Built-In</h4>
+<p>Native bridging across CDSCO, DCGI, the New Drugs and Clinical Trials Rules 2019, DPDP Act 2023, and ICMR genomic data guidelines. Most global platforms are FDA/EMA-optimized and treat India as a translation problem. We are the translation layer.</p>
+</div>
+<div class="card card-amber" style="margin-top:8px">
+<h4>USP 5 — Future-Proofed via India-Tuned Sovereign Models</h4>
+<p>Year 1 LabOS runs on frontier LLMs behind a model-router that captures every trajectory as distillation data. By Year 2, an India-cohort-tuned bio model deployed on AWS Hyderabad and Apollo on-prem nodes serves 80% of agent calls. By Year 3, vertical-specialist models per disease area become licensable assets. This is both a margin lever (offload from frontier APIs) and a DPDP Act compliance feature — Apollo patient data <em>never leaves India</em>. No other India platform is architected for this from day one.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Section 08</div>
+<h2>Customer Value <em>Proposition</em></h2>
+<p>Different customer segments have fundamentally different pain points. The value proposition must be segment-specific, not generic.</p>
+<div class="card-grid">
+<div class="card">
+<h4>🏭 Indian Generic Pharma<br/><span style="font-weight:400;color:var(--ink-muted)">Sun, Dr. Reddy's, Cipla, Lupin</span></h4>
+<p><strong>Pain:</strong> Patent cliffs accelerating, need innovation pipelines not just generics. Struggling to compete on novel drug discovery.<br/><strong>Our value:</strong> AI-powered drug repurposing, biomarker-driven formulation science, NCE discovery at 1/5th the cost of US CROs. Regulatory dossiers India-ready.</p>
+</div>
+<div class="card">
+<h4>🌐 MNC Pharma India R&amp;D<br/><span style="font-weight:400;color:var(--ink-muted)">Novartis, AZ, Pfizer, Roche</span></h4>
+<p><strong>Pain:</strong> Need to diversify discovery into APAC populations. India data is siloed, unstructured, underutilized.<br/><strong>Our value:</strong> Access to India's unique genomic diversity. Pre-validated cohorts. Faster IND-enabling data packages. Cost-effective Phase 0 studies.</p>
+</div>
+<div class="card">
+<h4>🔬 Indian Biotech Startups<br/><span style="font-weight:400;color:var(--ink-muted)">CAR-T, Gene Therapy, Biologics</span></h4>
+<p><strong>Pain:</strong> Can't afford full computational biology + wet lab teams. Discovery infrastructure is the bottleneck, not ideas.<br/><strong>Our value:</strong> Discovery-as-a-Service. Pay-per-program. Full-stack from hypothesis to validated lead without building a lab.</p>
+</div>
+<div class="card">
+<h4>🏥 Hospital Research Arms<br/><span style="font-weight:400;color:var(--ink-muted)">Apollo, Fortis, AIIMS, CMC</span></h4>
+<p><strong>Pain:</strong> Rich clinical data, no AI-multiomics capability to convert it to insights or IP.<br/><strong>Our value:</strong> Clinical data → multiomics → biomarker discovery pipeline. Co-IP arrangements. Revenue share on licensing.</p>
+</div>
+<div class="card">
+<h4>🎓 Government / Institutional<br/><span style="font-weight:400;color:var(--ink-muted)">BIRAC, DBT, ICMR, IITs</span></h4>
+<p><strong>Pain:</strong> Grant-funded research needs commercial translation. IP generation without commercialization pathways.<br/><strong>Our value:</strong> Translational research platform. Co-IP. BIRAC/DBT grant co-application partner. De-risked innovation.</p>
+</div>
+<div class="card">
+<h4>🌏 APAC Expansion Targets<br/><span style="font-weight:400;color:var(--ink-muted)">Singapore, Japan, South Korea</span></h4>
+<p><strong>Pain:</strong> Singapore (A*STAR/Biopolis) needs APAC platform plays. Japanese pharma (Takeda, Astellas) seeking Asia discovery partners.<br/><strong>Our value:</strong> Pan-APAC discovery network, diverse population datasets, Singapore as regulatory bridge to FDA/EMA.</p>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Section 09</div>
+<h2>Customer Value <em>Chain Mapping</em></h2>
+<p>We intervene at the highest-value, highest-friction steps of the drug discovery value chain. The highlighted steps are where we replace or dramatically accelerate the current bottleneck.</p>
+<div class="chain">
+<div class="chain-step active">
+<div class="chain-label">Target ID</div>
+<div class="chain-sublabel">OmicsOS multiomics</div>
+</div>
+<div class="chain-arrow">→</div>
+<div class="chain-step active">
+<div class="chain-label">Hit Discovery</div>
+<div class="chain-sublabel">AI screen + FAL HTS</div>
+</div>
+<div class="chain-arrow">→</div>
+<div class="chain-step active">
+<div class="chain-label">Lead Optim.</div>
+<div class="chain-sublabel">ADMET + SAR cycles</div>
+</div>
+<div class="chain-arrow">→</div>
+<div class="chain-step active">
+<div class="chain-label">Preclinical</div>
+<div class="chain-sublabel">Biomarker + validation</div>
+</div>
+<div class="chain-arrow">→</div>
+<div class="chain-step">
+<div class="chain-label">IND Filing</div>
+<div class="chain-sublabel">Partner handoff</div>
+</div>
+<div class="chain-arrow">→</div>
+<div class="chain-step">
+<div class="chain-label">Phase I/II/III</div>
+<div class="chain-sublabel">Companion Dx</div>
+</div>
+</div>
+<p style="font-size:12px;color:var(--ink-muted);margin-top:6px;">Highlighted = primary intervention zones. Shaded = downstream value through companion diagnostics &amp; pharmacogenomics.</p>
+<h3>Value Delivered at Each Intervention Point</h3>
+<table>
+<thead>
+<tr><th>Stage</th><th>Traditional Approach</th><th>Our Platform</th><th>Time Savings</th><th>Cost Reduction</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Target ID</strong></td>
+<td>Literature mining, manual GWAS, 12–18 months</td>
+<td>OmicsOS multiomics integration, AI target scoring, India cohort validation</td>
+<td>70% faster</td>
+<td>60% lower</td>
+</tr>
+<tr>
+<td><strong>Hit Discovery</strong></td>
+<td>HTS library screening, $2–5M, 6–12 months</td>
+<td>Virtual screen + focused FAL validation of top 500 candidates</td>
+<td>65% faster</td>
+<td>80% lower</td>
+</tr>
+<tr>
+<td><strong>Lead Optimization</strong></td>
+<td>Manual SAR iterations, 18–36 months</td>
+<td>Closed-loop DBTL: AI designs → FAL makes → AI learns → iterate</td>
+<td>50% faster</td>
+<td>50% lower</td>
+</tr>
+<tr>
+<td><strong>Preclinical Biomarker</strong></td>
+<td>$5–10M, 2–3 years per panel</td>
+<td>scRNA + spatial omics + proteomics panel in 6–9 months</td>
+<td>60% faster</td>
+<td>70% lower</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div class="footer-title">Programmable Bio</div>
+      <p class="footer-tag">Agentic operating system for distributed biology. India-first, APAC expansion via the Singapore BioHelix node.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-title">Platform</div>
+      <ul>
+        <li><a href="/platform.html">LabOS Architecture</a></li>
+        <li><a href="/platform.html">Why Now</a></li>
+        <li><a href="/platform.html">LIMS Integration</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-title">Moat &amp; Programs</div>
+      <ul>
+        <li><a href="/apollo.html">Apollo Partnership</a></li>
+        <li><a href="/apollo.html">Competitive Moat</a></li>
+        <li><a href="/programs.html">Reference Programs</a></li>
+        <li><a href="/programs.html">Offerings &amp; USP</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-title">Strategy</div>
+      <ul>
+        <li><a href="/strategy.html">Build vs Partner</a></li>
+        <li><a href="/strategy.html">Go-to-Market</a></li>
+        <li><a href="/strategy.html">Risk Mitigation</a></li>
+        <li><a href="/biohelix.html">Singapore BioHelix</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Programmable Bio. All rights reserved. &middot; <a href="mailto:skannan@oncophenomics.com">skannan@oncophenomics.com</a>
+  </div>
+</footer>
+
+</body>
+</html>

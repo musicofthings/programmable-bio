@@ -8,13 +8,23 @@ discovery for India and APAC.
 
 ## Pages
 
-- [Strategic Blueprint](https://programmablebio.tech/) — the full thesis: LabOS
-  agentic architecture, Apollo Hospitals data moat, the two flagship reference
-  programs (IVD Companion Diagnostics + Phase 4 Pharmacovigilance), risk
-  mitigation, and the pre-seed pitch outline.
-- [Singapore BioHelix Node](https://programmablebio.tech/biohelix.html) — the APAC
-  wet-lab operations hub, MiRXES partnership thesis, and the India ↔ Singapore
-  corridor architecture.
+Public site (linked from nav):
+
+- [Home](https://programmablebio.tech/) — market context + core strategic thesis
+- [Platform](https://programmablebio.tech/platform.html) — Why Now, LabOS agentic
+  architecture, LIMS integration, fine-tuning roadmap
+- [Apollo Moat](https://programmablebio.tech/apollo.html) — Apollo Hospitals
+  partnership + competitive moat analysis
+- [Programs](https://programmablebio.tech/programs.html) — two costed reference
+  programs (IVD CDx + Phase 4 PV), offerings stack, customer segments, value chain
+- [Strategy](https://programmablebio.tech/strategy.html) — build-vs-partner,
+  go-to-market, North Star + KPIs, risk mitigation incl. agentic-lab interface
+- [BioHelix](https://programmablebio.tech/biohelix.html) — Singapore APAC hub
+
+Internal-only (in repo, not linked from public nav):
+
+- `rainmatter.html` — Rainmatter VC fit analysis
+- `pitch-deck.html` — Investor pitch deck blueprint
 
 ## Status
 

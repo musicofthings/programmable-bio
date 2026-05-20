@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Platform — LabOS Architecture &mdash; Programmable Bio</title>
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">Programmable <strong>Bio</strong></a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/platform.html" class="active">Platform</a></li>
+      <li><a href="/apollo.html">Apollo Moat</a></li>
+      <li><a href="/programs.html">Programs</a></li>
+      <li><a href="/strategy.html">Strategy</a></li>
+      <li><a href="/biohelix.html">BioHelix</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="section" style="padding-top: 16px;">
+  <div class="section-label">Programmable Bio</div>
+  <h2>Platform — LabOS Architecture</h2>
+  <p style="font-size: 16px; color: var(--ink-secondary); max-width: 720px;">The agentic operating system for distributed biology. Why now, how the five-agent mesh works, and how it sits beside your LIMS.</p>
+</div>
+<div class="section">
+<div class="section-label">Section 04</div>
+<h2>Why <em>Now</em> — The 2026 Step-Change</h2>
+<p>LabOS could not have been built two years ago. Three independent waves crossed in 2025–26, and the window to claim the category is roughly 18 months before incumbents pivot.</p>
+<div class="card-grid">
+<div class="card card-accent">
+<h4>1 · Reasoning models cross the threshold</h4>
+<p>GPT-5, Claude Opus 4.7, and Gemini 2.5 Pro can now plan multi-step experiments, recover from unexpected lab state, and reason over typed scientific schemas — not just summarize. Agentic chains that were brittle in 2024 are production-ready in 2026. This is the engine that makes the LabOS agent mesh actually work.</p>
+</div>
+<div class="card card-teal">
+<h4>2 · Lab automation APIs standardize</h4>
+<p>SiLA2 v1.4 (instrument interop), Opentrons SDK v8, Automata Eva 3.0, Hamilton Venus REST, and PyLabRobot have made instruments programmable behind a uniform contract. CROs (Syngene, Aragen) now expose digital interfaces. The orchestration layer is finally buildable without bespoke integration per partner.</p>
+</div>
+<div class="card card-purple">
+<h4>3 · Indian regulatory + data infrastructure matures</h4>
+<p>CDSCO's New Drugs and Clinical Trials Rules 2019 + DPDP Act 2023 + ICMR genomic data guidelines + DigiLocker health stack now constitute a coherent (if imperfect) regulatory rail. Apollo Hospitals' EHR digitization (Apollo 24/7) is at production scale. Hospital biobanks are consent-enabled. India is suddenly platform-buildable.</p>
+</div>
+<div class="card card-blue">
+<h4>4 · Incumbent attention is misallocated</h4>
+<p>Ginkgo is decommissioning benches and pivoting to Cloud Lab. Recursion is doubling down on US phenomics. Isomorphic is protein-structure-only. No global player has a coherent India strategy — and they will not for ~18 months while they prove out their domestic businesses post-pivot. Window: now.</p>
+</div>
+</div>
+<div class="callout">
+<h4>Why not 2024 · Why not 2028</h4>
+<p>2024: reasoning models hallucinated protocols, lab APIs were proprietary, DPDP wasn't enforceable. 2028: Ginkgo Cloud Lab has an India POP, Recursion has acquired an Indian CRO, and Apollo's data has been licensed to the highest bidder. The category gets defined in <strong>2026–27</strong>.</p>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Section 06</div>
+<h2>LabOS <em>Agentic Architecture</em></h2>
+<p>LabOS is not a "natural-language protocol submission engine." That's a chatbot wrapper on SiLA2 — table stakes by 2026. LabOS is an <strong>agent mesh whose product is the experimental graph</strong>: every datapoint cryptographically tied to the typed chain of operations that produced it. This is what regulators want, what pharma BD pays for, and what trains the next generation of self-improving protocols.</p>
+<h3>The Five-Agent Mesh</h3>
+<table>
+<thead>
+<tr><th>Agent</th><th>Owns</th><th>Inputs</th><th>Outputs</th><th>Backed by</th></tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hypothesis</strong></td>
+<td>Target / mechanism proposals</td>
+<td>OmicsOS embeddings, literature, Apollo cohort</td>
+<td>Ranked hypotheses with uncertainty</td>
+<td>Frontier LLM + RAG over Atlas</td>
+</tr>
+<tr>
+<td><strong>Design</strong></td>
+<td>Hypothesis → executable experiment graph (DAG)</td>
+<td>Reagent catalog, instrument capability registry, budget</td>
+<td>Typed DAG of ops, power calcs, success criteria, cost</td>
+<td>Protocol IR + planner LLM</td>
+</tr>
+<tr>
+<td><strong>Execution</strong></td>
+<td>Brokers + monitors partner-lab runs</td>
+<td>DAG, CRO/cloud-lab API state, SLA</td>
+<td>Real-time status, anomaly flags, dynamic re-routing</td>
+<td>State machine + LLM exception handler</td>
+</tr>
+<tr>
+<td><strong>QC / Validator</strong></td>
+<td>Decides whether output is trustworthy</td>
+<td>Raw data, instrument metadata, spike-ins, controls</td>
+<td>Pass/fail + uncertainty quantification</td>
+<td>Statistical models + vision/sequence models</td>
+</tr>
+<tr>
+<td><strong>Learning</strong></td>
+<td>Updates priors, refines protocols, posts to Atlas</td>
+<td>All graph nodes + outcomes + scientist feedback</td>
+<td>Updated model weights, protocol patches, Atlas entries</td>
+<td>RLHF + offline distillation pipeline</td>
+</tr>
+</tbody>
+</table>
+<h3>System Architecture</h3>
+<div class="card" style="background: var(--bg-soft); font-family: var(--font-mono); font-size: 12px; line-height: 1.7; white-space: pre; overflow-x: auto;">
+   Scientist · Pharma BD · OmicsOS (programmatic API)
+                       │ goal / hypothesis
+                       ▼
+   ┌────────────────────────────────────────────────────────┐
+   │  AGENT MESH                                            │
+   │  Hypothesis → Design → Execution → QC → Learning       │
+   │  Shared memory: experiment graph store (provenance DB) │
+   │  Tool catalog:  instrument + assay capability registry │
+   └────────────────────────────────────────────────────────┘
+                       │ typed experiment DAG
+                       ▼
+   ┌────────────────────────────────────────────────────────┐
+   │  EXECUTION BROKER — routes nodes to the cheapest       │
+   │  qualified partner:                                    │
+   │   • Syngene / Aragen / GVK Bio  (HTS, in vivo, ADMET)  │
+   │   • MedGenome / Strand          (NGS, sequencing)      │
+   │   • Apollo Diagnostics          (clinical assays)      │
+   │   • Ginkgo Cloud Lab / Arctoris (overflow, novel)      │
+   │   • FAL Pods (Phase 2 — Opentrons/Automata, own)       │
+   └────────────────────────────────────────────────────────┘
+                       │ signed run records + raw data
+                       ▼
+   ┌────────────────────────────────────────────────────────┐
+   │  DATA PLANE                                            │
+   │  Provenance-signed graph store · LIMS sync ·           │
+   │  Atlas write (consented) · OmicsOS training corpus     │
+   └────────────────────────────────────────────────────────┘
+  </div>
+<h3>Engineering Substrate — What Makes This Defensible</h3>
+<div class="card-grid">
+<div class="card">
+<h4>Protocol IR</h4>
+<p>A typed intermediate representation for lab operations — typed extension of PAML/Aquarium. Stable contract between Design and Execution. Without this, every CRO integration is bespoke and doesn't compound.</p>
+</div>
+<div class="card">
+<h4>Capability Registry</h4>
+<p>"npm for lab ops." Every CRO and instrument publishes a capability manifest (operations supported, specs, turnaround, cost). Execution Broker reads this to make smart routing decisions instead of being a Jira board.</p>
+</div>
+<div class="card">
+<h4>Provenance Signing</h4>
+<p>Every datapoint cryptographically tied to its DAG path (Ed25519 + content-addressed graph store). Unlocks regulatory submission, IP defense, and pharma audit in one mechanism.</p>
+</div>
+<div class="card">
+<h4>Agent Eval Harness</h4>
+<p>Held-out historical programs where agents must recover known answers. Without this, you can't claim the system works; with it, you've defined the category and have a reproducible benchmark for investors and regulators.</p>
+</div>
+</div>
+<h3>Future-Proofing — The Fine-Tuning Roadmap</h3>
+<div class="card card-accent">
+<h4>Why fine-tune (and why it's not optional)</h4>
+<p>Year-1 LabOS runs on frontier LLMs (Opus 4.7, GPT-5, Gemini 2.5). Every margin point is Anthropic's or OpenAI's, every latency hit is theirs, and Apollo patient data <em>cannot legally leave India</em> under DPDP Act 2023. Fine-tuning is therefore both a margin lever and a regulatory necessity — not a "nice to have."</p>
+</div>
+<div class="phases" style="margin-top: 16px;">
+<div class="phase">
+<div class="phase-num">Y1</div>
+<div class="phase-body">
+<h4>Year 1 — Frontier wrappers + multi-model abstraction</h4>
+<p>Opus 4.7 / GPT-5 / Gemini 2.5 behind a model-router. Capture every prompt/response pair as supervised distillation data. No regulated patient data sent to frontier APIs — proxied through on-prem retrieval.</p>
+</div>
+</div>
+<div class="phase">
+<div class="phase-num">Y2</div>
+<div class="phase-body">
+<h4>Year 2 — Distill into specialist bio model on sovereign cloud</h4>
+<p>Fine-tune Llama 4 / Qwen3 / Mistral-Bio on India cohort + Atlas + captured trajectories. Deploy on AWS Hyderabad (MeitY-compliant) and Apollo on-prem nodes. Target: 80% of agent calls served by sovereign model, 20% fallback to frontier.</p>
+</div>
+</div>
+<div class="phase">
+<div class="phase-num">Y3</div>
+<div class="phase-body">
+<h4>Year 3 — Vertical specialist models per disease area</h4>
+<p>Oncology, rare disease, cardiometabolic — separately fine-tuned heads sharing a base. Each vertical's model is a licensable asset. Sovereign deployment becomes a sellable feature to MNC pharma (data residency compliance bundled).</p>
+</div>
+</div>
+<div class="phase">
+<div class="phase-num">Y4+</div>
+<div class="phase-body">
+<h4>Year 4+ — Continuous learning from the experimental graph</h4>
+<p>Every closed-loop cycle becomes training data. RLHF from scientist sign-offs. The model gets better the more LabOS is used — the compounding loop OpenAI cannot replicate without our data substrate.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-label">Section 07</div>
+<h2>LIMS Integration — <em>The Quiet Wedge</em></h2>
+<p>LIMS (Laboratory Information Management Systems) is where the lab's institutional memory lives. STARLIMS, LabWare, LabVantage, Benchling, SampleManager — every serious lab has one, and most are 10–20 years old, painful to extend, and unloved. <strong>LabOS being LIMS-native is the quiet wedge that converts a "platform sale" into an "infrastructure upgrade."</strong> Buyers approve infrastructure upgrades. Buyers stall on platform sales.</p>
+<div class="two-col">
+<div>
+<h3>Why LIMS is the wedge</h3>
+<ul>
+<li><strong>Already budgeted:</strong> labs spend $50K–$500K/year per site on LIMS. We replace or augment that line item — no net-new budget required.</li>
+<li><strong>Audit-trail mandate:</strong> 21 CFR Part 11, GxP, NABL — LIMS exists because regulators demand provenance. Our provenance-signed graph natively satisfies the same audit requirements, often better.</li>
+<li><strong>Switching cost is the moat:</strong> once we are the system of record for sample lineage and experiment state, displacing us means re-validating every protocol. Same dynamic that protects incumbents — flipped to favor us.</li>
+<li><strong>Sample lineage = data lineage:</strong> sample tracking is the exact same graph as experimental provenance. We unify two systems that have always been separate.</li>
+</ul>
+</div>
+<div>
+<h3>Integration architecture</h3>
+<div class="card card-blue">
+<h4>Three integration tiers</h4>
+<p style="margin-bottom: 8px;"><strong>Tier 1 — Sidecar (Months 0–6):</strong> Read-only adapters for STARLIMS, LabWare, LabVantage, Benchling. LabOS reads sample IDs, writes back results + provenance. Customer's existing LIMS stays canonical. Zero validation burden.</p>
+<p style="margin-bottom: 8px;"><strong>Tier 2 — Bidirectional sync (Months 6–18):</strong> Two-way integration with conflict resolution. Sample lineage authoritative in LabOS; LIMS gets the human-readable view. Sample management moves into the agent mesh.</p>
+<p style="margin: 0;"><strong>Tier 3 — LIMS replacement (Year 2+):</strong> For new sites and greenfield CROs, LabOS-native LIMS as a module. Sells as "LabOS Bench" — modern UX, agent-driven, on top of the same graph.</p>
+</div>
+</div>
+</div>
+<h3>Targeted LIMS / ELN ecosystem</h3>
+<table>
+<thead>
+<tr><th>System</th><th>Footprint</th><th>Integration priority</th><th>Year 1 target</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Benchling</strong></td><td>Biotech / academic / startup-favored ELN+LIMS</td><td>P0 (modern API, ecosystem)</td><td>Native two-way sync</td></tr>
+<tr><td><strong>STARLIMS (Abbott)</strong></td><td>Pharma QC, Indian generic pharma</td><td>P0 (Sun, Dr Reddy's, Cipla footprint)</td><td>Tier-1 sidecar</td></tr>
+<tr><td><strong>LabWare</strong></td><td>Large pharma R&amp;D, Apollo Diagnostics likely</td><td>P0 (Apollo integration path)</td><td>Tier-1 sidecar</td></tr>
+<tr><td><strong>LabVantage</strong></td><td>Mid-large pharma, biopharma</td><td>P1</td><td>Tier-1 sidecar Q4</td></tr>
+<tr><td><strong>SampleManager (Thermo)</strong></td><td>Analytical labs, Thermo instrument shops</td><td>P1</td><td>Q4 connector</td></tr>
+<tr><td><strong>SapioSciences, Genemod, eLabNext</strong></td><td>Modern challengers</td><td>P2</td><td>Year 2 if pulled by customer</td></tr>
+</tbody>
+</table>
+<div class="callout">
+<h4>The LIMS narrative for pharma BD</h4>
+<p>"You will not replace your STARLIMS deployment. <strong>LabOS sits beside it</strong>, gives your scientists agentic experiment design and your QA team better audit trails, and within a year your sample lineage is more searchable than it has ever been. No validation re-cert. No data migration. <strong>One signed MSA.</strong>"</p>
+</div>
+</div>
+
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div class="footer-title">Programmable Bio</div>
+      <p class="footer-tag">Agentic operating system for distributed biology. India-first, APAC expansion via the Singapore BioHelix node.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-title">Platform</div>
+      <ul>
+        <li><a href="/platform.html">LabOS Architecture</a></li>
+        <li><a href="/platform.html">Why Now</a></li>
+        <li><a href="/platform.html">LIMS Integration</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-title">Moat &amp; Programs</div>
+      <ul>
+        <li><a href="/apollo.html">Apollo Partnership</a></li>
+        <li><a href="/apollo.html">Competitive Moat</a></li>
+        <li><a href="/programs.html">Reference Programs</a></li>
+        <li><a href="/programs.html">Offerings &amp; USP</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <div class="footer-title">Strategy</div>
+      <ul>
+        <li><a href="/strategy.html">Build vs Partner</a></li>
+        <li><a href="/strategy.html">Go-to-Market</a></li>
+        <li><a href="/strategy.html">Risk Mitigation</a></li>
+        <li><a href="/biohelix.html">Singapore BioHelix</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Programmable Bio. All rights reserved. &middot; <a href="mailto:skannan@oncophenomics.com">skannan@oncophenomics.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
