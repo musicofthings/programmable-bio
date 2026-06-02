@@ -2,7 +2,7 @@
 
 **LabOS — the agentic operating system for distributed biology.**
 
-Stealth-stage AI × Bio platform venture orchestrating multiomics computation,
+AI × Bio platform venture orchestrating multiomics computation,
 partner wet labs, and Apollo Hospitals' clinical biobank into closed-loop
 discovery for India and APAC.
 
@@ -27,14 +27,9 @@ Nested under **Reference Programs**:
 
 Every topic page has a breadcrumb (`Home › Hub › Topic`) and prev/next nav.
 
-Internal-only (in repo, not linked from public nav):
-
-- `rainmatter.html` — Rainmatter VC fit analysis
-- `pitch-deck.html` — Investor pitch deck blueprint
-
 ## Status
 
-Pre-seed. Strategic Blueprint dated April 2026.
+Strategic Blueprint dated April 2026.
 
 ## Disclaimer
 
