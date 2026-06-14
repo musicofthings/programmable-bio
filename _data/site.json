@@ -4,5 +4,8 @@
   "url": "https://programmablebio.tech",
   "email": "skannan@oncophenomics.com",
   "year": 2026,
-  "disclaimer": "Financial projections are indicative and scenario-based. Nothing on this site constitutes an offer of securities."
+  "disclaimer": "Financial projections are indicative and scenario-based. Nothing on this site constitutes an offer of securities.",
+  "investorFormAction": "https://formsubmit.co/skannan@oncophenomics.com",
+  "investorAccessUrl": "/investor-access.html",
+  "investorDeckUrl": "/investor-deck.html"
 }

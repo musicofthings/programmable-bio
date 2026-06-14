@@ -16,3 +16,6 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="{{ title }} &mdash; Programmable Bio">
 <meta name="twitter:description" content="{{ description }}">
+{% if noindex %}
+<meta name="robots" content="noindex, nofollow">
+{% endif %}

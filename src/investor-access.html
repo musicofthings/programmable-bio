@@ -1,0 +1,20 @@
+---
+permalink: investor-access.html
+layout: layouts/base.njk
+title: "Investor Access Granted"
+description: "Access granted to the Programmable Bio investor pitch deck."
+noindex: true
+eleventyExcludeFromCollections: true
+extraCss: investor-deck.css
+---
+<div class="access-panel">
+  <div class="section-label">Investors</div>
+  <h2>Access <em>granted</em></h2>
+  <p>Thank you. Your request has been received. You now have access to the investor pitch deck for the next 7 days on this browser.</p>
+  <a href="{{ site.investorDeckUrl }}" class="form-submit" id="deck-link">Open pitch deck &rarr;</a>
+  <p style="font-size: 12px; color: var(--ink-muted); margin-top: 24px;">Questions? <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+</div>
+<script src="/assets/investor-gate.js"></script>
+<script>
+  if (window.pbInvestorGate) window.pbInvestorGate.grantAccess();
+</script>

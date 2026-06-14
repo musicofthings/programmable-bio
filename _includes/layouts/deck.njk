@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include "partials/head.njk" %}
+  <link rel="stylesheet" href="/assets/investor-deck.css">
+</head>
+<body class="deck-body">
+  <header class="deck-header">
+    <a href="/" class="deck-logo">Programmable <strong>Bio</strong></a>
+    <div class="deck-header-actions">
+      <span class="deck-progress" id="deck-progress">1</span>
+      <a href="/investors.html" class="deck-exit">Exit</a>
+    </div>
+  </header>
+  <main class="deck-main" id="deck-main">
+    {{ content | safe }}
+  </main>
+  <nav class="deck-nav" aria-label="Slide navigation">
+    <button type="button" class="deck-nav-btn" id="deck-prev" aria-label="Previous slide">&larr;</button>
+    <button type="button" class="deck-nav-btn" id="deck-next" aria-label="Next slide">&rarr;</button>
+  </nav>
+  <script src="/assets/investor-gate.js"></script>
+  <script src="/assets/investor-deck.js"></script>
+</body>
+</html>

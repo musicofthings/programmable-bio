@@ -11,7 +11,8 @@ module.exports = function (eleventyConfig) {
           item.url &&
           item.url !== "/404.html/" &&
           !item.url.endsWith(".txt") &&
-          !item.url.endsWith(".xml")
+          !item.url.endsWith(".xml") &&
+          !item.data.noindex
       );
   });
 

@@ -1,0 +1,83 @@
+---
+permalink: investors.html
+layout: layouts/base.njk
+title: "Investors"
+description: "Request access to the Programmable Bio investor pitch deck. LabOS — India's agentic lab operating system."
+navActive: "home"
+breadcrumb:
+  - label: "Investors"
+extraCss: investor-deck.css
+---
+<div class="investor-hero">
+  <div class="section-label">Investors</div>
+  <h2>Investor <em>materials</em></h2>
+  <p class="lead">Programmable Bio is building LabOS — the agentic operating system for distributed biology, anchored on Apollo Hospitals' clinical substrate and expanding to APAC via Singapore BioHelix.</p>
+</div>
+
+<div id="access-alert" class="form-alert form-alert-error" style="display: none;">
+  Please complete the form below to access the pitch deck.
+</div>
+
+<div class="investor-grid">
+  <div class="investor-highlights">
+    <h3>Investment highlights</h3>
+    <ul>
+      <li><strong>Category-defining window</strong> — autonomous labs commercial in 2026; no indigenous India platform at scale</li>
+      <li><strong>Apollo moat</strong> — pan-India EHR + biobank substrate; 3&ndash;5 year replication barrier</li>
+      <li><strong>LabOS platform</strong> — five-agent mesh, provenance-signed experimental graph, LIMS-native wedge</li>
+      <li><strong>Dual revenue engine</strong> — SaaS (LabOS/OmicsCloud) + milestone discovery sprints (IVD, PV)</li>
+      <li><strong>APAC corridor</strong> — Singapore BioHelix node + MiRXES i4.0 manufacturing partnership</li>
+      <li><strong>Software margins</strong> — partner CRO execution in Phase 1; no $50M+ FAL CapEx</li>
+    </ul>
+    <p style="font-size: 12px; color: var(--ink-muted); margin-top: 20px;">Public blueprint at <a href="/overview.html">programmablebio.tech</a>. Deck access is for qualified investors and strategic partners only.</p>
+  </div>
+
+  <div class="investor-form">
+    <h3>Request pitch deck</h3>
+    <form action="{{ site.investorFormAction }}" method="POST">
+      <input type="hidden" name="_subject" value="Investor deck request — Programmable Bio">
+      <input type="hidden" name="_next" value="{{ site.url }}{{ site.investorAccessUrl }}">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+      <div class="form-field">
+        <label for="inv-name">Full name</label>
+        <input type="text" id="inv-name" name="name" required autocomplete="name">
+      </div>
+      <div class="form-field">
+        <label for="inv-email">Work email</label>
+        <input type="email" id="inv-email" name="email" required autocomplete="email">
+      </div>
+      <div class="form-field">
+        <label for="inv-org">Organization / fund</label>
+        <input type="text" id="inv-org" name="organization" required autocomplete="organization">
+      </div>
+      <div class="form-field">
+        <label for="inv-type">Investor type</label>
+        <select id="inv-type" name="investor_type" required>
+          <option value="">Select&hellip;</option>
+          <option value="VC">Venture capital</option>
+          <option value="Angel">Angel / family office</option>
+          <option value="Strategic">Strategic (pharma / CRO / hospital)</option>
+          <option value="Growth">Growth / PE</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label for="inv-msg">Message <span style="font-weight:400;text-transform:none;">(optional)</span></label>
+        <textarea id="inv-msg" name="message" placeholder="Brief context on your interest or fund thesis…"></textarea>
+      </div>
+      <button type="submit" class="form-submit">Request access &rarr;</button>
+      <p class="form-note">{{ site.disclaimer }} By submitting, you agree to be contacted regarding Programmable Bio. We do not share your information with third parties.</p>
+    </form>
+  </div>
+</div>
+
+<script>
+(function () {
+  if (new URLSearchParams(window.location.search).get("access") === "required") {
+    var el = document.getElementById("access-alert");
+    if (el) el.style.display = "block";
+  }
+})();
+</script>
