@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include "partials/head.njk" %}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  {% include "partials/nav.njk" %}
+  <main id="main">
+    {% if breadcrumb %}
+      {% include "partials/breadcrumb.njk" %}
+    {% endif %}
+    {{ content | safe }}
+    {% if pageNavHub or prev or next %}
+      {% include "partials/page-nav.njk" %}
+    {% endif %}
+  </main>
+  {% include "partials/footer.njk" %}
+</body>
+</html>

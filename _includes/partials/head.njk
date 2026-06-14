@@ -1,0 +1,18 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ title }} &mdash; Programmable Bio</title>
+<meta name="description" content="{{ description }}">
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+{% if extraCss %}
+<link rel="stylesheet" href="/assets/{{ extraCss }}">
+{% endif %}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Programmable Bio">
+<meta property="og:title" content="{{ title }} &mdash; Programmable Bio">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ title }} &mdash; Programmable Bio">
+<meta name="twitter:description" content="{{ description }}">

@@ -21,3 +21,5 @@ notes/
 *.tmp
 *.bak
 *.log
+node_modules/
+_site/

@@ -1,0 +1,21 @@
+<nav class="page-nav" aria-label="Topic navigation">
+  {% if prev %}
+    <a class="page-nav-prev" href="{% if prev.url %}/{{ prev.url }}{% else %}/{% endif %}">
+      <span class="page-nav-dir">&larr; Previous</span>
+      <span class="page-nav-title">{{ prev.title }}</span>
+    </a>
+  {% else %}
+    <div class="page-nav-spacer" aria-hidden="true"></div>
+  {% endif %}
+  {% if pageNavHub %}
+    <a class="page-nav-hub" href="{% if pageNavHub.url %}/{{ pageNavHub.url }}{% else %}/{% endif %}">{{ pageNavHub.label }}</a>
+  {% endif %}
+  {% if next %}
+    <a class="page-nav-next" href="{% if next.url %}/{{ next.url }}{% else %}/{% endif %}">
+      <span class="page-nav-dir">Next &rarr;</span>
+      <span class="page-nav-title">{{ next.title }}</span>
+    </a>
+  {% else %}
+    <div class="page-nav-spacer" aria-hidden="true"></div>
+  {% endif %}
+</nav>

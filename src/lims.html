@@ -1,0 +1,60 @@
+---
+permalink: lims.html
+layout: layouts/base.njk
+title: "LIMS Integration"
+description: "The quiet wedge — sit beside STARLIMS with no validation re-certification burden."
+navActive: "platform"
+breadcrumb:
+  - label: "Platform"
+    url: "platform.html"
+  - label: "LIMS Integration"
+prev:
+  title: "LabOS Agentic Architecture"
+  url: "labos.html"
+pageNavHub:
+  label: "All Platform topics"
+  url: "platform.html"
+---
+<div class="section">
+<div class="section-label">Section 07</div>
+<h2>LIMS Integration — <em>The Quiet Wedge</em></h2>
+<p>LIMS (Laboratory Information Management Systems) is where the lab's institutional memory lives. STARLIMS, LabWare, LabVantage, Benchling, SampleManager — every serious lab has one, and most are 10–20 years old, painful to extend, and unloved. <strong>LabOS being LIMS-native is the quiet wedge that converts a "platform sale" into an "infrastructure upgrade."</strong> Buyers approve infrastructure upgrades. Buyers stall on platform sales.</p>
+<div class="two-col">
+<div>
+<h3>Why LIMS is the wedge</h3>
+<ul>
+<li><strong>Already budgeted:</strong> labs spend $50K–$500K/year per site on LIMS. We replace or augment that line item — no net-new budget required.</li>
+<li><strong>Audit-trail mandate:</strong> 21 CFR Part 11, GxP, NABL — LIMS exists because regulators demand provenance. Our provenance-signed graph natively satisfies the same audit requirements, often better.</li>
+<li><strong>Switching cost is the moat:</strong> once we are the system of record for sample lineage and experiment state, displacing us means re-validating every protocol. Same dynamic that protects incumbents — flipped to favor us.</li>
+<li><strong>Sample lineage = data lineage:</strong> sample tracking is the exact same graph as experimental provenance. We unify two systems that have always been separate.</li>
+</ul>
+</div>
+<div>
+<h3>Integration architecture</h3>
+<div class="card card-blue">
+<h4>Three integration tiers</h4>
+<p style="margin-bottom: 8px;"><strong>Tier 1 — Sidecar (Months 0–6):</strong> Read-only adapters for STARLIMS, LabWare, LabVantage, Benchling. LabOS reads sample IDs, writes back results + provenance. Customer's existing LIMS stays canonical. Zero validation burden.</p>
+<p style="margin-bottom: 8px;"><strong>Tier 2 — Bidirectional sync (Months 6–18):</strong> Two-way integration with conflict resolution. Sample lineage authoritative in LabOS; LIMS gets the human-readable view. Sample management moves into the agent mesh.</p>
+<p style="margin: 0;"><strong>Tier 3 — LIMS replacement (Year 2+):</strong> For new sites and greenfield CROs, LabOS-native LIMS as a module. Sells as "LabOS Bench" — modern UX, agent-driven, on top of the same graph.</p>
+</div>
+</div>
+</div>
+<h3>Targeted LIMS / ELN ecosystem</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr><th>System</th><th>Footprint</th><th>Integration priority</th><th>Year 1 target</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Benchling</strong></td><td>Biotech / academic / startup-favored ELN+LIMS</td><td>P0 (modern API, ecosystem)</td><td>Native two-way sync</td></tr>
+<tr><td><strong>STARLIMS (Abbott)</strong></td><td>Pharma QC, Indian generic pharma</td><td>P0 (Sun, Dr Reddy's, Cipla footprint)</td><td>Tier-1 sidecar</td></tr>
+<tr><td><strong>LabWare</strong></td><td>Large pharma R&amp;D, Apollo Diagnostics likely</td><td>P0 (Apollo integration path)</td><td>Tier-1 sidecar</td></tr>
+<tr><td><strong>LabVantage</strong></td><td>Mid-large pharma, biopharma</td><td>P1</td><td>Tier-1 sidecar Q4</td></tr>
+<tr><td><strong>SampleManager (Thermo)</strong></td><td>Analytical labs, Thermo instrument shops</td><td>P1</td><td>Q4 connector</td></tr>
+<tr><td><strong>SapioSciences, Genemod, eLabNext</strong></td><td>Modern challengers</td><td>P2</td><td>Year 2 if pulled by customer</td></tr>
+</tbody>
+</table></div>
+<div class="callout">
+<h4>The LIMS narrative for pharma BD</h4>
+<p>"You will not replace your STARLIMS deployment. <strong>LabOS sits beside it</strong>, gives your scientists agentic experiment design and your QA team better audit trails, and within a year your sample lineage is more searchable than it has ever been. No validation re-cert. No data migration. <strong>One signed MSA.</strong>"</p>
+</div>
+</div>

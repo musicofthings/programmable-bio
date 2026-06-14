@@ -1,0 +1,18 @@
+<nav class="site-nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">Programmable <strong>Bio</strong></a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-cb" aria-label="Open menu">
+    <label for="nav-toggle" class="nav-toggle">
+      <span></span><span></span><span></span>
+    </label>
+    <ul class="nav-links">
+      <li><a href="/"{% if navActive == "home" %} class="active" aria-current="page"{% endif %}>Home</a></li>
+      <li><a href="/overview.html"{% if navActive == "overview" %} class="active" aria-current="page"{% endif %}>Overview</a></li>
+      <li><a href="/platform.html"{% if navActive == "platform" %} class="active" aria-current="page"{% endif %}>Platform</a></li>
+      <li><a href="/apollo.html"{% if navActive == "apollo" %} class="active" aria-current="page"{% endif %}>Apollo Moat</a></li>
+      <li><a href="/programs.html"{% if navActive == "programs" %} class="active" aria-current="page"{% endif %}>Programs</a></li>
+      <li><a href="/strategy.html"{% if navActive == "strategy" %} class="active" aria-current="page"{% endif %}>Strategy</a></li>
+      <li><a href="/biohelix.html"{% if navActive == "biohelix" %} class="active" aria-current="page"{% endif %}>BioHelix</a></li>
+    </ul>
+  </div>
+</nav>

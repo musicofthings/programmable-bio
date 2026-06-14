@@ -6,6 +6,20 @@ AI × Bio platform venture orchestrating multiomics computation,
 partner wet labs, and Apollo Hospitals' clinical biobank into closed-loop
 discovery for India and APAC.
 
+Live site: [programmablebio.tech](https://programmablebio.tech)
+
+## Development
+
+This site is built with [Eleventy](https://www.11ty.dev/) from templates in `src/` and shared partials in `_includes/`.
+
+```bash
+npm install
+npm run serve   # local preview at http://localhost:8080
+npm run build   # output to _site/
+```
+
+GitHub Actions (`.github/workflows/pages.yml`) builds `_site/` and deploys to GitHub Pages on push to `main`. Enable **GitHub Pages → Source: GitHub Actions** in the repository settings if not already configured.
+
 ## Pages
 
 Top-level navigation hubs (7 items, with hamburger collapse on mobile):
@@ -26,6 +40,16 @@ Nested under **Reference Programs**:
 | `pharma` (sub-sub-hub) | `target-discovery`, `drug-discovery`, `in-silico`, `preclinical`, `clinical` (teaser), `pharmacovigilance` |
 
 Every topic page has a breadcrumb (`Home › Hub › Topic`) and prev/next nav.
+
+## Project layout
+
+| Path | Purpose |
+|---|---|
+| `src/` | Page content + front matter |
+| `_includes/` | Layout and partials (nav, footer, head) |
+| `_data/site.json` | Site-wide metadata |
+| `assets/` | CSS, favicon |
+| `scripts/migrate.py` | One-time HTML → src migration helper |
 
 ## Status
 
