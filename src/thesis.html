@@ -14,24 +14,33 @@ prev:
 pageNavHub:
   label: "All Overview topics"
   url: "overview.html"
+related:
+  - label: "LabOS Architecture"
+    url: "labos.html"
+  - label: "Offerings & USP"
+    url: "offerings.html"
+  - label: "Apollo Partnership"
+    url: "apollo-partnership.html"
 ---
 <div class="section">
-<div class="section-label">Section 02</div>
+<div class="section-label">Overview &middot; Thesis</div>
 <h2>Core <em>Strategic Thesis</em></h2>
 <p>The fundamental insight driving this venture is that biology's rate-limiting step has always been experimental data generation — not ideas. Autonomous labs eliminate this bottleneck by closing the Design-Build-Test-Learn (DBTL) loop at machine speed. But building the robots themselves is not the moat. The moat is in three things: <strong>the experimental graph</strong> (the typed, provenance-signed record of how every datapoint was produced), <strong>proprietary clinical data</strong> (Apollo Hospitals biobank), and <strong>an agent mesh</strong> that turns natural-language hypotheses into auditable wet-lab execution across heterogeneous partners.</p>
+
 <div class="callout">
 <h4>Our thesis in one sentence</h4>
 <p><strong>LabOS</strong> is the agentic operating system for distributed biology — a multi-agent mesh that orchestrates multiomics computation, partner wet labs, and Apollo Hospitals' clinical biobank into closed-loop discovery. We do not own robots; we own <strong>the experimental graph</strong> and the <strong>India-tuned models</strong> running on top of it.</p>
 </div>
+
 <h3>The Three-Layer Stack — LabOS at the Center</h3>
 <div class="card-grid">
 <div class="card card-accent">
 <h4>Layer 1 · OmicsOS (the AI brain feeding LabOS)</h4>
-<p>Multi-modal model integrating WGS/WES, scRNA-seq, spatial omics, proteomics, metabolomics, epigenomics. Generates hypotheses and ranks targets. Frontier-model wrappers in Year 1; <strong>fine-tuned, India-cohort-trained bio model</strong> on sovereign cloud by Year 2 (see Future-Proofing section).</p>
+<p>Multi-modal model integrating WGS/WES, scRNA-seq, spatial omics, proteomics, metabolomics, epigenomics. Generates hypotheses and ranks targets. Frontier-model wrappers in Year 1; <strong>fine-tuned, India-cohort-trained bio model</strong> on sovereign cloud by Year 2 (see <a href="/labos.html">LabOS fine-tuning roadmap</a>).</p>
 </div>
 <div class="card card-teal" style="grid-column: 1 / -1;">
 <h4>Layer 2 · LabOS — the Agentic Operating System <span class="badge badge-accent">FLAGSHIP</span></h4>
-<p>A five-agent mesh (Hypothesis → Design → Execution → QC/Validator → Learning) that translates a goal into a typed experiment graph, routes nodes to the cheapest qualified partner (Syngene, Aragen, MedGenome, Ginkgo Cloud Lab, FAL Pods), captures provenance-signed results, and feeds the loop. <strong>LIMS-native</strong>: ingests from and writes to STARLIMS, LabWare, Benchling, LabVantage. No robots owned. The experimental graph is the moat.</p>
+<p>A five-agent mesh (Hypothesis &rarr; Design &rarr; Execution &rarr; QC/Validator &rarr; Learning) that translates a goal into a typed experiment graph, routes nodes to the cheapest qualified partner (Syngene, Aragen, MedGenome, Ginkgo Cloud Lab, FAL Pods), captures provenance-signed results, and feeds the loop. <strong>LIMS-native</strong>: ingests from and writes to STARLIMS, LabWare, Benchling, LabVantage. No robots owned. The experimental graph is the moat.</p>
 </div>
 <div class="card card-purple">
 <h4>Layer 3 · ClinicalBridge (regulatory translation)</h4>
@@ -39,7 +48,26 @@ pageNavHub:
 </div>
 <div class="card card-blue">
 <h4>Data Substrate · Apollo Hospitals Biobank</h4>
-<p>Anchor data partnership with Apollo — pan-India EHR, longitudinal clinical phenotyping, consented biospecimens. The India Biomarker Atlas is constructed on top of this substrate. See dedicated Apollo Partnership section.</p>
+<p>Anchor data partnership with Apollo — pan-India EHR, longitudinal clinical phenotyping, consented biospecimens. The <a href="/biomarker-atlas.html">India Biomarker Atlas</a> is constructed on top of this substrate. See <a href="/apollo-partnership.html">Apollo Partnership</a>.</p>
 </div>
 </div>
+
+<h3>Business model</h3>
+<div class="table-scroll"><table>
+<thead><tr><th>Revenue line</th><th>Model</th><th>Typical ACV</th></tr></thead>
+<tbody>
+<tr><td><strong>LabOS Platform</strong></td><td>SaaS per site + broker take-rate</td><td>$250K&ndash;1.5M/yr</td></tr>
+<tr><td><strong>Discovery Sprints</strong></td><td>Milestone-gated programs</td><td>$0.5M&ndash;8M</td></tr>
+<tr><td><strong>Atlas licensing</strong></td><td>Annual data license</td><td>$200K&ndash;2M/yr</td></tr>
+<tr><td><strong>PV surveillance</strong></td><td>Recurring contract</td><td>$2.5M/yr</td></tr>
+<tr><td><strong>Co-development</strong></td><td>Equity + royalty</td><td>Long-tail</td></tr>
+</tbody>
+</table></div>
+
+<h3>What we do not do (Phase 1)</h3>
+<ul>
+<li><strong>Own robotic labs</strong> — partner CROs and cloud labs; see <a href="/fal.html">Build vs Partner</a></li>
+<li><strong>Sell diagnostics kits directly</strong> — we develop CDx with pharma partners; manufacturing via MiRXES/BioHelix at scale</li>
+<li><strong>Replace Apollo clinical care</strong> — we are a research and discovery layer on consented data</li>
+</ul>
 </div>

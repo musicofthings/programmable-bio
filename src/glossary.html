@@ -1,0 +1,60 @@
+---
+permalink: glossary.html
+layout: layouts/base.njk
+title: "Glossary"
+description: "Key terms used across the Programmable Bio strategic blueprint — LabOS, OmicsOS, ClinicalBridge, and more."
+navActive: "home"
+breadcrumb:
+  - label: "Glossary"
+related:
+  - label: "LabOS Architecture"
+    url: "labos.html"
+  - label: "Strategic Thesis"
+    url: "thesis.html"
+  - label: "India Biomarker Atlas"
+    url: "biomarker-atlas.html"
+---
+<div class="section">
+  <div class="section-label">Resources</div>
+  <h2>Glossary</h2>
+  <p>Key terms used across this blueprint. For architecture detail, start with <a href="/labos.html">LabOS Agentic Architecture</a>.</p>
+
+  <h3>Platform &amp; agents</h3>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Term</th><th>Definition</th></tr></thead>
+    <tbody>
+      <tr><td><strong>LabOS</strong></td><td>Agentic lab operating system — five-agent mesh (Hypothesis, Design, Execution, QC/Validator, Learning) that produces the experimental graph.</td></tr>
+      <tr><td><strong>Experimental graph</strong></td><td>Typed, provenance-signed DAG of lab operations; every datapoint tied to the chain that produced it.</td></tr>
+      <tr><td><strong>OmicsOS</strong></td><td>Multiomics AI layer — WGS/WES, scRNA-seq, spatial, proteomics — feeding hypotheses into LabOS.</td></tr>
+      <tr><td><strong>ClinicalBridge</strong></td><td>Regulatory translation layer — CDSCO, FDA, TGA, PMDA dossiers and bridging packages.</td></tr>
+      <tr><td><strong>Execution Broker</strong></td><td>LabOS component routing experiment nodes to qualified CRO/cloud-lab partners via the capability registry.</td></tr>
+      <tr><td><strong>Protocol IR</strong></td><td>Typed intermediate representation for lab operations — stable contract between Design and Execution agents.</td></tr>
+      <tr><td><strong>Capability registry</strong></td><td>&ldquo;npm for lab ops&rdquo; — manifests of what each CRO/instrument supports, for smart routing.</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Discovery &amp; data</h3>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Term</th><th>Definition</th></tr></thead>
+    <tbody>
+      <tr><td><strong>DBTL</strong></td><td>Design-Build-Test-Learn — closed-loop cycle compressed by agentic orchestration.</td></tr>
+      <tr><td><strong>India Biomarker Atlas</strong></td><td>Proprietary biomarker database on Apollo substrate — see <a href="/biomarker-atlas.html">dedicated page</a>.</td></tr>
+      <tr><td><strong>Discovery Sprint</strong></td><td>Time-boxed, milestone-gated program (90 days to 18 months) powered by LabOS end-to-end.</td></tr>
+      <tr><td><strong>CDx</strong></td><td>Companion diagnostic — test paired with a therapeutic to identify patients likely to respond.</td></tr>
+      <tr><td><strong>NAMs</strong></td><td>New Approach Methodologies — organoids, organ-on-chip, 3D culture replacing animal testing.</td></tr>
+      <tr><td><strong>PGx</strong></td><td>Pharmacogenomics — how genetic variants affect drug response (e.g. CYP2C19, VKORC1 in Indian populations).</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Infrastructure &amp; strategy</h3>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Term</th><th>Definition</th></tr></thead>
+    <tbody>
+      <tr><td><strong>FAL</strong></td><td>Fully Autonomous Lab — robotic wet-lab execution. We partner in Phase 1; own pods in Phase 2+. See <a href="/fal.html">Build vs Partner</a>.</td></tr>
+      <tr><td><strong>LIMS</strong></td><td>Laboratory Information Management System — STARLIMS, LabWare, Benchling, etc. LabOS integrates as sidecar first.</td></tr>
+      <tr><td><strong>BioHelix</strong></td><td>Singapore APAC node — MiRXES i4.0 wet lab, Biopolis ecosystem, India&ndash;Singapore corridor. See <a href="/biohelix.html">BioHelix page</a>.</td></tr>
+      <tr><td><strong>DPDP Act 2023</strong></td><td>India Digital Personal Data Protection Act — governs patient data; drives sovereign model requirement.</td></tr>
+      <tr><td><strong>Closed-loop discovery cycle</strong></td><td>North Star unit: hypothesis &rarr; design &rarr; execute &rarr; validate insight. See <a href="/kpis.html">KPIs</a>.</td></tr>
+    </tbody>
+  </table></div>
+</div>

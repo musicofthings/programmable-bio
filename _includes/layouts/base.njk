@@ -11,6 +11,9 @@
       {% include "partials/breadcrumb.njk" %}
     {% endif %}
     {{ content | safe }}
+    {% if related %}
+      {% include "partials/related.njk" %}
+    {% endif %}
     {% if pageNavHub or prev or next %}
       {% include "partials/page-nav.njk" %}
     {% endif %}

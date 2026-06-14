@@ -19,73 +19,100 @@ next:
 pageNavHub:
   label: "All Reference Programs topics"
   url: "reference-programs.html"
+related:
+  - label: "Pharmacovigilance Sprint"
+    url: "pharmacovigilance.html"
+  - label: "Apollo Partnership"
+    url: "apollo-partnership.html"
+  - label: "Case Studies"
+    url: "case-studies.html"
 ---
 <div class="section">
   <div class="section-label">Reference Programs &middot; Diagnostics</div>
   <h2>IVD <em>Companion Diagnostics</em></h2>
-  <p>One of two flagship reference programs. Built on the Apollo Hospitals biobank, orchestrated through LabOS, and packaged for CDSCO + FDA bridging via ClinicalBridge. This page covers the pre-approval companion-diagnostics track; for the pharma R&amp;D lifecycle, see the <a href="/pharma.html" style="color: var(--accent);">Pharma section</a>.</p>
+  <p>One of two flagship reference programs. Built on the Apollo Hospitals biobank, orchestrated through LabOS, and packaged for CDSCO + FDA bridging via ClinicalBridge. For the full pharma R&amp;D lifecycle, see <a href="/pharma.html">Pharma R&amp;D</a>.</p>
+
   <div class="card card-accent">
-<h4>The customer scenario</h4>
-<p>A pharma partner has a Phase 2 oncology drug — say, a targeted therapy in NSCLC or HER2-low breast cancer. To enter Phase 3 with a stratified label, they need a regulator-grade companion diagnostic (CDx) that predicts responders. Traditional path: outsource to Roche Dx or Thermo Fisher — 4–6 years, $30–50M, parallel to clinical development, and almost always FDA-optimized with CDSCO as an afterthought.</p>
-</div>
-<table style="margin-top: 16px;">
-<thead>
-<tr><th>Phase</th><th>Months</th><th>LabOS execution</th><th>Cost</th></tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Biomarker discovery</strong></td>
-<td>0–3</td>
-<td>OmicsOS Hypothesis Agent over Apollo NSCLC cohort (scRNA + WGS + IHC) + literature. Ranked candidate biomarkers with uncertainty.</td>
-<td>$0.4M</td>
-</tr>
-<tr>
-<td><strong>Analytical validation</strong></td>
-<td>3–9</td>
-<td>Design Agent emits typed DAGs; Execution Broker routes to Syngene (assay dev), MedGenome (NGS validation). Precision, accuracy, LoD/LoQ per CLSI EP05/EP17.</td>
-<td>$1.6M</td>
-</tr>
-<tr>
-<td><strong>Clinical validation</strong></td>
-<td>9–15</td>
-<td>Retrospective Apollo cohort (consented, IRB-approved) + prospective sub-study. QC Agent enforces sample-quality gates. Provenance-signed graph for every datapoint.</td>
-<td>$2.5M</td>
-</tr>
-<tr>
-<td><strong>Regulatory submission</strong></td>
-<td>15–18</td>
-<td>ClinicalBridge packages CDSCO IVD dossier + FDA pre-submission Q-Sub. Cross-agency bridging strategy.</td>
-<td>$0.5M</td>
-</tr>
-<tr style="background: var(--bg-soft);">
-<td><strong>Total</strong></td>
-<td><strong>18 months</strong></td>
-<td><strong>vs. 4–6 years traditional</strong></td>
-<td><strong>$5.0M vs. $30–50M</strong></td>
-</tr>
-</tbody>
-</table></div>
-<div class="two-col" style="margin-top: 16px;">
-<div class="card card-teal">
-<h4>Revenue to us</h4>
-<ul>
-<li><strong>$1.5M upfront</strong> sprint fee (LabOS + sample analysis + analytical validation)</li>
-<li><strong>$500K × 3 milestones</strong> (analytical lock, clinical lock, regulatory acceptance) = $1.5M</li>
-<li><strong>$5–10/test royalty</strong> on Dx kit sales (at peak 50K–200K tests/yr → $0.25–2M/yr recurring)</li>
-<li><strong>5–10% royalty</strong> on the drug's CDx-stratified clinical revenue (long-tail, decade+)</li>
-<li><strong>Apollo revenue share:</strong> 25–35% of kit royalty + Atlas licensing uplift</li>
-</ul>
-</div>
-<div class="card card-purple">
-<h4>Why this works for the pharma buyer</h4>
-<ul>
-<li><strong>6x faster, 6–10x cheaper</strong> than the Roche Dx route</li>
-<li><strong>India-first regulatory path</strong> de-risks domestic launch; FDA bridging via Q-Sub strategy</li>
-<li><strong>Auditable provenance</strong> — every datapoint signed to its DAG; reviewer can replay</li>
-<li><strong>Apollo clinical credibility</strong> on the submission — investigator-initiated extension built in</li>
-<li><strong>Companion Dx ready for Phase 3 enrollment</strong> stratification, accelerating clinical timeline</li>
-</ul>
-</div>
-</div>
- PROGRAM B: PHASE 4 PHARMACOVIGILANCE
+    <h4>The customer scenario</h4>
+    <p>A pharma partner has a Phase 2 oncology drug — say, a targeted therapy in NSCLC or HER2-low breast cancer. To enter Phase 3 with a stratified label, they need a regulator-grade companion diagnostic (CDx) that predicts responders. Traditional path: outsource to Roche Dx or Thermo Fisher — 4–6 years, $30–50M, parallel to clinical development, and almost always FDA-optimized with CDSCO as an afterthought.</p>
+  </div>
+
+  <h3>Program timeline</h3>
+  <div class="table-scroll"><table>
+    <thead>
+      <tr><th>Phase</th><th>Months</th><th>LabOS execution</th><th>Cost</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Biomarker discovery</strong></td>
+        <td>0–3</td>
+        <td>OmicsOS Hypothesis Agent over Apollo NSCLC cohort (scRNA + WGS + IHC) + literature. Ranked candidate biomarkers with uncertainty.</td>
+        <td>$0.4M</td>
+      </tr>
+      <tr>
+        <td><strong>Analytical validation</strong></td>
+        <td>3–9</td>
+        <td>Design Agent emits typed DAGs; Execution Broker routes to Syngene (assay dev), MedGenome (NGS validation). Precision, accuracy, LoD/LoQ per CLSI EP05/EP17.</td>
+        <td>$1.6M</td>
+      </tr>
+      <tr>
+        <td><strong>Clinical validation</strong></td>
+        <td>9–15</td>
+        <td>Retrospective Apollo cohort (consented, IRB-approved) + prospective sub-study. QC Agent enforces sample-quality gates. Provenance-signed graph for every datapoint.</td>
+        <td>$2.5M</td>
+      </tr>
+      <tr>
+        <td><strong>Regulatory submission</strong></td>
+        <td>15–18</td>
+        <td>ClinicalBridge packages CDSCO IVD dossier + FDA pre-submission Q-Sub. Cross-agency bridging strategy.</td>
+        <td>$0.5M</td>
+      </tr>
+      <tr style="background: var(--bg-soft);">
+        <td><strong>Total</strong></td>
+        <td><strong>18 months</strong></td>
+        <td><strong>vs. 4–6 years traditional</strong></td>
+        <td><strong>$5.0M vs. $30–50M</strong></td>
+      </tr>
+    </tbody>
+  </table></div>
+
+  <h3>Regulatory pathway</h3>
+  <div class="two-col">
+    <div class="card card-teal">
+      <h4>CDSCO-first (India launch)</h4>
+      <p>IVD dossier under New Medical Devices Rules 2017. Apollo investigator-initiated extension for clinical validation. Typical review 6&ndash;9 months post-submission.</p>
+    </div>
+    <div class="card card-blue">
+      <h4>FDA bridging (global label)</h4>
+      <p>Q-Sub pre-submission leveraging Apollo retrospective cohort + analytical validation data. MiRXES/BioHelix path for APAC manufacturing if kit production scales. See <a href="/biohelix.html">Singapore BioHelix</a>.</p>
+    </div>
+  </div>
+
+  <div class="two-col" style="margin-top: 16px;">
+    <div class="card card-teal">
+      <h4>Revenue to us</h4>
+      <ul>
+        <li><strong>$1.5M upfront</strong> sprint fee (LabOS + sample analysis + analytical validation)</li>
+        <li><strong>$500K &times; 3 milestones</strong> (analytical lock, clinical lock, regulatory acceptance) = $1.5M</li>
+        <li><strong>$5&ndash;10/test royalty</strong> on Dx kit sales (at peak 50K&ndash;200K tests/yr &rarr; $0.25&ndash;2M/yr recurring)</li>
+        <li><strong>5&ndash;10% royalty</strong> on the drug&rsquo;s CDx-stratified clinical revenue (long-tail, decade+)</li>
+        <li><strong>Apollo revenue share:</strong> 25&ndash;35% of kit royalty + Atlas licensing uplift</li>
+      </ul>
+    </div>
+    <div class="card card-purple">
+      <h4>Why this works for the pharma buyer</h4>
+      <ul>
+        <li><strong>6&times; faster, 6&ndash;10&times; cheaper</strong> than the Roche Dx route</li>
+        <li><strong>India-first regulatory path</strong> de-risks domestic launch; FDA bridging via Q-Sub strategy</li>
+        <li><strong>Auditable provenance</strong> — every datapoint signed to its DAG; reviewer can replay</li>
+        <li><strong>Apollo clinical credibility</strong> on the submission — investigator-initiated extension built in</li>
+        <li><strong>Companion Dx ready for Phase 3 enrollment</strong> stratification, accelerating clinical timeline</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="engagement-box">
+    <h4>Engagement terms</h4>
+    <p style="margin:0"><strong>$5M total</strong> over 18 months, milestone-gated. Exit at analytical lock, clinical lock, or regulatory acceptance. Co-development option for kit commercialization. Contact <a href="mailto:skannan@oncophenomics.com">skannan@oncophenomics.com</a> for program scoping.</p>
+  </div>
 </div>

@@ -4,12 +4,32 @@ layout: layouts/base.njk
 title: "Platform"
 description: "How LabOS works — the agentic operating system, why it is buildable now, and LIMS integration."
 navActive: "platform"
-hub: "True"
+hub: true
 ---
-<div class="section" class="section section--hub">
+<div class="section section--hub">
   <div class="section-label">Programmable Bio</div>
   <h2>Platform</h2>
   <p class="lead">How LabOS works — the technical story of the agentic operating system, why it is buildable now, and how it sits beside your existing LIMS.</p>
+
+  <p>LabOS is not a chatbot on top of a LIMS. It is a <strong>five-agent mesh</strong> whose product is the experimental graph: every datapoint cryptographically tied to the typed chain of operations that produced it. OmicsOS generates hypotheses; LabOS designs, routes, validates, and learns from execution across partner CROs; ClinicalBridge packages outputs for regulators.</p>
+
+  <div class="chain">
+    <div class="chain-step active"><div class="chain-label">OmicsOS</div><div class="chain-sublabel">Hypothesis layer</div></div>
+    <div class="chain-arrow">&rarr;</div>
+    <div class="chain-step active"><div class="chain-label">LabOS</div><div class="chain-sublabel">Agent mesh + graph</div></div>
+    <div class="chain-arrow">&rarr;</div>
+    <div class="chain-step active"><div class="chain-label">Partner CROs</div><div class="chain-sublabel">Syngene, MedGenome&hellip;</div></div>
+    <div class="chain-arrow">&rarr;</div>
+    <div class="chain-step"><div class="chain-label">ClinicalBridge</div><div class="chain-sublabel">Regulatory output</div></div>
+  </div>
+
+  <h3>Who buys LabOS first</h3>
+  <div class="card-grid">
+    <div class="card card-teal"><h4>Indian generic pharma QC/R&amp;D</h4><p>STARLIMS sidecar — agentic experiment design without validation re-cert. Sun, Dr Reddy&rsquo;s, Cipla footprint.</p></div>
+    <div class="card card-accent"><h4>Hospital research arms</h4><p>Apollo, AIIMS, CMC — clinical data to multiomics pipeline without building a bioinformatics team.</p></div>
+    <div class="card card-purple"><h4>Biotech startups</h4><p>Discovery-as-a-Service — full stack from hypothesis to validated lead without CapEx.</p></div>
+  </div>
+
   <div class="card-grid card-grid--spaced">
     <a class="card card-teal" href="/why-now.html">
       <h4>Why Now &rarr;</h4>

@@ -39,6 +39,8 @@ Nested under **Reference Programs**:
 | `ivd` | IVD Companion Diagnostics |
 | `pharma` (sub-sub-hub) | `target-discovery`, `drug-discovery`, `in-silico`, `preclinical`, `clinical` (teaser), `pharmacovigilance` |
 
+**Resources:** [Glossary](/glossary.html) · [India Biomarker Atlas](/biomarker-atlas.html) · [Case Studies](/case-studies.html)
+
 Every topic page has a breadcrumb (`Home › Hub › Topic`) and prev/next nav.
 
 ## Project layout
