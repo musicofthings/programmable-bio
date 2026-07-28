@@ -2,46 +2,75 @@
 permalink: platform.html
 layout: layouts/base.njk
 title: "Platform"
-description: "How LabOS works — the agentic operating system, why it is buildable now, and LIMS integration."
+description: "LabOS — the software layer between a design model and a robotic bench. Protocol compiler, feasibility agent, scheduler, QC agent, and provenance signer."
 navActive: "platform"
-hub: true
+breadcrumb:
+  - label: "Platform"
 ---
-<div class="section section--hub">
-  <div class="section-label">Programmable Bio</div>
-  <h2>Platform</h2>
-  <p class="lead">How LabOS works — the technical story of the agentic operating system, why it is buildable now, and how it sits beside your existing LIMS.</p>
+<div class="section">
+  <div class="section-label">Platform</div>
+  <h2>LabOS &mdash; the layer between the <em>model</em> and the <em>bench</em></h2>
+  <p class="lead">A design model emits candidates. A robotic instrument executes programmes. LabOS is everything in between: the part that turns an intent into an executable run and turns a run back into data a model can learn from.</p>
+</div>
 
-  <p>LabOS is not a chatbot on top of a LIMS. It is a <strong>five-agent mesh</strong> whose product is the experimental graph: every datapoint cryptographically tied to the typed chain of operations that produced it. OmicsOS generates hypotheses; LabOS designs, routes, validates, and learns from execution across partner CROs; ClinicalBridge packages outputs for regulators.</p>
+<div class="section">
+  <div class="section-label">Architecture</div>
+  <h2>Five components, one loop</h2>
+  <div class="card-grid card-grid--spaced-sm">
+    <div class="card card-teal">
+      <h4>Protocol compiler</h4>
+      <p>Takes a described experiment &mdash; plain language, a construct file, or a structured API job &mdash; and lowers it into an executable instrument programme. This is the piece that replaces a technician re-typing a Word document, and it is where reproducibility is actually won.</p>
+    </div>
+    <div class="card card-accent">
+      <h4>Feasibility &amp; quote agent</h4>
+      <p>Answers, at submission time, whether the current fleet can run the protocol and what it will cost. Returns runnable, runnable-with-substitutions, or out-of-scope-because. Removes the multi-week quoting cycle that defines legacy CRO engagement.</p>
+    </div>
+    <div class="card card-blue">
+      <h4>Scheduler</h4>
+      <p>Packs incoming orders across instruments and shifts to maximise utilisation. Instrument capacity is a fixed cost, so utilisation <em>is</em> gross margin &mdash; which makes the scheduler the most commercially consequential component in the system.</p>
+    </div>
+    <div class="card card-purple">
+      <h4>QC &amp; anomaly agent</h4>
+      <p>Watches controls and instrument telemetry mid-run. A failed plate is caught and re-queued while the reagents are still on deck, rather than surfacing as a disappointing result three weeks later.</p>
+    </div>
+    <div class="card card-amber">
+      <h4>Provenance signer</h4>
+      <p>Every result is signed with the instrument identity, reagent lots, calibration state, and the exact programme executed. When a finding is challenged, the record of what physically happened is retrievable rather than reconstructed.</p>
+    </div>
+    <div class="card">
+      <h4>The experimental graph</h4>
+      <p>All of the above accumulates into a typed graph linking hypothesis, execution, and outcome. Serving customers well and building the data asset are the same activity.</p>
+    </div>
+  </div>
+</div>
 
+<div class="section">
+  <div class="section-label">Design principle</div>
+  <h2>Every run is a <em>training example</em></h2>
+  <p>Most lab software is built to produce a report for a human. LabOS is built to produce a record for a model. The difference shows up in what we keep:</p>
+  <ul>
+    <li><strong>Negative results are first-class</strong> &mdash; a candidate that failed to bind is returned with the same fidelity as one that succeeded, because that is exactly the label a design model is missing</li>
+    <li><strong>Parameters are structured, not prose</strong> &mdash; conditions are typed fields, so runs are comparable across time and instrument</li>
+    <li><strong>Raw and parsed both persist</strong> &mdash; re-analysis never requires re-running the experiment</li>
+    <li><strong>Failure modes are labelled</strong> &mdash; an expression failure and a binding failure are different data, and conflating them destroys the signal</li>
+  </ul>
+  <div class="callout">
+    This is why the loop closes. A conventional CRO returns an answer. LabOS returns an answer plus the structured evidence needed to improve the model that asked the question.
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-label">Execution</div>
+  <h2>Partner-executed first, owned fleet next</h2>
   <div class="chain">
-    <div class="chain-step active"><div class="chain-label">OmicsOS</div><div class="chain-sublabel">Hypothesis layer</div></div>
+    <div class="chain-step active"><div class="chain-label">Portal + compiler</div><div class="chain-sublabel">Software live</div></div>
     <div class="chain-arrow">&rarr;</div>
-    <div class="chain-step active"><div class="chain-label">LabOS</div><div class="chain-sublabel">Agent mesh + graph</div></div>
+    <div class="chain-step active"><div class="chain-label">Partner labs</div><div class="chain-sublabel">Proves demand</div></div>
     <div class="chain-arrow">&rarr;</div>
-    <div class="chain-step active"><div class="chain-label">Partner CROs</div><div class="chain-sublabel">Syngene, MedGenome&hellip;</div></div>
+    <div class="chain-step"><div class="chain-label">First owned cell</div><div class="chain-sublabel">Margin measurable</div></div>
     <div class="chain-arrow">&rarr;</div>
-    <div class="chain-step"><div class="chain-label">ClinicalBridge</div><div class="chain-sublabel">Regulatory output</div></div>
+    <div class="chain-step"><div class="chain-label">Fleet + API</div><div class="chain-sublabel">Scale-out</div></div>
   </div>
-
-  <h3>Who buys LabOS first</h3>
-  <div class="card-grid">
-    <div class="card card-teal"><h4>Indian generic pharma QC/R&amp;D</h4><p>STARLIMS sidecar — agentic experiment design without validation re-cert. Sun, Dr Reddy&rsquo;s, Cipla footprint.</p></div>
-    <div class="card card-accent"><h4>Hospital research arms</h4><p>Apollo, AIIMS, CMC — clinical data to multiomics pipeline without building a bioinformatics team.</p></div>
-    <div class="card card-purple"><h4>Biotech startups</h4><p>Discovery-as-a-Service — full stack from hypothesis to validated lead without CapEx.</p></div>
-  </div>
-
-  <div class="card-grid card-grid--spaced">
-    <a class="card card-teal" href="/why-now.html">
-      <h4>Why Now &rarr;</h4>
-      <p>The 2026 step-change — four waves converge into a buildable window.</p>
-    </a>
-    <a class="card card-teal" href="/labos.html">
-      <h4>LabOS Agentic Architecture &rarr;</h4>
-      <p>The five-agent mesh, experimental graph, fine-tuning roadmap.</p>
-    </a>
-    <a class="card card-teal" href="/lims.html">
-      <h4>LIMS Integration &rarr;</h4>
-      <p>The quiet wedge — sit beside STARLIMS, no validation re-cert.</p>
-    </a>
-  </div>
+  <p>The software layer is the durable asset, so it gets built first. Running early volume through partner wet labs proves demand and pricing before committing instrument CapEx &mdash; and the protocol compiler that drives a partner lab is most of the compiler that will drive an owned one.</p>
+  <p><a href="/how-it-works.html">See the ordering flow &rarr;</a> &middot; <a href="/landscape.html">How this compares to Ginkgo and Emerald &rarr;</a></p>
 </div>

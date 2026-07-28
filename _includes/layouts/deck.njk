@@ -4,11 +4,12 @@
   {% include "partials/head.njk" %}
   <link rel="stylesheet" href="/assets/investor-deck.css">
 </head>
-<body class="deck-body">
+<body class="deck-body" data-analytics-endpoint="{{ site.analyticsEndpoint }}">
   <header class="deck-header">
     <a href="/" class="deck-logo">Programmable <strong>Bio</strong></a>
     <div class="deck-header-actions">
       <span class="deck-progress" id="deck-progress">1</span>
+      <button type="button" class="deck-print" id="deck-print">Save as PDF</button>
       <a href="/investors.html" class="deck-exit">Exit</a>
     </div>
   </header>
@@ -19,7 +20,11 @@
     <button type="button" class="deck-nav-btn" id="deck-prev" aria-label="Previous slide">&larr;</button>
     <button type="button" class="deck-nav-btn" id="deck-next" aria-label="Next slide">&rarr;</button>
   </nav>
-  <script src="/assets/investor-gate.js"></script>
   <script src="/assets/investor-deck.js"></script>
+  <script>
+    document.getElementById("deck-print").addEventListener("click", function () {
+      window.print();
+    });
+  </script>
 </body>
 </html>

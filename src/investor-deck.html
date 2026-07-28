@@ -1,221 +1,185 @@
 ---
 permalink: investor-deck.html
 layout: layouts/deck.njk
-title: "Investor Pitch Deck"
-description: "Programmable Bio investor pitch deck — LabOS, Apollo moat, and India/APAC opportunity."
-noindex: true
-eleventyExcludeFromCollections: true
+title: "Investor Deck"
+description: "Programmable Bio — validation infrastructure for AI-designed biology. Scientists order wet-lab validation online; autonomous labs in India return model-ready data in days."
 ---
 <section class="deck-slide deck-slide-dark">
   <div class="deck-slide-label">Programmable Bio</div>
-  <h1>LabOS — the agentic operating system for <strong>distributed biology</strong></h1>
-  <p class="deck-slide-sub">India-first discovery platform anchored on Apollo Hospitals' clinical substrate. APAC expansion via Singapore BioHelix.</p>
-  <p style="font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 32px;">Confidential &middot; {{ site.year }} &middot; {{ site.disclaimer }}</p>
+  <h1>Validation infrastructure for <strong>AI-designed biology</strong></h1>
+  <p class="deck-slide-sub">Scientists order wet-lab validation online. Our autonomous labs execute it and return structured, model-ready data in days &mdash; at a cost base no Boston or Bay Area facility can match.</p>
+  <p style="font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 32px;">{{ site.year }} &middot; {{ site.disclaimer }}</p>
 </section>
 
 <section class="deck-slide">
-  <div class="deck-slide-label">Problem</div>
-  <h2>India &amp; APAC are <em>invisible</em> on the autonomous lab map</h2>
-  <p class="deck-slide-sub">The 2026 autonomous lab revolution runs through Boston, London, and SF — while the world's most diverse patient populations and deepest R&amp;D cost arbitrage sit in India and APAC.</p>
+  <div class="deck-slide-label">The shift</div>
+  <h2>Design got cheap. <em>Proof didn't.</em></h2>
+  <p class="deck-slide-sub">In 2024 the hard part of AI &times; Bio was generating a plausible candidate. In 2026 it is finding out whether the candidate is real.</p>
   <ul class="deck-bullets">
-    <li>Experimental data generation — not ideas — remains biology's rate-limiting step</li>
-    <li>US platforms (Ginkgo, Recursion, Isomorphic) have zero meaningful India/APAC presence</li>
-    <li>Indian CROs execute well but lack an AI orchestration layer for closed-loop discovery</li>
-    <li>Indian genomics players are diagnostics-focused — no full-stack discovery + wet-lab loop</li>
-    <li>11,000+ biotech startups in India with no indigenous agentic lab platform at scale</li>
+    <li><strong>Design capacity exploded</strong> &mdash; a dozen-plus protein design foundation models now ship publicly; generating 10,000 candidates is a weekend of GPU time</li>
+    <li><strong>Validation capacity did not</strong> &mdash; the same wet-lab step costs the same weeks it did a decade ago</li>
+    <li><strong>Q1 2026 was the inflection</strong> &mdash; the first wave of AI-designed molecules reached peer-reviewed preclinical validation, and the field discovered its real constraint</li>
+    <li><strong>The bottleneck moved</strong> &mdash; from algorithms to throughput: iterating candidate libraries and proving which survive contact with a bench</li>
   </ul>
+</section>
+
+<section class="deck-slide">
+  <div class="deck-slide-label">The core insight</div>
+  <h2>The field keeps <em>two ledgers</em></h2>
+  <div class="deck-two-col">
+    <div class="card card-blue">
+      <h4>Capability</h4>
+      <p>What a model can demonstrably do <em>in silico</em>. Cheap to produce, fast to publish, easy to game with benchmark selection.</p>
+    </div>
+    <div class="card card-accent">
+      <h4>Validity</h4>
+      <p>What survives contact with an actual wet lab. Costs real money and real months. This is the only ledger a partner, a regulator, or an acquirer pays for.</p>
+    </div>
+  </div>
+  <p class="deck-slide-sub" style="margin-top: 28px;">These two ledgers diverge constantly, and the gap between them is where AI&nbsp;&times;&nbsp;Bio value is created or destroyed. <strong>We sell throughput on the second ledger.</strong></p>
+</section>
+
+<section class="deck-slide">
+  <div class="deck-slide-label">Today</div>
+  <h2>What a scientist actually goes through</h2>
+  <ul class="deck-bullets">
+    <li><strong>Weeks to a quote</strong> &mdash; email a CRO, wait for scoping calls before a price exists</li>
+    <li><strong>Protocols re-typed by hand</strong> &mdash; the computational design is flattened into a Word document and re-entered by a technician</li>
+    <li><strong>Results arrive as a PDF</strong> &mdash; unstructured, un-versioned, impossible to feed back into the model that generated the hypothesis</li>
+    <li><strong>No provenance</strong> &mdash; when a result fails to reproduce, there is no signed record of what the instrument actually did</li>
+    <li><strong>Academia is priced out entirely</strong> &mdash; the largest single source of AI-designed candidates cannot transact at biopharma contract rates</li>
+  </ul>
+</section>
+
+<section class="deck-slide">
+  <div class="deck-slide-label">The product</div>
+  <h2>Order validation the way you order <em>compute</em></h2>
+  <div class="chain">
+    <div class="chain-step active"><div class="chain-label">Design</div><div class="chain-sublabel">Your model, your candidates</div></div>
+    <div class="chain-arrow">&rarr;</div>
+    <div class="chain-step active"><div class="chain-label">Order</div><div class="chain-sublabel">Web portal or API</div></div>
+    <div class="chain-arrow">&rarr;</div>
+    <div class="chain-step active"><div class="chain-label">Execute</div><div class="chain-sublabel">Autonomous lab</div></div>
+    <div class="chain-arrow">&rarr;</div>
+    <div class="chain-step active"><div class="chain-label">Return</div><div class="chain-sublabel">Structured data</div></div>
+    <div class="chain-arrow">&rarr;</div>
+    <div class="chain-step active"><div class="chain-label">Retrain</div><div class="chain-sublabel">Loop closes</div></div>
+  </div>
+  <p class="deck-slide-sub" style="margin-top: 28px;">No scoping call. No account manager. Transparent per-assay pricing at the moment of ordering, and a result that arrives as a typed object rather than a report.</p>
+</section>
+
+<section class="deck-slide">
+  <div class="deck-slide-label">Platform</div>
+  <h2>LabOS &mdash; the layer between the model and the bench</h2>
+  <ul class="deck-bullets">
+    <li><strong>Protocol compiler</strong> &mdash; turns a described experiment into an executable instrument program, not a technician's to-do list</li>
+    <li><strong>Feasibility &amp; quote agent</strong> &mdash; instant answer on whether the fleet can run it and what it costs</li>
+    <li><strong>Scheduler</strong> &mdash; packs orders across instruments to keep utilisation high; utilisation is the entire unit economic story</li>
+    <li><strong>QC &amp; anomaly agent</strong> &mdash; catches a failed run while it is still running, not at delivery</li>
+    <li><strong>Provenance signer</strong> &mdash; every result carries a signed record of the exact instrument, reagent lot, and parameters</li>
+  </ul>
+  <p class="deck-slide-sub" style="margin-top: 24px;">Every run emits a training example by construction &mdash; the data asset is a by-product of serving the customer.</p>
+</section>
+
+<section class="deck-slide">
+  <div class="deck-slide-label">Why India</div>
+  <h2>A cost base competitors <em>cannot refactor into</em></h2>
+  <div class="stat-grid">
+    <div class="stat-card"><div class="stat-num"><strong>$191.7M</strong></div><div class="stat-label">India preclinical CRO market, 2024</div></div>
+    <div class="stat-card"><div class="stat-num"><strong>$549M</strong></div><div class="stat-label">Projected 2033</div></div>
+    <div class="stat-card"><div class="stat-num"><strong>12.3%</strong></div><div class="stat-label">CAGR, 2025&ndash;2033</div></div>
+  </div>
+  <ul class="deck-bullets" style="margin-top: 28px;">
+    <li><strong>Price is already the battleground</strong> &mdash; Ginkgo launched US-based ADME profiling explicitly to match or beat Chinese vendor quotes. Incumbents are defending on cost, not attacking</li>
+    <li><strong>Structural, not promotional</strong> &mdash; facilities, technical staff, and utilities in India run at a fraction of a Boston cost base; we can price where they cannot follow</li>
+    <li><strong>Deep talent pool</strong> &mdash; India's CRO sector has trained two decades of bench scientists now available to an automation-first employer</li>
+  </ul>
+</section>
+
+<section class="deck-slide">
+  <div class="deck-slide-label">The moat</div>
+  <h2>Apollo: the substrate <em>no one else can buy</em></h2>
+  <p class="deck-slide-sub">Cost advantages get competed away. Data advantages compound.</p>
+  <ul class="deck-bullets">
+    <li><strong>Pan-India clinical substrate</strong> &mdash; EHR and biobank access across Apollo's hospital network</li>
+    <li><strong>South Asian genetic diversity</strong> &mdash; systematically underrepresented in the reference data every Western validation stack is built on</li>
+    <li><strong>Validation against real patients</strong> &mdash; a candidate can be tested against the population it is meant to treat, not only a cell line</li>
+    <li><strong>Compounding</strong> &mdash; every validation run enriches an atlas that makes the next run more informative. Ginkgo can rebuild our robots; it cannot rebuild this</li>
+  </ul>
+</section>
+
+<section class="deck-slide">
+  <div class="deck-slide-label">Landscape</div>
+  <h2>Where we sit &mdash; <em>honestly</em></h2>
+  <div class="table-scroll"><table>
+    <thead><tr><th>Player</th><th>Model</th><th>Why we still win</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Ginkgo Cloud Lab</strong><br><span style="font-size:12px;color:var(--ink-muted);">Launched Mar 2026</span></td><td>Browser access to autonomous fleet, 70+ instruments, AI quoting</td><td>Closest competitor and validates the category. US cost base; biopharma-anchored pricing; no clinical substrate</td></tr>
+      <tr><td><strong>Emerald Cloud Lab</strong></td><td>200+ instruments, Command Center, symbolic protocol language</td><td>Powerful but steep learning curve and US pricing; built for protocol authors, not model builders</td></tr>
+      <tr><td><strong>Lila Sciences</strong> &middot; <strong>Periodic Labs</strong></td><td>Vertically integrated &mdash; autonomous labs for their <em>own</em> discovery</td><td>Not service competitors. They are proof the category is real: $550M and $300M&ndash;500M raised respectively</td></tr>
+      <tr><td><strong>Legacy CROs</strong></td><td>Manual execution, relationship sales</td><td>Not API-native; deliver PDFs, not model-ready data; quoting cycle measured in weeks</td></tr>
+    </tbody>
+  </table></div>
+  <p class="footnote">We are not first to autonomous cloud labs. We intend to be first to autonomous validation that an academic lab can actually afford, tied to a clinical substrate no incumbent holds.</p>
+</section>
+
+<section class="deck-slide">
+  <div class="deck-slide-label">Customers</div>
+  <h2>Land in academia. Expand into industry.</h2>
+  <div class="deck-two-col">
+    <div class="card card-teal">
+      <h4>Wedge &mdash; academic R&amp;D</h4>
+      <p>Postdocs and PIs running design models with grant-scale budgets. Small orders, card payment, no procurement cycle. They generate the most candidates and have the least validation access.</p>
+    </div>
+    <div class="card card-purple">
+      <h4>Expand &mdash; industry R&amp;D</h4>
+      <p>Biotech and pharma discovery teams. Capacity subscriptions, API integration into existing DBTL loops, higher contract values.</p>
+    </div>
+  </div>
+  <p class="deck-slide-sub" style="margin-top: 28px;">The developer-tools motion applied to biology: the scientist who validated a construct during their PhD specifies us when they join a company.</p>
+</section>
+
+<section class="deck-slide">
+  <div class="deck-slide-label">Business model</div>
+  <h2>Three revenue layers</h2>
+  <ul class="deck-bullets">
+    <li><strong>Per-assay self-serve</strong> &mdash; transparent published pricing, paid at order. Acquisition engine and the source of utilisation</li>
+    <li><strong>Capacity subscription</strong> &mdash; reserved throughput plus API access for teams running continuous design&ndash;build&ndash;test loops</li>
+    <li><strong>Data products</strong> &mdash; the India Biomarker Atlas and aggregate validation benchmarks, built from consented, de-identified run data</li>
+  </ul>
+  <div class="callout" style="margin-top: 28px;">
+    <strong>Gross margin is a utilisation problem.</strong> Instrument capacity is a fixed cost; every incremental order runs against hardware already paid for. The scheduler is therefore the most commercially important component in LabOS.
+  </div>
+  <p class="footnote"><span class="badge badge-red">FILL</span> Insert current pricing per assay class, target gross margin, and payback period per instrument cell.</p>
 </section>
 
 <section class="deck-slide">
   <div class="deck-slide-label">Market</div>
-  <h2>A <em>$112B</em> India biotech market by 2034</h2>
-  <div class="stat-grid" style="margin-bottom: 24px;">
-    <div class="stat-card"><div class="stat-num"><strong>$1.61T</strong></div><div class="stat-label">APAC biotech by 2034<br/>14.8% CAGR</div></div>
-    <div class="stat-card"><div class="stat-num"><strong>$112B</strong></div><div class="stat-label">India biotech by 2034<br/>13.09% CAGR</div></div>
-    <div class="stat-card"><div class="stat-num"><strong>$18.4B</strong></div><div class="stat-label">Lab automation by 2033<br/>APAC fastest growing</div></div>
-    <div class="stat-card"><div class="stat-num"><strong>29.6%</strong></div><div class="stat-label">AI drug discovery CAGR<br/>through 2030</div></div>
+  <h2>Sized on validation spend, not lab software</h2>
+  <ul class="deck-bullets">
+    <li><strong>Beachhead</strong> &mdash; India preclinical CRO, $191.7M (2024) growing to $549M (2033)</li>
+    <li><strong>Serviceable</strong> &mdash; global outsourced preclinical validation and assay services, where price and turnaround are the deciding criteria</li>
+    <li><strong>Category</strong> &mdash; venture capital now treats autonomous labs as an infrastructure asset class alongside chip fabs and data centres; over $1B has entered the category since 2025</li>
+  </ul>
+  <p class="footnote"><span class="badge badge-red">FILL</span> Replace with your own bottom-up TAM/SAM/SOM build once assay pricing is fixed. Top-down analyst figures are directional only.</p>
+</section>
+
+<section class="deck-slide">
+  <div class="deck-slide-label">Roadmap</div>
+  <h2>From first cell to fleet</h2>
+  <div class="phases">
+    <div class="phase"><div class="phase-num">1</div><div class="phase-body"><h4>Portal + partner execution</h4><p>Ordering portal and protocol compiler live; execution through partner wet labs. Proves demand and pricing before capital equipment.</p></div></div>
+    <div class="phase"><div class="phase-num">2</div><div class="phase-body"><h4>First autonomous cell</h4><p>Owned instrument cell for the highest-volume assay classes. Utilisation and margin become measurable.</p></div></div>
+    <div class="phase"><div class="phase-num">3</div><div class="phase-body"><h4>Apollo integration</h4><p>Clinical substrate wired into the validation loop; Atlas begins compounding.</p></div></div>
+    <div class="phase"><div class="phase-num">4</div><div class="phase-body"><h4>Fleet + API</h4><p>Multi-cell scale-out, capacity subscriptions, APAC expansion.</p></div></div>
   </div>
-  <div class="table-scroll"><table>
-    <thead><tr><th>Layer</th><th>Scope</th><th>Estimate</th></tr></thead>
-    <tbody>
-      <tr><td><strong>TAM</strong></td><td>Global AI-bio + lab automation + CRO orchestration</td><td>$50B+ by 2030</td></tr>
-      <tr><td><strong>SAM</strong></td><td>India + APAC discovery platform + data licensing</td><td>$8&ndash;12B</td></tr>
-      <tr><td><strong>SOM (Y5)</strong></td><td>LabOS sites + sprints + Atlas licenses</td><td>$50M+ ARR target</td></tr>
-    </tbody>
-  </table></div>
+  <p class="footnote"><span class="badge badge-red">FILL</span> Attach real dates, current phase, and any live pilots or LOIs. An early-stage VC will ask what is running today &mdash; this slide must answer it.</p>
 </section>
 
 <section class="deck-slide deck-slide-dark">
-  <div class="deck-slide-label">Solution</div>
-  <h2>LabOS — we own the <em>experimental graph</em>, not the robots</h2>
-  <p class="deck-slide-sub">Discovery-as-a-Service: a multi-agent mesh orchestrating multiomics computation, partner wet labs, and Apollo's clinical biobank into closed-loop DBTL cycles.</p>
-  <ul class="deck-bullets">
-    <li><strong>Experimental graph</strong> — every datapoint cryptographically tied to the typed chain of operations that produced it</li>
-    <li><strong>Proprietary clinical data</strong> — Apollo Hospitals biobank + pan-India EHR substrate</li>
-    <li><strong>Agent mesh</strong> — natural-language hypotheses → auditable wet-lab execution across heterogeneous partners</li>
-    <li><strong>Software margins</strong> — partner CRO execution in Phase 1; no $50M+ FAL CapEx</li>
-  </ul>
-</section>
-
-<section class="deck-slide">
-  <div class="deck-slide-label">Product</div>
-  <h2>Five-agent <em>mesh</em></h2>
-  <p class="deck-slide-sub">LabOS is not a chatbot on SiLA2. The product is the provenance-signed experimental graph — what regulators want and pharma BD pays for.</p>
-  <div class="table-scroll"><table>
-    <thead><tr><th>Agent</th><th>Owns</th><th>Output</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Hypothesis</strong></td><td>Target / mechanism proposals</td><td>Ranked hypotheses with uncertainty</td></tr>
-      <tr><td><strong>Design</strong></td><td>Hypothesis → experiment DAG</td><td>Typed ops graph, power calcs, cost</td></tr>
-      <tr><td><strong>Execution</strong></td><td>Partner-lab run brokerage</td><td>Real-time status, anomaly flags, re-routing</td></tr>
-      <tr><td><strong>QC / Validator</strong></td><td>Output trustworthiness</td><td>Pass/fail + uncertainty quantification</td></tr>
-      <tr><td><strong>Learning</strong></td><td>Prior updates, Atlas entries</td><td>Protocol patches, model weights, biomarkers</td></tr>
-    </tbody>
-  </table></div>
-</section>
-
-<section class="deck-slide">
-  <div class="deck-slide-label">Moat</div>
-  <h2>Apollo — <em>3&ndash;5 year</em> replication barrier</h2>
-  <div class="deck-two-col">
-    <div>
-      <ul class="deck-bullets">
-        <li>70+ hospitals, ~150K patient encounters/day</li>
-        <li>Pan-India genetic diversity — Tamil Nadu to Punjab to North-East</li>
-        <li>Oncology, cardiac, diabetes, transplant — top disease-burden verticals</li>
-        <li>DPDP Act 2023 + ICMR compliant federated learning at source</li>
-      </ul>
-    </div>
-    <div>
-      <ul class="deck-bullets">
-        <li>Joint biobank co-development — revenue share on Atlas licensing</li>
-        <li>India Biomarker Atlas compounds with every closed-loop cycle</li>
-        <li>Singapore BioHelix node — APAC corridor + MiRXES i4.0 partnership</li>
-        <li>LIMS-native wedge — LabOS beside STARLIMS, no migration required</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="deck-slide deck-slide-dark">
-  <div class="deck-slide-label">Business Model</div>
-  <h2>Dual revenue <em>engine</em></h2>
-  <div class="deck-two-col">
-    <div>
-      <h3 style="font-size: 18px; margin-bottom: 12px; color: #fff;">Platform SaaS</h3>
-      <ul class="deck-bullets">
-        <li><strong>LabOS Platform</strong> — $250K&ndash;1.5M ARR/site</li>
-        <li><strong>OmicsCloud</strong> — $50K&ndash;250K ARR/customer</li>
-        <li><strong>LabOS Broker</strong> — 2&ndash;5% take-rate on CRO routing</li>
-        <li><strong>India Biomarker Atlas</strong> — data licensing to MNC pharma</li>
-      </ul>
-    </div>
-    <div>
-      <h3 style="font-size: 18px; margin-bottom: 12px; color: #fff;">Discovery Sprints</h3>
-      <ul class="deck-bullets">
-        <li><strong>IVD CDx</strong> — 18 mo / $5M vs $30&ndash;50M traditional</li>
-        <li><strong>Pharmacovigilance</strong> — $2.5M/yr milestone contracts</li>
-        <li><strong>Target ID sprints</strong> — $500K&ndash;3M per program</li>
-        <li>Gross margin path: 40&ndash;50% Y1 &rarr; 75%+ Y5</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="deck-slide">
-  <div class="deck-slide-label">Traction &amp; Roadmap</div>
-  <h2>Phase 1 <em>land</em> &rarr; Phase 3 <em>scale</em></h2>
-  <ul class="deck-bullets">
-    <li><strong>Now (0&ndash;18 mo):</strong> Anchor customers — 1 generic pharma, 1 hospital research arm, 1 biotech startup via Apollo intros</li>
-    <li><strong>18&ndash;36 mo:</strong> LabOS STARLIMS sidecar + Syngene/Aragen co-sell; first Atlas MNC license</li>
-    <li><strong>36&ndash;60 mo:</strong> Singapore/Japan customers; sovereign India bio model; 200+ active customers</li>
-    <li><strong>North Star:</strong> Closed-loop discovery cycles completed per quarter</li>
-  </ul>
-  <p style="font-size: 13px; color: var(--ink-muted); margin-top: 20px;">Full blueprint: <a href="/overview.html">programmablebio.tech</a></p>
-</section>
-
-<section class="deck-slide">
-  <div class="deck-slide-label">Go-to-Market</div>
-  <h2>Partnership-led <em>growth</em></h2>
-  <div class="deck-two-col">
-    <div>
-      <h3 style="font-size: 16px; margin-bottom: 8px;">Phase 1 — Land (0&ndash;18 mo)</h3>
-      <ul class="deck-bullets">
-        <li>Apollo warm intros + Hyderabad Genome Valley</li>
-        <li>3 signed programs, 10 cycles/quarter</li>
-        <li>$500K&ndash;3M sprint + $100&ndash;250K OmicsCloud ARR</li>
-      </ul>
-    </div>
-    <div>
-      <h3 style="font-size: 16px; margin-bottom: 8px;">Phase 2 — Scale (18&ndash;36 mo)</h3>
-      <ul class="deck-bullets">
-        <li>MNC pharma India R&amp;D expansion</li>
-        <li>20&ndash;30 customers, $3M ARR</li>
-        <li>First international customer (Singapore/Japan)</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="deck-slide">
-  <div class="deck-slide-label">Why Now</div>
-  <h2>The <em>2026</em> inflection point</h2>
-  <ul class="deck-bullets">
-    <li>Ginkgo Cloud Lab (Mar 2026) — 36K conditions, 40% cost reduction, closed-loop GPT-5 workflow</li>
-    <li>Recursion at 50+ PB phenomics; Isomorphic raised $600M; Automata $45M Series C + Danaher</li>
-    <li>Agentic lab orchestration is table stakes — the window for category creation in India is now</li>
-    <li>DPDP Act 2023 + sovereign cloud enable compliant federated learning at Apollo scale</li>
-    <li>No indigenous India platform has captured this stack — first mover with Apollo wins</li>
-  </ul>
-</section>
-
-<section class="deck-slide deck-slide-dark">
-  <div class="deck-slide-label">Financials</div>
-  <h2>Year-by-year <em>targets</em></h2>
-  <p class="deck-slide-sub" style="color: rgba(255,255,255,0.65);">Indicative, scenario-based projections. See full KPI framework on site.</p>
-  <div class="table-scroll"><table>
-    <thead><tr><th>Metric</th><th>Year 1</th><th>Year 2</th><th>Year 3</th><th>Year 5</th></tr></thead>
-    <tbody>
-      <tr><td><strong>ARR</strong></td><td>$500K</td><td>$3M</td><td>$10M</td><td>$50M+</td></tr>
-      <tr><td><strong>Active Customers</strong></td><td>5&ndash;8</td><td>20&ndash;30</td><td>60&ndash;80</td><td>200+</td></tr>
-      <tr><td><strong>Closed-Loop Cycles/Qtr</strong></td><td>10</td><td>50</td><td>200</td><td>1,000+</td></tr>
-      <tr><td><strong>Atlas Entries</strong></td><td>5K</td><td>50K</td><td>500K</td><td>5M+</td></tr>
-      <tr><td><strong>Gross Margin</strong></td><td>40&ndash;50%</td><td>55&ndash;65%</td><td>65&ndash;70%</td><td>75%+</td></tr>
-    </tbody>
-  </table></div>
-</section>
-
-<section class="deck-slide">
-  <div class="deck-slide-label">Competition</div>
-  <h2>We fill the <em>orchestration gap</em></h2>
-  <div class="table-scroll"><table>
-    <thead><tr><th>Player</th><th>Strength</th><th>Gap we fill</th></tr></thead>
-    <tbody>
-      <tr><td><strong>US autonomous labs</strong></td><td>Scale, capital, data volume</td><td>India cohort depth + regulatory + CRO mesh</td></tr>
-      <tr><td><strong>Indian CROs</strong></td><td>Execution, cost</td><td>AI orchestration — partners, not rivals</td></tr>
-      <tr><td><strong>Indian genomics</strong></td><td>Diagnostics reach</td><td>Discovery loop + Atlas + wet-lab brokerage</td></tr>
-      <tr><td><strong>AI drug discovery</strong></td><td>In silico speed</td><td>Apollo substrate + full-stack execution</td></tr>
-    </tbody>
-  </table></div>
-</section>
-
-<section class="deck-slide">
-  <div class="deck-slide-label">The Ask</div>
-  <h2>Seed capital to reach <em>Phase 1 milestones</em></h2>
-  <p class="deck-slide-sub">Capital accelerates Apollo partnership formalization, LabOS MVP deployment, and first three anchor discovery programs.</p>
-  <ul class="deck-bullets">
-    <li><strong>Platform engineering</strong> — five-agent mesh MVP, LIMS adapters, capability registry</li>
-    <li><strong>Apollo biobank pilot</strong> — federated learning infrastructure, consent workflow, first cohort</li>
-    <li><strong>Commercial</strong> — 3 anchor customer programs, BD team, Singapore BioHelix node setup</li>
-    <li><strong>18-month target:</strong> $500K ARR, 10 closed-loop cycles/quarter, 2 peer-reviewed publications</li>
-  </ul>
-  <p style="font-size: 12px; color: var(--ink-muted); margin-top: 16px;">Specific round size and terms available under NDA. {{ site.disclaimer }}</p>
-</section>
-
-<section class="deck-slide deck-slide-dark">
-  <div class="deck-slide-label">Contact</div>
-  <h2>Let's build India's <em>discovery infrastructure</em></h2>
-  <p class="deck-slide-sub" style="margin-bottom: 32px;">Full public blueprint at programmablebio.tech. Detailed financial model, term sheet, and data room available to qualified investors.</p>
-  <p style="font-size: 20px; color: #fff; margin-bottom: 8px;"><a href="mailto:{{ site.email }}" style="color: #f97c52;">{{ site.email }}</a></p>
-  <p style="font-size: 14px; color: rgba(255,255,255,0.5);">programmablebio.tech &middot; Singapore BioHelix node</p>
-  <p style="font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 40px;">{{ site.disclaimer }}</p>
+  <div class="deck-slide-label">Team &amp; ask</div>
+  <h2>Who we are and what we're raising</h2>
+  <p class="deck-slide-sub"><span class="badge badge-red">FILL</span> Founder bios with the specific credential that makes you the right team for autonomous labs plus Indian clinical access. Then: round size, instrument for the raise, use of funds split across hardware, engineering and Apollo integration, and the milestone this round buys.</p>
+  <p style="font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 32px;">{{ site.email }} &middot; {{ site.url }}</p>
+  <p style="font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 12px;">{{ site.disclaimer }}</p>
 </section>

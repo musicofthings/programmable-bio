@@ -173,6 +173,17 @@
   text-decoration: none;
 }
 .deck-exit:hover { color: var(--accent); }
+.deck-print {
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--ink-secondary);
+  background: none;
+  border: 1px solid var(--border-strong);
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+.deck-print:hover { color: var(--accent); border-color: var(--accent); }
 
 .deck-main {
   flex: 1;
@@ -307,20 +318,19 @@
   outline-offset: 2px;
 }
 
-.deck-gate-msg {
-  text-align: center;
-  padding: 80px 32px;
-  max-width: 480px;
-  margin: 0 auto;
-}
-
 @media print {
+  @page { size: A4 landscape; margin: 12mm; }
   .deck-header, .deck-nav { display: none; }
   .deck-body { height: auto; overflow: visible; }
   .deck-main { overflow: visible; scroll-snap-type: none; }
   .deck-slide {
     min-height: auto;
     page-break-after: always;
+    break-after: page;
     padding: 32px;
+    /* keep dark title/section slides legible in the exported PDF */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
+  .deck-slide:last-child { page-break-after: auto; break-after: auto; }
 }
