@@ -1,12 +1,23 @@
 {
   "name": "programmable-bio",
   "private": true,
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "build": "eleventy",
     "serve": "eleventy --serve",
-    "clean": "rm -rf _site"
+    "clean": "rm -rf _site",
+    "validate:site": "node scripts/check-site.mjs",
+    "validate:html": "html-validate \"_site/**/*.html\"",
+    "check": "npm run build && npm run validate:site && npm run validate:html",
+    "test:e2e": "playwright test",
+    "audit:ci": "env -u npm_config_allow_scripts npm audit --omit=dev --audit-level=high"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0"
+    "@11ty/eleventy": "^3.1.6",
+    "@axe-core/playwright": "^4.12.1",
+    "@playwright/test": "^1.62.1",
+    "html-validate": "^10.17.0"
   }
 }

@@ -2,98 +2,55 @@
 permalink: how-it-works.html
 layout: layouts/base.njk
 title: "How it works"
-description: "Submit a protocol, get an instant feasibility answer and price, and receive structured model-ready data in days. The Programmable Bio ordering flow for academic and industry scientists."
+description: "How prospective customers move from an expression of interest to an autonomous experiment in the operational Hyderabad R&D lab."
 navActive: "how"
 breadcrumb:
   - label: "How it works"
 ---
-<div class="section">
-  <div class="section-label">Ordering</div>
-  <h2>From protocol to <em>data</em>, without a scoping call</h2>
-  <p class="lead">The whole point is that you never wait on a human to tell you whether we can run your experiment or what it costs. You find out at submission.</p>
-</div>
+<section class="section">
+  <div class="section-label">Customer workflow</div>
+  <h1 class="page-title">From design to <em>data</em></h1>
+  <p class="lead">The lab is operational. Access is deliberately reviewed while the catalog is small; standardized assays move to self-serve ordering as capacity expands.</p>
+  <div class="status-banner">
+    <span class="status-dot" aria-hidden="true"></span>
+    <p><strong>Current access:</strong> selected academic and industry pilots through an expression of interest. <strong>Planned access:</strong> instant compatibility checks, published checkout, and an API for standardized workflows.</p>
+  </div>
+</section>
 
-<div class="section">
+<section class="section">
   <div class="phases">
-    <div class="phase">
-      <div class="phase-num">1</div>
-      <div class="phase-body">
-        <h4>Describe the experiment</h4>
-        <p>Paste a protocol in plain language, upload a construct or sequence set, or POST a job from your pipeline. You do not have to learn a proprietary protocol language to get a quote.</p>
-      </div>
-    </div>
-    <div class="phase">
-      <div class="phase-num">2</div>
-      <div class="phase-body">
-        <h4>Instant feasibility and price</h4>
-        <p>The feasibility agent checks your protocol against what the fleet can currently execute and returns one of three answers immediately: runnable at this price, runnable with these substitutions, or out of scope with the reason. No quote cycle.</p>
-      </div>
-    </div>
-    <div class="phase">
-      <div class="phase-num">3</div>
-      <div class="phase-body">
-        <h4>Ship samples or have them made</h4>
-        <p>Send physical material, or have constructs synthesised and expressed on our side so nothing crosses a border that does not have to.</p>
-      </div>
-    </div>
-    <div class="phase">
-      <div class="phase-num">4</div>
-      <div class="phase-body">
-        <h4>Autonomous execution</h4>
-        <p>The protocol compiler turns your experiment into an executable instrument program. Runs are scheduled against the fleet, monitored live by the QC agent, and re-run automatically when a control fails rather than being delivered as a failure.</p>
-      </div>
-    </div>
-    <div class="phase">
-      <div class="phase-num">5</div>
-      <div class="phase-body">
-        <h4>Structured data back</h4>
-        <p>Results return as typed objects over the API alongside raw instrument files &mdash; each carrying a signed provenance record of instrument, reagent lot, operator programme, and parameters. Feed it straight back into the model that generated the hypothesis.</p>
-      </div>
-    </div>
+    <div class="phase"><div class="phase-num">1</div><div class="phase-body"><h4>Submit an expression of interest</h4><p>Tell us the assay class, sample type, approximate batch size, and desired turnaround. Do not send confidential sequences or patient data through the public form.</p></div></div>
+    <div class="phase"><div class="phase-num">2</div><div class="phase-body"><h4>Feasibility review and quote</h4><p>We map the request to the current Hyderabad cell, identify any method-development work, and return scope, price, inputs, and an estimated completion window.</p></div></div>
+    <div class="phase"><div class="phase-num">3</div><div class="phase-body"><h4>Secure technical intake</h4><p>Accepted programs receive a secure channel for sequences, protocols, material-transfer details, and acceptance criteria.</p></div></div>
+    <div class="phase"><div class="phase-num">4</div><div class="phase-body"><h4>Autonomous execution</h4><p>LabOS schedules the workflow, drives the connected instruments, monitors controls, and records the parameters and materials used in the run.</p></div></div>
+    <div class="phase"><div class="phase-num">5</div><div class="phase-body"><h4>Structured results</h4><p>Customers receive parsed results, raw instrument files, QC context, and an execution record suitable for analysis or the next model-training cycle.</p></div></div>
   </div>
-</div>
+  <div class="cta-row"><a class="button button-primary" href="/express-interest.html">Start with an EOI &rarr;</a></div>
+</section>
 
-<div class="section">
-  <div class="section-label">Catalog</div>
-  <h2>What you can order</h2>
-  <p>Validation classes we build the fleet around &mdash; chosen because they are the steps that most often sit between an in-silico design and a defensible claim.</p>
+<section class="section">
+  <div class="section-label">Launch catalog</div>
+  <h2>Pricing targets benchmarked to the market</h2>
+  <div class="assumption-note"><strong>Illustrative planning assumptions.</strong> These are target launch prices and service levels, not a claim of current catalog availability or historical performance. Final quotes depend on method fit, batch size, materials, and shipping.</div>
   <div class="card-grid card-grid--spaced-sm">
-    <div class="card card-teal">
-      <h4>Construct &amp; expression</h4>
-      <p>Plasmid assembly, sequence verification, and protein expression &mdash; including cell-free synthesis, which removes the host-toxicity failure mode that kills cell-based expression of designed proteins.</p>
-    </div>
-    <div class="card card-accent">
-      <h4>Binding &amp; affinity</h4>
-      <p>SPR and BLI kinetics for designed binders. The single most common thing a protein design model needs checked.</p>
-    </div>
-    <div class="card card-blue">
-      <h4>Stability &amp; biophysics</h4>
-      <p>Thermal shift, aggregation, and structural characterisation for candidates that bind but will not survive formulation.</p>
-    </div>
-    <div class="card card-purple">
-      <h4>Functional &amp; cellular</h4>
-      <p>Enzyme activity, reporter assays, viability and cytotoxicity panels against relevant cell backgrounds.</p>
-    </div>
-    <div class="card card-amber">
-      <h4>Molecular readouts</h4>
-      <p>qPCR, targeted expression panels, and sequencing readouts for perturbation experiments.</p>
-    </div>
-    <div class="card">
-      <h4>Clinical-context validation</h4>
-      <p>Validation against Apollo-derived South Asian sample sets, where population relevance rather than raw throughput is the question. <a href="/apollo.html">More &rarr;</a></p>
-    </div>
+    <div class="card card-teal"><h4>RNA synthesis + qPCR</h4><div class="price">$99 / sample</div><div class="price-meta">Target: up to 12 business days</div><p>Automated synthesis, purification, and quantitative readout for standardized inputs.</p></div>
+    <div class="card card-accent"><h4>Cell-free expression + A280</h4><div class="price">$149 / sample</div><div class="price-meta">Target: up to 11 days</div><p>Expression, affinity purification, yield quantification, controls, and raw data.</p></div>
+    <div class="card card-blue"><h4>E. coli expression + A280</h4><div class="price">$199 / sample</div><div class="price-meta">Target: up to 3 weeks</div><p>Transformation through expression, purification, yield measurement, and QC.</p></div>
+    <div class="card card-purple"><h4>Thermal-shift characterization</h4><div class="price">$159 / sample</div><div class="price-meta">Target: up to 12 days</div><p>Expression, purification, and standardized thermal unfolding measurements.</p></div>
+    <div class="card card-amber"><h4>Plate-reader assay onboarding</h4><div class="price">$399 / assay</div><div class="price-meta">Target: 3&ndash;4 weeks</div><p>One method-development iteration and qualification run for a compatible assay.</p></div>
+    <div class="card"><h4>SPR target onboarding</h4><div class="price">$1,399 / target</div><div class="price-meta">Target: up to 4 weeks</div><p>Target qualification for subsequent binder-kinetics programs.</p></div>
   </div>
-  <p class="footnote"><span class="badge badge-red">FILL</span> Publish per-assay pricing and turnaround SLAs here. Transparent published pricing is the core differentiator against both legacy CROs and Ginkgo &mdash; leaving it blank forfeits the advantage.</p>
-</div>
+  <p class="footnote">Benchmark checked 31 July 2026 against the public <a href="https://cloud.ginkgo.bio/protocols">Ginkgo Cloud Lab protocol catalog</a>. Programmable Bio intends to match these published prices at launch; this comparison should be rechecked before publication.</p>
+</section>
 
-<div class="section">
+<section class="section">
   <div class="section-label">Data contract</div>
-  <h2>What you get back</h2>
+  <h2>What every standardized run should return</h2>
   <ul>
-    <li><strong>Typed results, not documents</strong> &mdash; every assay class has a stable schema, so a result is machine-readable the moment it lands</li>
-    <li><strong>Raw files preserved</strong> &mdash; instrument-native output is retained alongside the parsed result, so you can re-analyse without re-running</li>
-    <li><strong>Signed provenance</strong> &mdash; instrument identity, reagent lots, calibration state, and the exact executed programme travel with the result</li>
-    <li><strong>Negative results included</strong> &mdash; failed candidates are returned with the same fidelity as successful ones, because a design model learns as much from them</li>
-    <li><strong>Your data stays yours</strong> &mdash; results are not pooled into shared datasets without explicit, separately-consented opt-in</li>
+    <li><strong>Typed results</strong> &mdash; stable fields for the assay class rather than values trapped in prose</li>
+    <li><strong>Raw files</strong> &mdash; instrument-native output retained alongside parsed results</li>
+    <li><strong>Execution provenance</strong> &mdash; instrument, method version, reagent lots, calibration state, and parameters</li>
+    <li><strong>QC context</strong> &mdash; controls, flags, re-run decisions, and failure-mode labels</li>
+    <li><strong>Customer control</strong> &mdash; no reuse for shared datasets without a separate, explicit agreement</li>
   </ul>
-</div>
+</section>

@@ -1,68 +1,48 @@
 ---
 permalink: biomarker-atlas.html
 layout: layouts/base.njk
-title: "India Biomarker Atlas"
-description: "Proprietary biomarker database built on Apollo Hospitals biobank — licensing, stratification, and companion Dx development."
+title: "Future India Biomarker Atlas"
+description: "A future, consent-governed India Biomarker Atlas concept; it is not a currently available dataset or licensed product."
 navActive: "apollo"
 breadcrumb:
   - label: "Apollo"
     url: "apollo.html"
-  - label: "India Biomarker Atlas"
+  - label: "Future Biomarker Atlas"
 related:
-  - label: "Apollo Partnership"
+  - label: "Proposed Apollo collaboration"
     url: "apollo-partnership.html"
-  - label: "Apollo substrate"
-    url: "apollo.html"
-  - label: "Case Studies"
+  - label: "Programmable Bio platform"
+    url: "platform.html"
+  - label: "Illustrative programs"
     url: "case-studies.html"
 ---
-<div class="section">
-  <div class="section-label">Programs &middot; Data Asset</div>
-  <h2>India Biomarker <em>Atlas</em></h2>
-  <p>The Atlas is a proprietary biomarker database constructed on the Apollo Hospitals biobank substrate. It is referenced across OmicsOS, ClinicalBridge, IVD sprints, and clinical stratification — and licensed to pharma as a standalone data product.</p>
+<section class="section">
+  <div class="section-label">Future data program &middot; Not yet built</div>
+  <h1 class="page-title">India Biomarker <em>Atlas</em></h1>
+  <p class="lead">The India Biomarker Atlas is a future product concept: a governed collection of experimental and clinical-context evidence for populations underrepresented in many global reference datasets. It is not currently available, licensed, or populated through Apollo.</p>
+  <div class="assumption-note"><strong>Dependency:</strong> the Atlas would require separately consented research programs and signed institutional agreements. The proposed Apollo collaboration has not been signed.</div>
 
-  <div class="callout">
-    <h4>Why it matters</h4>
-    <p>Western genomic references (TCGA, UK Biobank) under-represent India&rsquo;s ~4,600 population groups. The Atlas is the <strong>genomic Rosetta Stone for Asia</strong> — a 3&ndash;5 year structural lead once Apollo partnership closes.</p>
-  </div>
+  <h2>Why build it through programmable experiments</h2>
+  <p>A useful atlas needs more than a large table of variants. It needs reproducible measurements, interpretable cohort definitions, clear consent scope, and provenance linking each result to how it was generated. The autonomous lab contributes repeatability; clinical collaborators contribute legitimate context and governance.</p>
 
-  <h3>What the Atlas contains</h3>
   <div class="card-grid">
-    <div class="card card-teal"><h4>Multiomics layers</h4><p>WGS/WES, scRNA-seq, spatial transcriptomics, proteomics, metabolomics — linked to structured clinical phenotype from Apollo EHR.</p></div>
-    <div class="card card-accent"><h4>Longitudinal outcomes</h4><p>Treatment response, progression, adverse events — enabling response-predictive and safety-predictive biomarker discovery.</p></div>
-    <div class="card card-purple"><h4>India-specific variants</h4><p>Population-frequency annotations for CYP enzymes, HLA types, and disease-associated variants rare or absent in Western cohorts.</p></div>
-    <div class="card card-blue"><h4>Provenance metadata</h4><p>Every entry traceable to consent status, collection site, assay method, and quality score — audit-ready for regulatory submission.</p></div>
+    <div class="card card-teal"><h4>Standardized assays</h4><p>Comparable measurements produced through versioned methods and controls.</p></div>
+    <div class="card card-accent"><h4>Population relevance</h4><p>Research questions designed around Indian and South Asian diversity rather than treating it as an afterthought.</p></div>
+    <div class="card card-purple"><h4>Longitudinal context</h4><p>Where permitted, link experimental findings to outcomes without exposing raw identities.</p></div>
+    <div class="card card-blue"><h4>Consent-aware provenance</h4><p>Every export tied to permitted purpose, source, method, quality, and governance metadata.</p></div>
   </div>
 
-  <h3>Growth trajectory</h3>
-  <div class="table-scroll"><table>
-    <thead><tr><th>Year</th><th>Atlas entries</th><th>Primary sources</th></tr></thead>
+  <h2>Illustrative development path</h2>
+  <div class="table-scroll" tabindex="0" role="region" aria-label="Proposed atlas build sequence"><table>
+    <thead><tr><th>Stage</th><th>Scope</th><th>Exit criterion</th></tr></thead>
     <tbody>
-      <tr><td><strong>Year 1</strong></td><td>5,000</td><td>Apollo oncology + cardiometabolic pilot cohorts; IVD sprint outputs</td></tr>
-      <tr><td><strong>Year 2</strong></td><td>50,000</td><td>Expanded disease verticals; PV sub-cohort enrichment</td></tr>
-      <tr><td><strong>Year 3</strong></td><td>500K</td><td>Pan-India Apollo network; SEA genomics via BioHelix/GIS collaboration</td></tr>
-      <tr><td><strong>Year 5</strong></td><td>5M+</td><td>Continuous enrichment from every LabOS closed-loop cycle</td></tr>
+      <tr><td><strong>Pilot</strong></td><td>One disease area, one institution, one assay family</td><td>Ethics approval, signed agreement, reproducible data contract</td></tr>
+      <tr><td><strong>Reference cohort</strong></td><td>Multiple sites or cohorts using the same measurement standard</td><td>External scientific review and documented representativeness</td></tr>
+      <tr><td><strong>Research product</strong></td><td>Governed access for qualified academic and industry users</td><td>Validated privacy, licensing, support, and withdrawal processes</td></tr>
+      <tr><td><strong>Expansion</strong></td><td>Additional diseases, assays, and APAC collaborators</td><td>Evidence of scientific utility and sustainable economics</td></tr>
     </tbody>
   </table></div>
 
-  <h3>Commercial model</h3>
-  <div class="two-col">
-    <div class="card">
-      <h4>Licensing tiers</h4>
-      <ul>
-        <li><strong>Research license</strong> — $200K&ndash;500K/yr, academic and early-stage biotech</li>
-        <li><strong>Commercial license</strong> — $500K&ndash;2M/yr, pharma CDx and trial design</li>
-        <li><strong>Co-development</strong> — equity + royalty on biomarker-derived assets</li>
-      </ul>
-    </div>
-    <div class="card card-accent">
-      <h4>Apollo economics</h4>
-      <p>25&ndash;35% revenue share to Apollo on Atlas licensing. Federated learning ensures raw patient data never leaves Apollo sovereign infrastructure — only differential-privacy outputs and model weights cross the boundary.</p>
-    </div>
-  </div>
-
-  <div class="engagement-box">
-    <h4>Use cases</h4>
-    <p style="margin:0">Companion Dx development &middot; Clinical trial stratification &middot; Drug repositioning &middot; Phase 4 PGx signal baselines &middot; Rare-disease mechanism work where Western references fail.</p>
-  </div>
-</div>
+  <h2>Commercial model</h2>
+  <p>No price is published because the asset does not yet exist. Potential models include sponsored cohort creation, governed research access, co-development, and institution-approved licensing. Economics would be negotiated with data and clinical partners before any offer is made.</p>
+</section>

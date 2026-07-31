@@ -1,13 +1,14 @@
 {
   "name": "Programmable Bio",
-  "tagline": "LabOS — the agentic operating system for distributed biology.",
+  "tagline": "Autonomous experiments for programmable biology.",
   "url": "https://programmablebio.tech",
   "email": "skannan@oncophenomics.com",
   "year": 2026,
   "disclaimer": "Financial projections are indicative and scenario-based. Nothing on this site constitutes an offer of securities.",
-  "investorFormAction": "https://formsubmit.co/skannan@oncophenomics.com",
-  "investorThanksUrl": "/thanks.html",
+  "formAction": "https://formsubmit.co/skannan@oncophenomics.com",
+  "thanksUrl": "/thanks.html",
   "analyticsEndpoint": "",
   "investorDeckUrl": "/investor-deck.html",
-  "ogImage": "/assets/og-cover.png"
+  "ogImage": "/assets/og-cover.png",
+  "privacyUrl": "/privacy.html"
 }

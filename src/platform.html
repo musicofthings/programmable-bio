@@ -2,75 +2,51 @@
 permalink: platform.html
 layout: layouts/base.njk
 title: "Platform"
-description: "LabOS — the software layer between a design model and a robotic bench. Protocol compiler, feasibility agent, scheduler, QC agent, and provenance signer."
+description: "The operational Hyderabad autonomous lab and LabOS software that connect experimental intent, instrument execution, quality control, and model-ready data."
 navActive: "platform"
 breadcrumb:
   - label: "Platform"
 ---
-<div class="section">
+<section class="section">
   <div class="section-label">Platform</div>
-  <h2>LabOS &mdash; the layer between the <em>model</em> and the <em>bench</em></h2>
-  <p class="lead">A design model emits candidates. A robotic instrument executes programmes. LabOS is everything in between: the part that turns an intent into an executable run and turns a run back into data a model can learn from.</p>
-</div>
+  <h1 class="page-title">A working autonomous cell for <em>programmable biology</em></h1>
+  <p class="lead">Programmable Bio combines a compact autonomous R&amp;D lab in Hyderabad with LabOS, the software layer that converts an accepted experiment into instrument operations and structured evidence.</p>
+  <div class="status-banner">
+    <span class="status-dot" aria-hidden="true"></span>
+    <p><strong>Current status: fully operational at R&amp;D scale.</strong> The next financing expands instrument breadth, parallel capacity, standardized assays, and external customer access.</p>
+  </div>
+</section>
 
-<div class="section">
-  <div class="section-label">Architecture</div>
-  <h2>Five components, one loop</h2>
+<section class="section">
+  <div class="section-label">LabOS</div>
+  <h2>Five responsibilities, one experimental loop</h2>
   <div class="card-grid card-grid--spaced-sm">
-    <div class="card card-teal">
-      <h4>Protocol compiler</h4>
-      <p>Takes a described experiment &mdash; plain language, a construct file, or a structured API job &mdash; and lowers it into an executable instrument programme. This is the piece that replaces a technician re-typing a Word document, and it is where reproducibility is actually won.</p>
-    </div>
-    <div class="card card-accent">
-      <h4>Feasibility &amp; quote agent</h4>
-      <p>Answers, at submission time, whether the current fleet can run the protocol and what it will cost. Returns runnable, runnable-with-substitutions, or out-of-scope-because. Removes the multi-week quoting cycle that defines legacy CRO engagement.</p>
-    </div>
-    <div class="card card-blue">
-      <h4>Scheduler</h4>
-      <p>Packs incoming orders across instruments and shifts to maximise utilisation. Instrument capacity is a fixed cost, so utilisation <em>is</em> gross margin &mdash; which makes the scheduler the most commercially consequential component in the system.</p>
-    </div>
-    <div class="card card-purple">
-      <h4>QC &amp; anomaly agent</h4>
-      <p>Watches controls and instrument telemetry mid-run. A failed plate is caught and re-queued while the reagents are still on deck, rather than surfacing as a disappointing result three weeks later.</p>
-    </div>
-    <div class="card card-amber">
-      <h4>Provenance signer</h4>
-      <p>Every result is signed with the instrument identity, reagent lots, calibration state, and the exact programme executed. When a finding is challenged, the record of what physically happened is retrievable rather than reconstructed.</p>
-    </div>
-    <div class="card">
-      <h4>The experimental graph</h4>
-      <p>All of the above accumulates into a typed graph linking hypothesis, execution, and outcome. Serving customers well and building the data asset are the same activity.</p>
-    </div>
+    <div class="card card-teal"><h4>Protocol translation</h4><p>Convert an approved experimental plan into versioned, machine-executable operations for the instruments available in the cell.</p></div>
+    <div class="card card-accent"><h4>Capability and quote</h4><p>Match requested work to validated methods, materials, capacity, and price. Human review remains in the loop for non-standard programs.</p></div>
+    <div class="card card-blue"><h4>Scheduling</h4><p>Coordinate instruments, plates, incubation windows, and dependencies to increase useful walkaway time and utilization.</p></div>
+    <div class="card card-purple"><h4>QC and exception handling</h4><p>Track controls and telemetry, pause or re-queue work when defined conditions fail, and preserve the reason for every intervention.</p></div>
+    <div class="card card-amber"><h4>Provenance</h4><p>Bind results to method version, instrument, reagent lot, calibration context, and executed parameters.</p></div>
+    <div class="card"><h4>Experimental graph</h4><p>Link design, execution, measurement, and outcome so the next computational cycle can learn from both successes and failures.</p></div>
   </div>
-</div>
+</section>
 
-<div class="section">
-  <div class="section-label">Design principle</div>
-  <h2>Every run is a <em>training example</em></h2>
-  <p>Most lab software is built to produce a report for a human. LabOS is built to produce a record for a model. The difference shows up in what we keep:</p>
-  <ul>
-    <li><strong>Negative results are first-class</strong> &mdash; a candidate that failed to bind is returned with the same fidelity as one that succeeded, because that is exactly the label a design model is missing</li>
-    <li><strong>Parameters are structured, not prose</strong> &mdash; conditions are typed fields, so runs are comparable across time and instrument</li>
-    <li><strong>Raw and parsed both persist</strong> &mdash; re-analysis never requires re-running the experiment</li>
-    <li><strong>Failure modes are labelled</strong> &mdash; an expression failure and a binding failure are different data, and conflating them destroys the signal</li>
-  </ul>
-  <div class="callout">
-    This is why the loop closes. A conventional CRO returns an answer. LabOS returns an answer plus the structured evidence needed to improve the model that asked the question.
-  </div>
-</div>
-
-<div class="section">
-  <div class="section-label">Execution</div>
-  <h2>Partner-executed first, owned fleet next</h2>
+<section class="section">
+  <div class="section-label">Scale plan</div>
+  <h2>Operational cell &rarr; customer capacity &rarr; distributed fleet</h2>
   <div class="chain">
-    <div class="chain-step active"><div class="chain-label">Portal + compiler</div><div class="chain-sublabel">Software live</div></div>
+    <div class="chain-step active"><div class="chain-label">Hyderabad R&amp;D cell</div><div class="chain-sublabel">Operational now</div></div>
     <div class="chain-arrow">&rarr;</div>
-    <div class="chain-step active"><div class="chain-label">Partner labs</div><div class="chain-sublabel">Proves demand</div></div>
+    <div class="chain-step active"><div class="chain-label">Selected pilots</div><div class="chain-sublabel">EOI access</div></div>
     <div class="chain-arrow">&rarr;</div>
-    <div class="chain-step"><div class="chain-label">First owned cell</div><div class="chain-sublabel">Margin measurable</div></div>
+    <div class="chain-step"><div class="chain-label">Expanded cells</div><div class="chain-sublabel">Funded scale-up</div></div>
     <div class="chain-arrow">&rarr;</div>
-    <div class="chain-step"><div class="chain-label">Fleet + API</div><div class="chain-sublabel">Scale-out</div></div>
+    <div class="chain-step"><div class="chain-label">Catalog + API</div><div class="chain-sublabel">Standard workflows</div></div>
+    <div class="chain-arrow">&rarr;</div>
+    <div class="chain-step"><div class="chain-label">APAC network</div><div class="chain-sublabel">Future nodes</div></div>
   </div>
-  <p>The software layer is the durable asset, so it gets built first. Running early volume through partner wet labs proves demand and pricing before committing instrument CapEx &mdash; and the protocol compiler that drives a partner lab is most of the compiler that will drive an owned one.</p>
-  <p><a href="/how-it-works.html">See the ordering flow &rarr;</a> &middot; <a href="/landscape.html">How this compares to Ginkgo and Emerald &rarr;</a></p>
-</div>
+  <p>We are not raising to prove that a compact autonomous lab can run. It already does. We are raising to turn that working R&amp;D cell into reliable customer capacity.</p>
+  <div class="cta-row">
+    <a class="button button-primary" href="/express-interest.html">Propose a pilot</a>
+    <a class="button" href="/investors.html">See the scale-up case</a>
+  </div>
+</section>

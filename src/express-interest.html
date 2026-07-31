@@ -1,0 +1,85 @@
+---
+permalink: express-interest.html
+layout: layouts/base.njk
+title: "Run an experiment"
+description: "Submit an expression of interest for an academic or industry pilot in Programmable Bio's operational autonomous R&D lab in Hyderabad."
+navActive: "eoi"
+breadcrumb:
+  - label: "Run an experiment"
+extraCss: investor-deck.css
+---
+<section class="section">
+  <div class="section-label">Customer expression of interest</div>
+  <h1 class="page-title">What do you want to <em>test?</em></h1>
+  <p class="lead">The Hyderabad autonomous lab is operational and accepting selected academic and industry pilots. Tell us enough to assess fit; if the project is suitable, we will arrange a secure technical intake.</p>
+  <div class="assumption-note"><strong>Do not submit confidential sequences, patient information, clinical records, unpublished protocols, export-controlled material, or other sensitive data through this public form.</strong></div>
+</section>
+
+<div class="investor-grid">
+  <section>
+    <h2>What happens next</h2>
+    <div class="phases">
+      <div class="phase"><div class="phase-num">1</div><div class="phase-body"><h4>Fit review</h4><p>We compare the request with current instruments, methods, batch limits, and material requirements.</p></div></div>
+      <div class="phase"><div class="phase-num">2</div><div class="phase-body"><h4>Scope and estimate</h4><p>Suitable projects receive a proposed scope, target turnaround, indicative price, and a list of required inputs.</p></div></div>
+      <div class="phase"><div class="phase-num">3</div><div class="phase-body"><h4>Secure intake</h4><p>Only after mutual interest do we establish confidentiality terms and a secure channel for technical materials.</p></div></div>
+    </div>
+    <p>Launch price targets are published on <a href="/how-it-works.html">How it works</a>. Custom method development and non-standard inputs are quoted separately.</p>
+  </section>
+
+  <section class="investor-form" aria-labelledby="eoi-form-title">
+    <h2 id="eoi-form-title">Expression of interest</h2>
+    <form action="{{ site.formAction }}" method="POST" accept-charset="UTF-8">
+      <input type="hidden" name="_subject" value="Customer EOI — Programmable Bio">
+      <input type="hidden" name="_next" value="{{ site.url }}{{ site.thanksUrl }}">
+      <input type="hidden" name="_url" value="{{ site.url }}/express-interest.html">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="form-field"><label for="eoi-name">Full name</label><input type="text" id="eoi-name" name="name" required autocomplete="name"></div>
+      <div class="form-field"><label for="eoi-email">Work or institutional email</label><input type="email" id="eoi-email" name="email" required autocomplete="email"></div>
+      <div class="form-field"><label for="eoi-org">Institution / company</label><input type="text" id="eoi-org" name="organization" required autocomplete="organization"></div>
+      <div class="form-field">
+        <label for="eoi-org-type">Organization type</label>
+        <select id="eoi-org-type" name="organization_type" required>
+          <option value="">Select&hellip;</option>
+          <option value="Academic">Academic / nonprofit research</option>
+          <option value="Startup">Biotech startup</option>
+          <option value="Industry">Pharma / established industry</option>
+          <option value="CRO">CRO / laboratory partner</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label for="eoi-assay">Closest assay class</label>
+        <select id="eoi-assay" name="assay_class" required>
+          <option value="">Select&hellip;</option>
+          <option value="RNA synthesis and qPCR">RNA synthesis + qPCR</option>
+          <option value="Cell-free expression">Cell-free expression</option>
+          <option value="E. coli expression">E. coli expression</option>
+          <option value="Binding and kinetics">Binding / kinetics</option>
+          <option value="Thermal characterization">Thermal characterization</option>
+          <option value="Plate-reader assay">Plate-reader assay</option>
+          <option value="Molecular readout">Molecular readout</option>
+          <option value="Other">Other / not sure</option>
+        </select>
+      </div>
+      <div class="form-field"><label for="eoi-batch">Approximate batch size</label><input type="text" id="eoi-batch" name="batch_size" placeholder="For example: 48 constructs" required></div>
+      <div class="form-field">
+        <label for="eoi-timeframe">Desired start</label>
+        <select id="eoi-timeframe" name="desired_start" required>
+          <option value="">Select&hellip;</option>
+          <option value="Within 30 days">Within 30 days</option>
+          <option value="1–3 months">1&ndash;3 months</option>
+          <option value="3–6 months">3&ndash;6 months</option>
+          <option value="Exploring">Exploring / no fixed date</option>
+        </select>
+      </div>
+      <div class="form-field"><label for="eoi-summary">Non-confidential project summary</label><textarea id="eoi-summary" name="project_summary" required placeholder="What decision should the experiment help you make?"></textarea></div>
+      <div class="consent-field">
+        <input type="checkbox" id="eoi-consent" name="contact_consent" value="yes" required>
+        <label for="eoi-consent">I consent to Programmable Bio and its form-processing provider using these details to assess and respond to this enquiry. See the <a href="{{ site.privacyUrl }}">privacy notice</a>.</label>
+      </div>
+      <button type="submit" class="form-submit">Submit EOI &rarr;</button>
+      <p class="form-note">This form is processed by FormSubmit and may present Google reCAPTCHA. Do not use it for sensitive technical or personal data.</p>
+    </form>
+  </section>
+</div>

@@ -2,54 +2,50 @@
 permalink: investors.html
 layout: layouts/base.njk
 title: "Investors"
-description: "Programmable Bio investor materials — validation infrastructure for AI-designed biology. Read the full deck, no gate, no form."
+description: "Investor materials for scaling Programmable Bio's operational autonomous R&D lab in Hyderabad."
 navActive: "investors"
 breadcrumb:
   - label: "Investors"
 extraCss: investor-deck.css
 ---
-<div class="investor-hero">
+<section class="investor-hero">
   <div class="section-label">Investors</div>
-  <h2>Investor <em>materials</em></h2>
-  <p class="lead">Programmable Bio is building the validation layer for AI&nbsp;&times;&nbsp;Bio: scientists order wet-lab validation online, and our autonomous labs return structured, model-ready data in days at a cost base Western facilities cannot match.</p>
-  <p><a href="{{ site.investorDeckUrl }}" class="form-submit" style="display:inline-block;margin-top:8px;">Read the full deck &rarr;</a></p>
-  <p style="font-size: 13px; color: var(--ink-muted); margin-top: 12px;">No gate and no form &mdash; the deck is public. Use <strong>Save as PDF</strong> in the deck header if you need to circulate it internally.</p>
-</div>
+  <h1 class="page-title">Scale a working autonomous lab</h1>
+  <p class="lead">Programmable Bio operates a compact autonomous R&amp;D lab in Hyderabad. The financing case is to expand a functioning execution loop into customer capacity, a standardized assay catalog, and eventually a distributed programmable-biology network.</p>
+  <div class="cta-row">
+    <a href="{{ site.investorDeckUrl }}" class="button button-primary">Read the full deck &rarr;</a>
+    <a href="/express-interest.html" class="button">Customer EOI</a>
+  </div>
+  <p class="form-note">The deck is public. Figures explicitly marked as planning assumptions are illustrative drafts and must be replaced with verified company data before formal circulation.</p>
+</section>
 
 <div class="investor-grid">
-  <div class="investor-highlights">
-    <h3>Investment highlights</h3>
+  <section class="investor-highlights">
+    <h2>Investment highlights</h2>
     <ul>
-      <li><strong>The bottleneck moved</strong> &mdash; AI design capacity outran validation capacity in 2026; the constraint on the entire field is now wet-lab throughput</li>
-      <li><strong>Category is funded and proven</strong> &mdash; over $1B into autonomous labs since 2025; Ginkgo's March 2026 Cloud Lab launch settles the model question</li>
-      <li><strong>Structural cost advantage</strong> &mdash; an India-based fleet attacks a price battleground incumbents are already defending</li>
-      <li><strong>Underserved wedge</strong> &mdash; academic labs generate the most candidates and are priced out of every existing option</li>
-      <li><strong>Compounding moat</strong> &mdash; Apollo's pan-India EHR and biobank give clinical grounding no Boston facility can replicate</li>
-      <li><strong>Capital-efficient entry</strong> &mdash; partner-lab execution proves demand and pricing before instrument CapEx</li>
+      <li><strong>Operational starting point</strong> &mdash; a compact autonomous R&amp;D cell is running in Hyderabad today</li>
+      <li><strong>Clear use of capital</strong> &mdash; instruments, parallel capacity, assay standardization, software, and customer delivery</li>
+      <li><strong>Public price benchmark</strong> &mdash; launch targets match Ginkgo's published cloud-lab catalog</li>
+      <li><strong>Two customer paths</strong> &mdash; accessible academic pilots and higher-value industry capacity programs</li>
+      <li><strong>Programmable-biology data loop</strong> &mdash; structured execution records return evidence to computational design systems</li>
+      <li><strong>Clinical option, honestly scoped</strong> &mdash; an Apollo collaboration is proposed but no MoU is signed</li>
     </ul>
-    <p style="font-size: 12px; color: var(--ink-muted); margin-top: 20px;">See the <a href="/landscape.html">competitive landscape</a> for an unvarnished read on Ginkgo, Emerald, Lila and Periodic.</p>
-  </div>
+    <p class="form-note">See the <a href="/landscape.html">competitive landscape</a> for current source links and the <a href="/platform.html">platform page</a> for operational status.</p>
+  </section>
 
-  <div class="investor-form">
-    <h3>Start a conversation</h3>
-    <p style="font-size: 13px; color: var(--ink-secondary); margin-bottom: 20px;">The deck is already open. Use this if you want to talk &mdash; diligence questions, an intro, or a partnership.</p>
-    <form action="{{ site.investorFormAction }}" method="POST">
+  <section class="investor-form" aria-labelledby="investor-contact-title">
+    <h2 id="investor-contact-title">Start a conversation</h2>
+    <p>Use this form for diligence, introductions, and strategic partnerships. Please do not include confidential, patient, or regulated information.</p>
+    <form action="{{ site.formAction }}" method="POST" accept-charset="UTF-8">
       <input type="hidden" name="_subject" value="Investor enquiry — Programmable Bio">
-      <input type="hidden" name="_next" value="{{ site.url }}{{ site.investorThanksUrl }}">
-      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="_next" value="{{ site.url }}{{ site.thanksUrl }}">
+      <input type="hidden" name="_url" value="{{ site.url }}/investors.html">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-      <div class="form-field">
-        <label for="inv-name">Full name</label>
-        <input type="text" id="inv-name" name="name" required autocomplete="name">
-      </div>
-      <div class="form-field">
-        <label for="inv-email">Work email</label>
-        <input type="email" id="inv-email" name="email" required autocomplete="email">
-      </div>
-      <div class="form-field">
-        <label for="inv-org">Organization / fund</label>
-        <input type="text" id="inv-org" name="organization" required autocomplete="organization">
-      </div>
+      <div class="form-field"><label for="inv-name">Full name</label><input type="text" id="inv-name" name="name" required autocomplete="name"></div>
+      <div class="form-field"><label for="inv-email">Work email</label><input type="email" id="inv-email" name="email" required autocomplete="email"></div>
+      <div class="form-field"><label for="inv-org">Organization / fund</label><input type="text" id="inv-org" name="organization" required autocomplete="organization"></div>
       <div class="form-field">
         <label for="inv-type">Investor type</label>
         <select id="inv-type" name="investor_type" required>
@@ -57,16 +53,17 @@ extraCss: investor-deck.css
           <option value="Pre-seed / Seed">Pre-seed / Seed</option>
           <option value="Series A">Series A</option>
           <option value="Angel">Angel / family office</option>
-          <option value="Strategic">Strategic (pharma / CRO / hospital)</option>
+          <option value="Strategic">Strategic investor</option>
           <option value="Other">Other</option>
         </select>
       </div>
-      <div class="form-field">
-        <label for="inv-msg">Message <span style="font-weight:400;text-transform:none;">(optional)</span></label>
-        <textarea id="inv-msg" name="message" placeholder="Questions after reading the deck, or context on your thesis&hellip;"></textarea>
+      <div class="form-field"><label for="inv-msg">Message <span class="form-optional">(optional)</span></label><textarea id="inv-msg" name="message" placeholder="Questions or context on your investment thesis"></textarea></div>
+      <div class="consent-field">
+        <input type="checkbox" id="inv-consent" name="contact_consent" value="yes" required>
+        <label for="inv-consent">I consent to Programmable Bio and its form-processing provider using these details to respond to this enquiry. See the <a href="{{ site.privacyUrl }}">privacy notice</a>.</label>
       </div>
       <button type="submit" class="form-submit">Send &rarr;</button>
-      <p class="form-note">{{ site.disclaimer }} By submitting, you agree to be contacted regarding Programmable Bio. We do not share your information with third parties.</p>
+      <p class="form-note">This form is processed by FormSubmit and may present Google reCAPTCHA. Submission data is therefore handled by third-party processors as described in our privacy notice.</p>
     </form>
-  </div>
+  </section>
 </div>

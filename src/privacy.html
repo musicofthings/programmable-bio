@@ -1,0 +1,43 @@
+---
+permalink: privacy.html
+layout: layouts/base.njk
+title: "Privacy"
+description: "How Programmable Bio handles website enquiries, form submissions, and optional investor-deck analytics."
+breadcrumb:
+  - label: "Privacy"
+---
+<section class="section">
+  <div class="section-label">Privacy notice &middot; Updated 31 July 2026</div>
+  <h1 class="page-title">Website privacy</h1>
+  <p class="lead">This notice covers the Programmable Bio public website, investor enquiry form, and customer expression-of-interest form. It does not cover future customer projects, clinical research, or laboratory data, which require separate agreements and notices.</p>
+
+  <h2>What the forms collect</h2>
+  <p>Depending on the form, we collect your name, work or institutional email, organization, organization type, investor type, assay interest, approximate batch size, desired timing, and the non-confidential message you provide.</p>
+
+  <h2>Why we use it</h2>
+  <ul>
+    <li>To respond to your enquiry</li>
+    <li>To assess whether a proposed experiment fits current lab capabilities</li>
+    <li>To arrange a later secure intake when both sides wish to proceed</li>
+    <li>To understand aggregate demand for assays and capacity planning</li>
+  </ul>
+
+  <h2>Processors and transfers</h2>
+  <p>Our public forms submit to <a href="https://formsubmit.co/">FormSubmit</a>, which forwards the form contents to our email. FormSubmit uses Google reCAPTCHA by default to prevent spam. These providers process submission data under their own infrastructure and policies. Do not submit confidential sequences, patient information, clinical records, regulated data, or other sensitive material through these forms.</p>
+
+  <h2>Retention and sharing</h2>
+  <p>FormSubmit states that it retains archived form submissions for 30 days. We retain enquiry records delivered to us only as long as reasonably needed to respond, evaluate a possible relationship, maintain necessary business records, or meet legal obligations. We do not sell form data. We may disclose it to service providers that process it for us, professional advisers where necessary, or authorities when legally required.</p>
+
+  <h2>Analytics</h2>
+  {% if site.analyticsEndpoint %}
+  <p>The public investor deck sends a per-visit random identifier, referrer, slide dwell time, deepest slide, and total active viewing time to our configured analytics endpoint. It does not set a persistent identifier. We use this information to understand deck engagement.</p>
+  {% else %}
+  <p>Investor-deck analytics are currently disabled because no analytics endpoint is configured. The deck does not send engagement events from the public site in this configuration.</p>
+  {% endif %}
+
+  <h2>Your choices</h2>
+  <p>You may ask us to access, correct, or delete enquiry information, withdraw permission for further contact, or raise a privacy concern by emailing <a href="mailto:{{ site.email }}">{{ site.email }}</a>. We may need to retain limited records where required for legal or security purposes.</p>
+
+  <h2>Security and project intake</h2>
+  <p>The public forms are not secure scientific data rooms. If an enquiry progresses, we will agree confidentiality terms and provide an appropriate channel before accepting technical files, sequences, samples, or regulated information.</p>
+</section>

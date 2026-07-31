@@ -10,6 +10,8 @@
   var nextBtn = document.getElementById("deck-next");
   var current = 0;
   var deepest = 0;
+  var reduceMotion = window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function labelFor(slide) {
     var el = slide.querySelector(".deck-slide-label");
@@ -18,22 +20,29 @@
 
   function updateProgress() {
     if (progress) progress.textContent = current + 1 + " / " + slides.length;
+    if (prevBtn) prevBtn.disabled = current === 0;
+    if (nextBtn) nextBtn.disabled = current === slides.length - 1;
   }
 
   /* ---- engagement tracking -------------------------------------------- */
-  /* Dwell time per slide, flushed once on exit. No cookies, no identifiers
-     beyond a per-visit random id, so this stays outside GDPR consent scope. */
+  /* Dwell time per slide, flushed once on exit. No cookies or persistent
+     identifiers are set. Any deployment must still apply the privacy and
+     consent rules relevant to its visitors and configured endpoint. */
 
   var endpoint = document.body.getAttribute("data-analytics-endpoint") || "";
   var dwell = slides.map(function () { return 0; });
   var enteredAt = Date.now();
-  var startedAt = enteredAt;
+  var activeMs = 0;
+  var visible = document.visibilityState !== "hidden";
   var visitId = Math.random().toString(36).slice(2) + Date.now().toString(36);
   var flushed = false;
 
   function accrue() {
+    if (!visible) return;
     var now = Date.now();
-    dwell[current] += now - enteredAt;
+    var elapsed = now - enteredAt;
+    dwell[current] += elapsed;
+    activeMs += elapsed;
     enteredAt = now;
   }
 
@@ -46,7 +55,7 @@
       visitId: visitId,
       deck: window.location.pathname,
       referrer: document.referrer || null,
-      totalMs: Date.now() - startedAt,
+      totalMs: activeMs,
       deepestSlide: deepest + 1,
       slideCount: slides.length,
       slides: slides.map(function (s, i) {
@@ -60,14 +69,28 @@
     }
     try {
       var blob = new Blob([JSON.stringify(payload)], { type: "application/json" });
-      navigator.sendBeacon(endpoint, blob);
+      var accepted = navigator.sendBeacon(endpoint, blob);
+      if (!accepted && window.fetch) {
+        window.fetch(endpoint, {
+          method: "POST",
+          body: blob,
+          keepalive: true,
+          credentials: "omit"
+        }).catch(function () {});
+      }
     } catch (e) {}
   }
 
-  /* pagehide is the only exit event Safari reliably fires */
+  /* pagehide is the most reliable final-exit event across browsers. */
   window.addEventListener("pagehide", flush);
   document.addEventListener("visibilitychange", function () {
-    if (document.visibilityState === "hidden") flush();
+    if (document.visibilityState === "hidden") {
+      accrue();
+      visible = false;
+    } else {
+      visible = true;
+      enteredAt = Date.now();
+    }
   });
 
   /* ---- active slide via IntersectionObserver --------------------------- */
@@ -103,7 +126,10 @@
   function goTo(index) {
     if (index < 0 || index >= slides.length) return;
     setCurrent(index);
-    slides[index].scrollIntoView({ behavior: "smooth", block: "start" });
+    slides[index].scrollIntoView({
+      behavior: reduceMotion ? "auto" : "smooth",
+      block: "start"
+    });
   }
 
   if (prevBtn) prevBtn.addEventListener("click", function () { goTo(current - 1); });
