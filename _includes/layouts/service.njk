@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include "partials/head.njk" %}
+</head>
+<body class="service-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  {% include "partials/nav.njk" %}
+  <main id="main" class="service-main">
+    {{ content | safe }}
+  </main>
+  {% include "partials/footer.njk" %}
+  <script src="/assets/site.js" defer></script>
+  {% if extraJs %}<script src="/assets/{{ extraJs }}" defer></script>{% endif %}
+</body>
+</html>

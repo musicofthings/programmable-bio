@@ -10,6 +10,7 @@ const corePages = [
   "/express-interest.html",
   "/investors.html",
   "/privacy.html",
+  "/services/expression/",
   "/investor-deck.html"
 ];
 
@@ -58,6 +59,42 @@ test("customer EOI exposes required safe-intake controls", async ({ page }) => {
   await expect(page.getByLabel("Non-confidential project summary")).toBeVisible();
   await expect(page.getByRole("button", { name: "Submit EOI →" })).toBeVisible();
   await expect(page.getByText("Do not submit confidential sequences")).toBeVisible();
+});
+
+test("Adaptyv expression calculator supports INR, tiers, replicates, and shipping FAQ", async ({ page }) => {
+  await page.goto("/services/expression/");
+  await expect(page.getByRole("heading", { name: "Expression", level: 1 })).toBeVisible();
+  await expect(page.locator('.site-nav a[href="/services/expression/"]')).toHaveAttribute("aria-current", "page");
+  await expect(page.getByRole("contentinfo").getByRole("link", { name: "Adaptyv Bio expression" })).toBeVisible();
+  await expect(page.locator("#grand-total")).toHaveText("$4,740");
+
+  await page.getByRole("button", { name: "INR" }).click();
+  await expect(page.locator("#grand-total")).toContainText("₹");
+
+  await page.getByRole("button", { name: "USD" }).click();
+  for (const [count, tier, price] of [
+    [47, "T1", "$89"],
+    [48, "T2", "$79"],
+    [91, "T3", "$69"],
+    [189, "T4", "$59"],
+    [401, "T5", "$49"]
+  ]) {
+    await page.locator("#protein-count").fill(String(count));
+    await expect(page.locator("#tier-name")).toHaveText(tier);
+    await expect(page.locator("#unit-price")).toHaveText(price);
+  }
+
+  await page.locator("#protein-count").fill("60");
+  await page.getByRole("button", { name: "3 Triplicate" }).click();
+  await expect(page.locator("#replicate-cost-row")).toBeVisible();
+  await expect(page.locator("#replicate-cost")).toHaveText("$540");
+
+  await page.getByLabel(/Release results on Proteinbase/).check();
+  await expect(page.locator("#discount-row")).toBeVisible();
+  await expect(page.locator("#grand-total")).toHaveText("$4,224");
+
+  await page.getByText("Can protein samples be shipped to me in India?").click();
+  await expect(page.getByText(/Sequel LifeCare/).last()).toBeVisible();
 });
 
 for (const [url, sourceUrl] of [
