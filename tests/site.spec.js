@@ -61,11 +61,11 @@ test("customer EOI exposes required safe-intake controls", async ({ page }) => {
   await expect(page.getByText("Do not submit confidential sequences")).toBeVisible();
 });
 
-test("Adaptyv expression calculator supports INR, tiers, replicates, and shipping FAQ", async ({ page }) => {
+test("expression planning calculator supports INR, tiers, replicates, and shipping FAQ", async ({ page }) => {
   await page.goto("/services/expression/");
   await expect(page.getByRole("heading", { name: "Expression", level: 1 })).toBeVisible();
   await expect(page.locator('.site-nav a[href="/services/expression/"]')).toHaveAttribute("aria-current", "page");
-  await expect(page.getByRole("contentinfo").getByRole("link", { name: "Adaptyv Bio expression" })).toBeVisible();
+  await expect(page.getByRole("contentinfo").getByRole("link", { name: "Expression service" })).toBeVisible();
   await expect(page.locator("#grand-total")).toHaveText("$4,740");
 
   await page.getByRole("button", { name: "INR" }).click();
@@ -86,15 +86,17 @@ test("Adaptyv expression calculator supports INR, tiers, replicates, and shippin
 
   await page.locator("#protein-count").fill("60");
   await page.getByRole("button", { name: "3 Triplicate" }).click();
-  await expect(page.locator("#replicate-cost-row")).toBeVisible();
   await expect(page.locator("#replicate-cost")).toHaveText("$540");
-
-  await page.getByLabel(/Release results on Proteinbase/).check();
-  await expect(page.locator("#discount-row")).toBeVisible();
-  await expect(page.locator("#grand-total")).toHaveText("$4,224");
+  await expect(page.locator("#grand-total")).toHaveText("$5,280");
 
   await page.getByText("Can protein samples be shipped to me in India?").click();
   await expect(page.getByText(/Sequel LifeCare/).last()).toBeVisible();
+});
+
+test("footer uses the Programmable Bio contact address", async ({ page }) => {
+  await page.goto("/how-it-works.html");
+  const contact = page.getByRole("contentinfo").getByRole("link", { name: "skannan@programmablebio.tech" });
+  await expect(contact).toHaveAttribute("href", "mailto:skannan@programmablebio.tech");
 });
 
 for (const [url, sourceUrl] of [

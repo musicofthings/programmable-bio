@@ -46,7 +46,7 @@ GitHub Actions builds, validates, tests, and deploys to GitHub Pages on pushes t
 |---|---|
 | `/` | Operational status, programmable-biology narrative, customer CTA |
 | `/how-it-works.html` | Pilot workflow, target launch prices, data contract |
-| `/services/expression/` | Adaptyv Bio expression service, INR calculator, India shipping FAQ |
+| `/services/expression/` | Protein expression workflow, INR planning calculator, India shipping FAQ |
 | `/platform.html` | Hyderabad cell, LabOS, and scale-out path |
 | `/apollo.html` | Explicitly proposed Apollo collaboration |
 | `/landscape.html` | Current competitor facts with primary-source links |

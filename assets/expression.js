@@ -14,7 +14,6 @@
   var exchangeRate = Number(pricing.getAttribute("data-usd-inr-rate")) || 95.77;
   var countInput = document.getElementById("protein-count");
   var slider = document.getElementById("protein-slider");
-  var discountInput = document.getElementById("proteinbase-discount");
   var currency = "USD";
   var replicates = 2;
 
@@ -59,8 +58,7 @@
     var base = count * tier.price;
     var replicateCost = Math.max(0, replicates - 2) * 9 * count;
     var subtotal = base + replicateCost;
-    var discount = discountInput.checked ? Math.round(subtotal * 0.2) : 0;
-    var total = subtotal - discount;
+    var total = subtotal;
     var perProtein = Math.round(total / count);
 
     countInput.value = String(count);
@@ -79,19 +77,14 @@
       ? "Duplicate included in price."
       : "+" + money(9) + " / protein for each extra replicate.";
 
-    var discountRow = document.getElementById("discount-row");
-    discountRow.hidden = discount === 0;
-    document.getElementById("discount-value").textContent = "−" + money(discount);
-
     document.getElementById("currency-note").textContent = currency === "INR"
-      ? "Indicative INR conversion at ₹" + exchangeRate.toFixed(2) + " per USD on 25 August 2026. Final conversion, GST, duties, import costs, and shipping are quoted separately."
-      : "USD list-price estimate. Taxes, duties, import costs, and shipping are quoted separately.";
+      ? "Indicative INR planning conversion at ₹" + exchangeRate.toFixed(2) + " per USD on 25 August 2026. Final conversion, GST, duties, and shipping are quoted separately."
+      : "Indicative USD planning estimate. Final scope, taxes, duties, and shipping are quoted separately.";
 
     var params = new URLSearchParams({
-      service: "Adaptyv Bio Expression",
+      service: "Protein Expression",
       proteins: String(count),
-      replicates: String(replicates),
-      proteinbase: discountInput.checked ? "yes" : "no"
+      replicates: String(replicates)
     });
     document.getElementById("estimate-cta").href = "/express-interest.html?" + params.toString();
   }
@@ -102,8 +95,6 @@
     countInput.value = String(countFromSlider(slider.value));
     render();
   });
-  discountInput.addEventListener("change", render);
-
   document.querySelectorAll("[data-count]").forEach(function (button) {
     button.addEventListener("click", function () {
       countInput.value = button.getAttribute("data-count");
