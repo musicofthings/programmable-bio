@@ -65,7 +65,7 @@ noindex redirect pages from `_data/redirects.json`.
 
 ## Forms and privacy
 
-The investor and customer EOI forms use
+The homepage access, investor, and customer EOI forms use
 [FormSubmit](https://formsubmit.co/) to forward submissions to
 `skannan@oncophenomics.com`. FormSubmit uses Google reCAPTCHA by default and
 documents a 30-day submission archive. The forms must
@@ -74,12 +74,19 @@ other sensitive project materials. See `/privacy.html`.
 
 Before relying on the forms in production:
 
-1. Submit each live form once and confirm FormSubmit's activation email in the
-   receiving mailbox.
-2. Verify the redirect to `https://programmablebio.tech/thanks.html` and confirm
-   that replies target the submitter's `email` field.
-3. Replace the email-address endpoint in `_data/site.json` with FormSubmit's
-   confirmed random-string endpoint if hiding the receiving address is desired.
+1. Submit the homepage form at `https://programmablebio.tech/#access` once with
+   non-confidential test data. The first submission triggers FormSubmit's
+   activation email and may not deliver as a normal enquiry.
+2. In the `skannan@oncophenomics.com` inbox, open the activation message from
+   FormSubmit and click **Activate Form**. Check spam, junk, promotions, and any
+   mail-security quarantine if it does not arrive within a few minutes.
+3. Submit the homepage form again, then test `/express-interest.html` and
+   `/investors.html`. Confirm that each submission arrives, the subject identifies
+   the correct form, Reply-To uses the submitter's `email`, and the browser returns
+   to `https://programmablebio.tech/thanks.html` after reCAPTCHA.
+4. Keep the FormSubmit confirmation email. It contains a random-string endpoint
+   that can replace the exposed email-address endpoint in `_data/site.json` after
+   activation if hiding the receiving address is desired.
 
 The form markup keeps reCAPTCHA enabled, supplies absolute `_next` and `_url`
 values, uses FormSubmit's `table` template, and includes a CSS-hidden `_honey`
