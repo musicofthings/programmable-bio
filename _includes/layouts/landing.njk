@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include "partials/head.njk" %}
+</head>
+<body class="landing-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="landing-nav" aria-label="Primary">
+    <div class="landing-nav__inner">
+      <a href="/" class="landing-brand" aria-label="Programmable Bio home">
+        <span class="landing-brand__mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>Programmable<span>Bio</span></span>
+      </a>
+      <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+      </button>
+      <div class="landing-nav__menu" id="primary-nav">
+        <ul class="landing-nav__links">
+          <li><a href="#platform">Platform</a></li>
+          <li><a href="#assays">Assays</a></li>
+          <li><a href="#developers">Developer stack</a></li>
+          <li><a href="#benchmarks">Benchmarks</a></li>
+          <li><a href="/how-it-works.html">How it works</a></li>
+        </ul>
+        <a class="landing-button landing-button--small" href="/express-interest.html" aria-label="Run an experiment">Deploy experiment</a>
+      </div>
+    </div>
+  </nav>
+  <main id="main">
+    {{ content | safe }}
+  </main>
+  <script src="/assets/site.js" defer></script>
+  <script src="/assets/landing.js" defer></script>
+</body>
+</html>

@@ -1,78 +1,244 @@
 ---
-layout: layouts/base.njk
-title: "Autonomous experiments for programmable biology"
-description: "A fully operational autonomous R&D lab in Hyderabad that turns computational biological designs into reproducible, model-ready experimental data."
+layout: layouts/landing.njk
+title: "Empirical data for computational protein design"
+description: "Send computational protein designs into an autonomous wet-lab workflow and receive structured, model-ready experimental data."
 navActive: "home"
+extraCss: landing.css
 permalink: "/"
 ---
-<div class="cover">
-  <div class="cover-eyebrow">Programmable Bio &middot; Hyderabad, India</div>
-  <h1>Your model designed it.<br>Our autonomous lab <strong>tests it.</strong></h1>
-  <p class="cover-sub">We operate a compact, fully autonomous R&amp;D lab in Hyderabad. It is running now. We are opening selected programs to academic and industry teams while raising capital to expand its instruments, assays, and throughput.</p>
-  <div class="cta-row">
-    <a class="button button-primary" href="/express-interest.html">Run an experiment &rarr;</a>
-    <a class="button" href="/how-it-works.html">See assays and launch pricing</a>
-  </div>
-  <div class="cover-meta">
-    <div class="cover-meta-item"><strong>Status:</strong> operational R&amp;D cell</div>
-    <div class="cover-meta-item"><strong>Location:</strong> Hyderabad, India</div>
-    <div class="cover-meta-item"><strong>Next:</strong> scale capacity and access</div>
-  </div>
-</div>
+<section class="landing-hero">
+  <div class="landing-shell landing-hero__grid">
+    <div class="landing-hero__copy">
+      <div class="landing-kicker"><span></span> Autonomous R&amp;D cell &middot; Hyderabad, India</div>
+      <h1>Turn in-silico protein designs into <em>empirical biophysical data.</em></h1>
+      <p class="landing-hero__lead">Close the loop between generative models and in-vitro reality. Submit candidate sequences for reviewed execution; our autonomous lab translates suitable designs into controlled wet-lab workflows and structured results.</p>
+      <div class="landing-actions">
+        <a class="landing-button" href="/express-interest.html">Launch your library <span aria-hidden="true">&rarr;</span></a>
+        <a class="landing-text-link" href="#developers">Explore the developer workflow <span aria-hidden="true">&darr;</span></a>
+      </div>
+      <div class="landing-proof" role="group" aria-label="Current operating status">
+        <div><strong>Operational</strong><span>Autonomous R&amp;D cell</span></div>
+        <div><strong>Reviewed</strong><span>Pilot intake and feasibility</span></div>
+        <div><strong>Structured</strong><span>Data with provenance</span></div>
+      </div>
+    </div>
 
-<div class="status-banner">
-  <span class="status-dot" aria-hidden="true"></span>
-  <p><strong>Operational today.</strong> The Hyderabad lab executes automated wet-lab workflows end to end. Customer access begins through a reviewed expression of interest; a self-serve catalog and API follow as each assay is standardized.</p>
-</div>
+    <div class="code-window" role="region" aria-label="Python SDK concept preview">
+      <div class="code-window__bar">
+        <div class="code-window__dots" aria-hidden="true"><i></i><i></i><i></i></div>
+        <span>experiment.py</span>
+        <button type="button" class="code-copy" data-copy-code aria-label="Copy Python example">Copy</button>
+      </div>
+      <div class="code-window__status"><span></span> SDK interface preview</div>
+      <pre><code><span class="c-purple">import</span> programmablebio <span class="c-purple">as</span> pb
 
-<section class="section">
-  <div class="section-label">The thesis</div>
-  <h2>Biology is becoming <em>programmable</em></h2>
-  <p>Models can now generate proteins, sequences, constructs, and experimental plans faster than laboratories can test them. The scarce resource is no longer a plausible design. It is trustworthy physical evidence.</p>
-  <p>Programmable biology needs an execution layer: software translates intent into lab operations, automation runs the experiment, and structured results flow back into the model. Our Hyderabad lab is the first compact implementation of that loop.</p>
-  <div class="callout">
-    <p>Design &rarr; execute &rarr; measure &rarr; learn. The product is not a robot or a report. It is a repeatable experimental loop.</p>
+client = pb.<span class="c-blue">Foundry</span>(api_key=<span class="c-green">"pb_live_..."</span>)
+
+experiment = client.experiments.<span class="c-blue">create</span>(
+    name=<span class="c-green">"binder-screen-r04"</span>,
+    target=<span class="c-green">"HER2_ECD"</span>,
+    designs=<span class="c-green">"candidates.fasta"</span>,
+    assays=[
+        pb.assays.<span class="c-blue">BindingKinetics</span>(),
+        pb.assays.<span class="c-blue">Thermostability</span>(),
+        pb.assays.<span class="c-blue">ExpressionYield</span>()
+    ]
+)
+
+<span class="c-muted"># proposed standardized interface</span>
+<span class="c-purple">print</span>(experiment.status)
+<span class="c-output">→ FEASIBILITY_REVIEW</span></code></pre>
+      <div class="code-window__footer"><span>Python 3.12</span><span>API surface under development</span></div>
+    </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="section-label">How it works</div>
-  <h2>From computational design to <em>experimental evidence</em></h2>
-  <div class="chain">
-    <div class="chain-step active"><div class="chain-label">Design</div><div class="chain-sublabel">Your candidates</div></div>
-    <div class="chain-arrow">&rarr;</div>
-    <div class="chain-step active"><div class="chain-label">Review</div><div class="chain-sublabel">Feasibility + quote</div></div>
-    <div class="chain-arrow">&rarr;</div>
-    <div class="chain-step active"><div class="chain-label">Execute</div><div class="chain-sublabel">Hyderabad lab</div></div>
-    <div class="chain-arrow">&rarr;</div>
-    <div class="chain-step active"><div class="chain-label">Return</div><div class="chain-sublabel">Data + provenance</div></div>
-    <div class="chain-arrow">&rarr;</div>
-    <div class="chain-step active"><div class="chain-label">Learn</div><div class="chain-sublabel">Next design cycle</div></div>
-  </div>
-  <p>Initial programs are reviewed with our team so we only accept work the current cell can execute reliably. Standardized workflows will move into transparent, self-serve ordering as the public catalog expands.</p>
-  <p><a href="/how-it-works.html">See the operating model and launch catalog &rarr;</a></p>
-</section>
-
-<section class="section">
-  <div class="section-label">Why Hyderabad</div>
-  <h2>Start with a working cell. Scale into a <em>network.</em></h2>
-  <div class="card-grid card-grid--spaced-sm">
-    <div class="card card-accent"><h4>Automation already running</h4><p>The core execution loop is operational in our Hyderabad R&amp;D setup. Funding expands breadth and throughput rather than financing a first demonstration.</p></div>
-    <div class="card card-teal"><h4>Price parity as a baseline</h4><p>Our launch targets match published cloud-lab prices. The India cost base is intended to preserve margin while keeping experiments accessible.</p></div>
-    <div class="card card-blue"><h4>Model-ready output</h4><p>Each standardized assay is designed to return structured results, raw files, QC context, and execution provenance.</p></div>
-    <div class="card card-purple"><h4>Clinical context is proposed</h4><p>We are pursuing, but have not signed, an Apollo partnership for consented clinical and biobank access. It is an expansion path, not a current asset.</p></div>
+<section class="ecosystem" aria-label="Computational ecosystem">
+  <div class="landing-shell ecosystem__inner">
+    <span class="ecosystem__label">Designed to fit computational workflows</span>
+    <div class="ecosystem__logos" role="group" aria-label="Compatible workflow inputs">
+      <span>RFdiffusion</span><span>AlphaFold</span><span>ESMFold</span><span>Boltz</span><span>Chai</span><span>ProteinMPNN</span><span>Nextflow</span>
+    </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="section-label">Who it is for</div>
-  <h2>One lab, two access models</h2>
-  <div class="two-col">
-    <div class="card card-teal"><h4>Academic R&amp;D</h4><p>Small, grant-sized experimental batches for teams whose computational output is growing faster than their bench capacity.</p></div>
-    <div class="card card-purple"><h4>Industry R&amp;D</h4><p>Pilot programs now, followed by reserved capacity and API-driven design&ndash;build&ndash;test&ndash;learn loops as the fleet scales.</p></div>
-  </div>
-  <div class="cta-row">
-    <a class="button button-primary" href="/express-interest.html">Submit an expression of interest</a>
-    <a class="button" href="/investors.html">Investor materials</a>
+<section class="landing-section landing-section--problem" id="platform">
+  <div class="landing-shell">
+    <div class="landing-section__intro landing-section__intro--wide">
+      <div class="landing-kicker landing-kicker--dark"><span></span> The atom-bit bottleneck</div>
+      <h2>Generative design takes milliseconds. <em>Physical validation still takes months.</em></h2>
+      <p>Structure prediction and de novo protein generation have accelerated design in the world of bits. Validation in the world of atoms remains constrained by manual handling, reagent lead times, consumable costs, and protocols that were never designed for machine-scale iteration.</p>
+    </div>
+    <div class="bottleneck-map">
+      <div class="bottleneck-map__side">
+        <span class="bottleneck-map__eyebrow">Digital abundance</span>
+        <strong>10<sup>4</sup>–10<sup>6</sup></strong>
+        <p>candidate sequences generated</p>
+      </div>
+      <div class="bottleneck-map__bridge" aria-hidden="true">
+        <i></i><i></i><i></i>
+        <span>translation gap</span>
+      </div>
+      <div class="bottleneck-map__side bottleneck-map__side--physical">
+        <span class="bottleneck-map__eyebrow">Physical scarcity</span>
+        <strong>10<sup>1</sup>–10<sup>2</sup></strong>
+        <p>variants commonly validated</p>
+      </div>
+    </div>
+    <div class="landing-statement">
+      <span>Our thesis</span>
+      <p>Abstract laboratory complexity into a repeatable execution layer: <strong>sequence in, evidence and provenance out.</strong></p>
+    </div>
   </div>
 </section>
+
+<section class="landing-section landing-section--light">
+  <div class="landing-shell">
+    <div class="landing-section__intro">
+      <div class="landing-kicker landing-kicker--dark"><span></span> Platform architecture</div>
+      <h2>Build the wet lab for <em>machine-scale iteration.</em></h2>
+      <p>Three integrated layers turn a candidate library into a measurable design&ndash;build&ndash;test&ndash;learn cycle.</p>
+    </div>
+    <div class="pillar-grid">
+      <article class="pillar-card">
+        <div class="pillar-card__top"><span>01</span><div class="pillar-icon pillar-icon--fluid" aria-hidden="true"><i></i><i></i><i></i></div></div>
+        <h3>Autonomous microfluidic workcells</h3>
+        <p>Miniaturized workflows are designed to reduce manual transfers and reagent use while increasing the number of conditions that can be explored per run.</p>
+        <ul><li>Cell-free expression workflows</li><li>Controlled microscale handling</li><li>Instrument telemetry and provenance</li></ul>
+      </article>
+      <article class="pillar-card">
+        <div class="pillar-card__top"><span>02</span><div class="pillar-icon pillar-icon--signal" aria-hidden="true"><i></i></div></div>
+        <h3>Biophysical characterization</h3>
+        <p>Move beyond binary readouts toward kinetic, stability, expression, and yield measurements that support real design decisions.</p>
+        <ul><li>Rate and affinity measurements</li><li>Thermal transition profiles</li><li>Raw files alongside parsed results</li></ul>
+      </article>
+      <article class="pillar-card">
+        <div class="pillar-card__top"><span>03</span><div class="pillar-icon pillar-icon--nodes" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div>
+        <h3>ML-ready orchestration</h3>
+        <p>Normalize experimental output into versioned data objects built to flow back into feature stores, notebooks, and active-learning loops.</p>
+        <ul><li>Machine-readable result schemas</li><li>Quality-control context</li><li>Lineage from design to measurement</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="landing-section landing-section--pipeline">
+  <div class="landing-shell">
+    <div class="landing-section__intro landing-section__intro--center">
+      <div class="landing-kicker"><span></span> End-to-end execution</div>
+      <h2>One continuous path from <em>FASTA to feedback.</em></h2>
+    </div>
+    <ol class="pipeline">
+      <li><span class="pipeline__number">01</span><div class="pipeline__glyph" aria-hidden="true">{AT}</div><h3>Candidate batch</h3><p>FASTA or CSV sequences with target and control specifications.</p></li>
+      <li><span class="pipeline__number">02</span><div class="pipeline__glyph" aria-hidden="true">&lt;/&gt;</div><h3>Reviewed dispatch</h3><p>Feasibility, synthesis-rule checks, scope, and quoted execution plan.</p></li>
+      <li><span class="pipeline__number">03</span><div class="pipeline__glyph" aria-hidden="true">&#8942;&#8942;</div><h3>Foundry execution</h3><p>Automated expression and instrumented assay workflows.</p></li>
+      <li><span class="pipeline__number">04</span><div class="pipeline__glyph" aria-hidden="true">{ }</div><h3>Structured return</h3><p>Measurements, raw files, QC context, and run provenance.</p></li>
+    </ol>
+    <div class="pipeline-note"><span>Current access</span><p>Programs begin with technical review. Self-serve ordering and programmatic dispatch follow as each workflow is standardized.</p><a href="/how-it-works.html">See how it works &rarr;</a></div>
+  </div>
+</section>
+
+<section class="landing-section landing-section--assays" id="assays">
+  <div class="landing-shell">
+    <div class="landing-section__intro landing-section__intro--wide">
+      <div class="landing-kicker landing-kicker--dark"><span></span> Assay matrix</div>
+      <h2>Measurements that help models <em>learn what is real.</em></h2>
+      <p>The matrix below describes the standardization direction for the platform. Availability and turnaround are confirmed during feasibility review for every pilot.</p>
+    </div>
+    <div class="assay-table-wrap" tabindex="0" aria-label="Scrollable assay matrix">
+      <table class="assay-table">
+        <thead><tr><th>Assay class</th><th>Primary readouts</th><th>Method direction</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Binding kinetics</strong><span>Interaction quality</span></td><td><code>k<sub>on</sub></code> <code>k<sub>off</sub></code> <code>K<sub>D</sub></code></td><td>BLI / label-free kinetic methods</td><td><span class="status-chip status-chip--review">Pilot review</span></td></tr>
+          <tr><td><strong>Thermostability</strong><span>Folding and aggregation</span></td><td><code>T<sub>m</sub></code> <code>T<sub>onset</sub></code> <code>T<sub>agg</sub></code></td><td>Thermal shift / light-scattering methods</td><td><span class="status-chip status-chip--planned">Planned expansion</span></td></tr>
+          <tr><td><strong>Expression &amp; yield</strong><span>Manufacturability signal</span></td><td>Soluble yield &middot; total yield</td><td>Fluorometric / capillary methods</td><td><span class="status-chip status-chip--review">Pilot review</span></td></tr>
+          <tr><td><strong>Enzyme kinetics</strong><span>Functional performance</span></td><td><code>V<sub>max</sub></code> <code>K<sub>m</sub></code> <code>k<sub>cat</sub></code></td><td>Absorbance / fluorescence traces</td><td><span class="status-chip status-chip--custom">Custom scope</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="assay-footnote">No fixed turnaround is promised until input materials, controls, assay maturity, and capacity are reviewed.</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--developer" id="developers">
+  <div class="landing-shell developer-grid">
+    <div>
+      <div class="landing-kicker"><span></span> Infrastructure as code</div>
+      <h2>Wet-lab experiments orchestrated from <em>your terminal.</em></h2>
+      <p class="developer-lead">The product direction is an authenticated interface that lets computational teams validate, dispatch, observe, and retrieve experiments without losing lineage.</p>
+      <div class="integration-list">
+        <div><span>01</span><p><strong>Workflow-native</strong>Planned adapters for Nextflow and Snakemake pipelines.</p></div>
+        <div><span>02</span><p><strong>Analysis-ready</strong>JSON objects designed for Pandas, Polars, and PyTorch.</p></div>
+        <div><span>03</span><p><strong>Deterministic lineage</strong>Connect generation runs, synthesis lots, telemetry, and raw data.</p></div>
+      </div>
+    </div>
+    <div class="terminal-window" role="region" aria-label="Command line interface concept preview">
+      <div class="terminal-window__bar"><span></span><span></span><span></span><b>pb-cli — zsh</b></div>
+      <pre><code><span class="terminal-prompt">$</span> pip install programmablebio
+<span class="terminal-muted"># interface preview; package not yet public</span>
+
+<span class="terminal-prompt">$</span> pb validate \
+  --library ./candidates.fasta \
+  --platform nanoliter-v2
+
+<span class="terminal-ok">✓ 96 sequences parsed</span>
+<span class="terminal-ok">✓ synthesis rules checked</span>
+<span class="terminal-warn">! 3 variants need manual review</span>
+
+<span class="terminal-prompt">$</span> pb deploy \
+  --target HER2_ECD \
+  --assay binding_kinetics
+
+<span class="terminal-output">Experiment prepared for feasibility review.</span></code></pre>
+    </div>
+  </div>
+</section>
+
+<section class="landing-section landing-section--benchmarks" id="benchmarks">
+  <div class="landing-shell benchmark-grid">
+    <div class="benchmark-visual" aria-hidden="true">
+      <div class="benchmark-axis benchmark-axis--y"></div><div class="benchmark-axis benchmark-axis--x"></div>
+      <span class="benchmark-dot benchmark-dot--1"></span><span class="benchmark-dot benchmark-dot--2"></span><span class="benchmark-dot benchmark-dot--3"></span><span class="benchmark-dot benchmark-dot--4"></span><span class="benchmark-dot benchmark-dot--5"></span><span class="benchmark-dot benchmark-dot--6"></span><span class="benchmark-dot benchmark-dot--7"></span>
+      <div class="benchmark-line"></div><small>predicted confidence</small><small>measured performance</small>
+    </div>
+    <div>
+      <div class="landing-kicker landing-kicker--dark"><span></span> Open science &amp; validation</div>
+      <h2>Empirical ground truth for the <em>computational community.</em></h2>
+      <p>Generative biology needs benchmarks that connect model outputs to physical measurements. We intend to publish carefully scoped, de-identified datasets that make that gap visible and measurable.</p>
+      <a class="landing-text-link landing-text-link--dark" href="/case-studies.html">Explore illustrative programs <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="landing-cta" id="access">
+  <div class="landing-shell landing-cta__inner">
+    <div>
+      <div class="landing-kicker"><span></span> Foundry access</div>
+      <h2>Ready to bridge design and <em>physical validation?</em></h2>
+      <p>Start with a non-confidential description of your candidate library. We’ll assess fit, define the assay scope, and return a proposed execution plan.</p>
+    </div>
+    <form class="access-form" action="{{ site.formAction }}" method="POST" accept-charset="UTF-8">
+      <input type="hidden" name="_subject" value="Foundry access request — Programmable Bio">
+      <input type="hidden" name="_next" value="{{ site.url }}{{ site.thanksUrl }}">
+      <input type="hidden" name="_url" value="{{ site.url }}/">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="sr-only" for="access-email">Corporate or institutional email</label>
+      <div class="access-form__row"><input id="access-email" type="email" name="email" autocomplete="email" placeholder="you@company.com" required><button type="submit">Request foundry access <span aria-hidden="true">&rarr;</span></button></div>
+      <p>Non-confidential contact details only. By submitting, you agree to our <a href="/privacy.html">privacy notice</a>.</p>
+    </form>
+  </div>
+</section>
+
+<footer class="landing-footer">
+  <div class="landing-shell">
+    <div class="landing-footer__top">
+      <div class="landing-footer__brand"><a href="/" class="landing-brand"><span class="landing-brand__mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Programmable<span>Bio</span></span></a><p>Autonomous experiments for programmable biology.</p></div>
+      <div><h3>Platform</h3><a href="#platform">Architecture</a><a href="#assays">Assay matrix</a><a href="/how-it-works.html">How it works</a></div>
+      <div><h3>Developers</h3><a href="#developers">Interface preview</a><a href="#developers">Pipeline integrations</a><a href="#benchmarks">Benchmarks</a></div>
+      <div><h3>Company</h3><a href="/express-interest.html">Submit a pilot</a><a href="/investors.html">Investors</a><a href="/privacy.html">Privacy</a></div>
+    </div>
+    <div class="landing-footer__bottom"><span>&copy; {{ site.year }} Programmable Bio. All rights reserved.</span><span>Hyderabad, India &middot; <a href="mailto:{{ site.email }}">Contact</a></span></div>
+    <p class="landing-footer__disclaimer">Platform interfaces, turnaround targets, assay coverage, and performance claims shown as previews or directions are not commitments. Final scope is confirmed during technical review.</p>
+  </div>
+</footer>
