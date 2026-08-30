@@ -16,8 +16,8 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.6",
-    "@axe-core/playwright": "^4.12.1",
+    "@axe-core/playwright": "^4.13.0",
     "@playwright/test": "^1.62.1",
-    "html-validate": "^10.17.0"
+    "html-validate": "^11.10.0"
   }
 }
