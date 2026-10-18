@@ -15,9 +15,9 @@
     "audit:ci": "env -u npm_config_allow_scripts npm audit --omit=dev --audit-level=high"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.6",
-    "@axe-core/playwright": "^4.12.1",
-    "@playwright/test": "^1.62.1",
-    "html-validate": "^10.17.0"
+    "@11ty/eleventy": "^3.1.7",
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.64.1",
+    "html-validate": "^11.16.2"
   }
 }
